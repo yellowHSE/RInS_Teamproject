@@ -314,22 +314,30 @@ def main(args=None):
         rc.undock()
     
     # Finally send it a goal to reach
-    goal_pose = PoseStamped()
-    goal_pose.header.frame_id = 'map'
-    goal_pose.header.stamp = rc.get_clock().now().to_msg()
 
-    goal_pose.pose.position.x = 2.6
-    goal_pose.pose.position.y = -1.3
-    goal_pose.pose.orientation = rc.YawToQuaternion(0.57)
+    goal_positions = [
+        {'x': 2.6, 'y': -1.3, 'yaw': 0.57},
+        {'x': 1.8, 'y': 1.8, 'yaw': 0.81},
+        {'x': -1.5, 'y': 4.1, 'yaw': 0.57}
+    ]
 
-    rc.goToPose(goal_pose)
+    for goal in goal_positions:
+        goal_pose = PoseStamped()
+        goal_pose.header.frame_id = 'map'
+        goal_pose.header.stamp = rc.get_clock().now().to_msg()
 
-    while not rc.isTaskComplete():
-        rc.info("Waiting for the task to complete...")
-        time.sleep(1)
+        goal_pose.pose.position.x = goal['x']
+        goal_pose.pose.position.y = goal['y']
+        goal_pose.pose.orientation = rc.YawToQuaternion(goal['yaw'])
 
-    rc.spin(-0.57)
+        rc.goToPose(goal_pose)
 
+        while not rc.isTaskComplete():
+            rc.info("Waiting for the task to complete...")
+            time.sleep(1)
+
+        rc.info("Goal reached")
+        
     rc.destroyNode()
 
     # And a simple example
