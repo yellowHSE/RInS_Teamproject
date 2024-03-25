@@ -15,8 +15,13 @@ import numpy as np
 
 from ultralytics import YOLO
 
+#from robot_commander import robot_commander
+
 # from rclpy.parameter import Parameter
 # from rcl_interfaces.msg import SetParametersResult
+
+
+#rc = robot_commander()
 
 class detect_faces(Node):
 
@@ -66,6 +71,8 @@ class detect_faces(Node):
 				if bbox.nelement() == 0: # skip if empty
 					continue
 
+
+
 				self.get_logger().info(f"Person has been detected!")
 
 				bbox = bbox[0]
@@ -80,6 +87,7 @@ class detect_faces(Node):
 				cv_image = cv2.circle(cv_image, (cx,cy), 5, self.detection_color, -1)
 
 				self.faces.append((cx,cy))
+				print(self.faces)
 
 			cv2.imshow("image", cv_image)
 			key = cv2.waitKey(1)
@@ -96,7 +104,7 @@ class detect_faces(Node):
 		height = data.height
 		width = data.width
 		point_step = data.point_step
-		row_step = data.row_step		
+		row_step = data.row_step
 
 		# iterate over face coordinates
 		for x,y in self.faces:
