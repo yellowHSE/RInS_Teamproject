@@ -12,6 +12,7 @@ from visualization_msgs.msg import Marker
 from cv_bridge import CvBridge, CvBridgeError
 import cv2
 import numpy as np
+import math
 
 from ultralytics import YOLO
 
@@ -22,6 +23,16 @@ from ultralytics import YOLO
 
 
 #rc = robot_commander()
+
+def distance(p1, p2):
+	return math.sqrt((float(p1[0])-float(p2[0]))**2 + (float(p1[1]) - float(p2[1]))**2)
+
+def point_in_area(point, array, threshold):
+	for p in array:
+		if distance(point, p) <= threshold:
+			return True
+
+	return False
 
 class detect_faces(Node):
 
@@ -41,6 +52,8 @@ class detect_faces(Node):
 
 		self.bridge = CvBridge()
 		self.scan = None
+
+		self.saved_markers = []
 
 		self.rgb_image_sub = self.create_subscription(Image, "/oakd/rgb/preview/image_raw", self.rgb_callback, qos_profile_sensor_data)
 		self.pointcloud_sub = self.create_subscription(PointCloud2, "/oakd/rgb/preview/depth/points", self.pointcloud_callback, qos_profile_sensor_data)
@@ -87,7 +100,7 @@ class detect_faces(Node):
 				cv_image = cv2.circle(cv_image, (cx,cy), 5, self.detection_color, -1)
 
 				self.faces.append((cx,cy))
-				print(self.faces)
+				#print(self.faces)
 
 			cv2.imshow("image", cv_image)
 			key = cv2.waitKey(1)
@@ -116,6 +129,12 @@ class detect_faces(Node):
 			# read center coordinates
 			d = a[y,x,:]
 
+
+			print(d)
+
+			if not point_in_area(d, self.saved_markers, 5):
+				self.saved_markers.append(d)
+
 			# create marker
 			marker = Marker()
 
@@ -143,6 +162,9 @@ class detect_faces(Node):
 			marker.pose.position.z = float(d[2])
 
 			self.marker_pub.publish(marker)
+			print(self.saved_markers)
+
+
 
 def main():
 	print('Face detection node starting.')
