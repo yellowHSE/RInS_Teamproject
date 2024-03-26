@@ -316,10 +316,15 @@ def main(args=None):
     # Finally send it a goal to reach
 
     goal_positions = [
+        {'x': -1.0, 'y': -0.5, 'yaw': 0.57},
+        {'x': 0.0, 'y': -1.8, 'yaw': 0.57},
         {'x': 2.6, 'y': -1.3, 'yaw': 0.57},
         {'x': 1.8, 'y': 1.8, 'yaw': 0.81},
-        {'x': -1.5, 'y': 4.1, 'yaw': 0.57}
+        {'x': -1.5, 'y': 4.1, 'yaw': 0.57},
+        {'x': -1.0, 'y': 1.0, 'yaw': 0.57},
+        {'x': 1.0, 'y': 1.0, 'yaw': 0.57}
     ]
+
 
     for goal in goal_positions:
         goal_pose = PoseStamped()
