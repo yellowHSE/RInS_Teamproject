@@ -178,13 +178,13 @@ class detect_faces(Node):
 				for point in self.prev_face_points:
 						self.get_logger().info(f"({self.prev_face_points})")
 
-				if len(self.prev_face_points) == 3:
-					self.get_logger().info("ROBOT STOP")
-					self.get_logger().info("Prev face points:")
-					for point in self.prev_face_points:
-						self.get_logger().info(f"({self.prev_face_points})")
-						rclpy.shutdown()
-						return
+				#if len(self.prev_face_points) == 3:
+				#	self.get_logger().info("ROBOT STOP")
+				#	self.get_logger().info("Prev face points:")
+				#	for point in self.prev_face_points:
+				#		self.get_logger().info(f"({self.prev_face_points})")
+				#		rclpy.shutdown()
+					#	return
 
 				# create marker
 				marker = Marker()
