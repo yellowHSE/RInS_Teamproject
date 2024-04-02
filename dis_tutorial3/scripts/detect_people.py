@@ -91,7 +91,7 @@ class detect_faces(Node):
 		try:
 			cv_image = self.bridge.imgmsg_to_cv2(data, "bgr8")
 
-			self.get_logger().info(f"Running inference on image...")
+			# self.get_logger().info(f"Running inference on image...")
 
 			# run inference
 			res = self.model.predict(cv_image, imgsz=(256, 320), show=False, verbose=False, classes=[0], device=self.device)
@@ -166,7 +166,7 @@ class detect_faces(Node):
 				#if any(np.allclose([face_point_map.x, face_point_map.y, face_point_map.z], [prev_face_point.x, prev_face_point.y, prev_face_point.z]) for prev_face_point in self.prev_face_points):
  				#	continue
 
-				if self.is_close(face_point_map, threshold=0.5):
+				if len(self.prev_face_points) > 0 and self.is_close(face_point_map, threshold=0.5):
 					self.get_logger().info("I WAS HERE")
 					continue
 
@@ -211,7 +211,10 @@ class detect_faces(Node):
 				marker.pose.position.y = face_point_map.y
 				marker.pose.position.z = face_point_map.z
 
+				self.get_logger().info(f"Publishing marker: {marker} on topic: {self.marker_pub.topic_name}")
 				self.marker_pub.publish(marker)
+
+
 			except TransformException as e:
 				self.get_logger().error(f"Transform exception: {e}")
 
@@ -223,23 +226,6 @@ class detect_faces(Node):
 				return True
 
 		return False
-
-def greeting():
-	text_to_speak = "Hello."
-	tts = gTTS(text=text_to_speak, lang='en')
-
-	temp_file = TemporaryFile()
-	tts.write_to_fp(temp_file)
-	temp_file.seek(0)
-
-	pygame.mixer.init()
-	pygame.mixer.music.load(temp_file)
-	pygame.mixer.music.play()
-
-	while pygame.mixer.music.get_busy():
-		time.sleep(0.1)
-
-	temp_file.close()
 
 
 def main():
