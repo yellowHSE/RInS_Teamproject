@@ -140,8 +140,12 @@ class RobotCommander(Node):
                        str(pose.pose.position.y) + ' was rejected!')
             return False
 
+        while not self.isTaskComplete():
+            time.sleep(1)
+
+        time.sleep(5)
+
         self.greeting()
-        time.sleep(15)
         return True
 
     def goToPose(self, pose, behavior_tree=''):
