@@ -62,6 +62,7 @@ class RobotCommander(Node):
 
         self.pose_frame_id = 'map'
         self.face_coordinate_msg = None
+        self.detected_face_num = 0
 
         # Flags and helper variables
         self.goal_handle = None
@@ -117,6 +118,7 @@ class RobotCommander(Node):
 
         self.get_logger().info(f"Face coordinate: ({x}, {y}, {z})")
         self.face_coordinate_received = True
+        self.detected_face_num = self.detected_face_num + 1
 
     def approachToFace(self, pose, behavior_tree=''):
         """Send a `NavToPose` action request."""
@@ -143,9 +145,10 @@ class RobotCommander(Node):
         while not self.isTaskComplete():
             time.sleep(1)
 
-        time.sleep(5)
+        time.sleep(10)
 
         self.greeting()
+
         return True
 
     def goToPose(self, pose, behavior_tree=''):
@@ -449,6 +452,10 @@ def main(args=None):
                 # Clear face coordinate message
                 rc.face_coordinate_msg = None
                 rc.face_coordinate_received = False
+
+                if(rc.detected_face_num > 2):
+                    break
+
             else:
                 rc.info("Waiting")
                 time.sleep(1)
