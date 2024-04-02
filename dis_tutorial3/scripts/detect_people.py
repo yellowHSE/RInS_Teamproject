@@ -158,11 +158,20 @@ class detect_faces(Node):
 
 
 				# If current face point is same as any of the previous face points, skip publishing marker
-				if any(np.allclose([face_point_map.x, face_point_map.y, face_point_map.z], [prev_face_point.x, prev_face_point.y, prev_face_point.z]) for prev_face_point in self.prev_face_points):
- 					continue
+				#if any(np.allclose([face_point_map.x, face_point_map.y, face_point_map.z], [prev_face_point.x, prev_face_point.y, prev_face_point.z]) for prev_face_point in self.prev_face_points):
+ 				#	continue
+
+				if self.is_close(face_point_map, threshold=0.5):
+					self.get_logger().info("I WAS HERE")
+					continue
+
 
  				# Add current face point to the list of previous face points
 				self.prev_face_points.append(face_point_map)
+
+				#This is here only for debuging
+				for point in self.prev_face_points:
+						self.get_logger().info(f"({self.prev_face_points})")
 
 				if len(self.prev_face_points) == 3:
 					self.get_logger().info("ROBOT STOP")
@@ -200,6 +209,15 @@ class detect_faces(Node):
 				self.marker_pub.publish(marker)
 			except TransformException as e:
 				self.get_logger().error(f"Transform exception: {e}")
+
+	def is_close(self, current_point, threshold):
+
+		for prev_point in self.prev_face_points:
+			distance = math.sqrt((current_point.x - prev_point.x) ** 2 + (current_point.y - prev_point.y) ** 2)
+			if distance < threshold:
+				return True
+
+		return False
 
 def main():
 	print('Face detection node starting.')
