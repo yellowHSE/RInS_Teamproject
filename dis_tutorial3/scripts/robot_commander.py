@@ -145,9 +145,9 @@ class RobotCommander(Node):
         while not self.isTaskComplete():
             time.sleep(1)
 
-        time.sleep(10)
-
         self.greeting()
+
+        time.sleep(5)
 
         return True
 
