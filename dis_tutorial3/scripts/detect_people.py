@@ -22,6 +22,11 @@ from tf2_ros.transform_listener import TransformListener
 
 from geometry_msgs.msg import PointStamped
 
+from gtts import gTTS
+import pygame
+from tempfile import TemporaryFile
+import time
+
 #from robot_commander import robot_commander
 
 # from rclpy.parameter import Parameter
@@ -168,8 +173,8 @@ class detect_faces(Node):
 
  				# Add current face point to the list of previous face points
 				self.prev_face_points.append(face_point_map)
+				#greeting()
 
-				#This is here only for debuging
 				for point in self.prev_face_points:
 						self.get_logger().info(f"({self.prev_face_points})")
 
@@ -218,6 +223,24 @@ class detect_faces(Node):
 				return True
 
 		return False
+
+def greeting():
+	text_to_speak = "Hello."
+	tts = gTTS(text=text_to_speak, lang='en')
+
+	temp_file = TemporaryFile()
+	tts.write_to_fp(temp_file)
+	temp_file.seek(0)
+
+	pygame.mixer.init()
+	pygame.mixer.music.load(temp_file)
+	pygame.mixer.music.play()
+
+	while pygame.mixer.music.get_busy():
+		time.sleep(0.1)
+
+	temp_file.close()
+
 
 def main():
 	print('Face detection node starting.')
