@@ -118,7 +118,6 @@ class RobotCommander(Node):
 
         self.get_logger().info(f"Face coordinate: ({x}, {y}, {z})")
         self.face_coordinate_received = True
-        self.detected_face_num = self.detected_face_num + 1
 
     def approachToFace(self, pose, behavior_tree=''):
         """Send a `NavToPose` action request."""
@@ -145,10 +144,9 @@ class RobotCommander(Node):
         while not self.isTaskComplete():
             time.sleep(1)
 
+
+        time.sleep(2)
         self.greeting()
-
-        time.sleep(5)
-
         return True
 
     def goToPose(self, pose, behavior_tree=''):
@@ -207,6 +205,7 @@ class RobotCommander(Node):
 
         if self.approachToFace(pose):
             self.info("Robot reached the face coordinate")
+            #self.greeting()
         else:
             self.info("Fail to reach the face coordinate")
 
@@ -418,10 +417,11 @@ def main(args=None):
     # Finally send it a goal to reach
 
     goal_positions = [
-        {'x': -1.0, 'y': -0.5, 'yaw': 0.57},
+        #{'x': -1.0, 'y': -0.5, 'yaw': 0.57},
         {'x': 0.0, 'y': -1.8, 'yaw': 0.57},
         {'x': 2.6, 'y': -1.3, 'yaw': 0.57},
-        {'x': 1.8, 'y': 1.8, 'yaw': 0.81},
+        {'x': 1.0, 'y': -0.5, 'yaw': 1.0},
+        {'x': -1.0, 'y': 3.2, 'yaw': 0.57},
         {'x': -1.5, 'y': 4.1, 'yaw': 0.57},
         {'x': -1.0, 'y': 1.0, 'yaw': 0.57},
         {'x': 1.0, 'y': 1.0, 'yaw': 0.57}
@@ -443,12 +443,17 @@ def main(args=None):
             # Check if face coordinate message is received
             if rc.face_coordinate_received:
                 rc.info("face detected")
+
+                rc.detected_face_num = rc.detected_face_num + 1
+
                 # rc.cancelTask()
                 # Move robot to face coordinate
                 rc.move_robot_to_face(rc.face_coordinate_msg)
 
                 # Wait for 5 seconds
-                time.sleep(10)
+                time.sleep(5)
+
+                #rc.greeting()
                 # Clear face coordinate message
                 rc.face_coordinate_msg = None
                 rc.face_coordinate_received = False
@@ -459,8 +464,10 @@ def main(args=None):
             else:
                 rc.info("Waiting")
                 time.sleep(1)
-
+        if(rc.detected_face_num > 2):
+            break
         rc.info("Goal reached")
+
 
     rc.destroyNode()
 
