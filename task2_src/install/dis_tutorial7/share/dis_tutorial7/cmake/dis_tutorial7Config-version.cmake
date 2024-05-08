@@ -1,0 +1,1 @@
+/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial7/ament_cmake_core/dis_tutorial7Config-version.cmake

@@ -40,11 +40,11 @@ class RingDetector(Node):
         self.depth_sub = self.create_subscription(Image, "/oakd/rgb/preview/depth", self.depth_callback, 1)
 
         # Publiser for the visualization markers
-        # self.marker_pub = self.create_publisher(Marker, "/ring", QoSReliabilityPolicy.BEST_EFFORT)
+        self.marker_pub = self.create_publisher(Marker, "/ring", QoSReliabilityPolicy.BEST_EFFORT)
 
         # Object we use for transforming between coordinate frames
-        # self.tf_buf = tf2_ros.Buffer()
-        # self.tf_listener = tf2_ros.TransformListener(self.tf_buf)
+        self.tf_buf = tf2_ros.Buffer()
+        self.tf_listener = tf2_ros.TransformListener(self.tf_buf)
 
         cv2.namedWindow("Binary Image", cv2.WINDOW_NORMAL)
         cv2.namedWindow("Detected contours", cv2.WINDOW_NORMAL)
@@ -72,11 +72,23 @@ class RingDetector(Node):
 
         # Do histogram equalization
         # gray = cv2.equalizeHist(gray)
+        
+        # Apply Gaussian Blur
+        #thresh = cv2.GaussianBlur(gray, (5, 5), 0)
 
         # Binarize the image, there are different ways to do it
         #ret, thresh = cv2.threshold(img, 50, 255, 0)
         #ret, thresh = cv2.threshold(img, 70, 255, cv2.THRESH_BINARY)
-        thresh = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 15, 30)
+        
+        edges = cv2.Canny(gray, 50, 150)
+        
+        # adjust the threshold(last two parameters: C and blocksize)
+        # C is used to adjust for the brightness or lighting conditions of the image
+        # BlockSize refers to the size of the surrounding area applied to each pixel, with large
+        # values using a larger surrounding area to calculate the threshold, thus ignoring small
+        # details and following a more general trend.
+	# 15 30 is basic
+        thresh = cv2.adaptiveThreshold(edges, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 15, 10)
         cv2.imshow("Binary Image", thresh)
         cv2.waitKey(1)
 
@@ -93,7 +105,7 @@ class RingDetector(Node):
         for cnt in contours:
             #     print cnt
             #     print cnt.shape
-            if cnt.shape[0] >= 20:
+            if cnt.shape[0] >= 20 and len(cnt) >= 9:
                 ellipse = cv2.fitEllipse(cnt)
                 elps.append(ellipse)
 
@@ -110,7 +122,7 @@ class RingDetector(Node):
                 angle_diff = np.abs(e1[2] - e2[2])
 
                 # The centers of the two elipses should be within 5 pixels of each other (is there a better treshold?)
-                if dist >= 5:
+                if dist >= 3:
                     continue
 
                 # The rotation of the elipses should be whitin 4 degrees of eachother
@@ -133,16 +145,46 @@ class RingDetector(Node):
                     continue # if one ellipse does not contain the other, it is not a ring
                 
                 # # The widths of the ring along the major and minor axis should be roughly the same
-                # border_major = (le[1][1]-se[1][1])/2
-                # border_minor = (le[1][0]-se[1][0])/2
-                # border_diff = np.abs(border_major - border_minor)
+                border_major = (le[1][1]-se[1][1])/2
+                border_minor = (le[1][0]-se[1][0])/2
+                border_diff = np.abs(border_major - border_minor)
 
-                # if border_diff>4:
-                #     continue
+                if border_diff>4:
+                    continue
                     
                 candidates.append((e1,e2))
 
         print("Processing is done! found", len(candidates), "candidates for rings")
+        
+        # Publish markers for detected rings
+        for c in candidates:
+            marker = Marker()
+            marker.header.frame_id = "/map"
+            marker.header.stamp = self.get_clock().now().to_msg()
+            marker.id = self.marker_num
+            marker.type = Marker.CYLINDER
+            marker.action = Marker.ADD
+            
+            transformed_point = self.transform_point(c[0][0])
+            
+            marker.pose.position.x = transformed_point.x
+            marker.pose.position.y = transformed_point.y
+            marker.pose.position.z = 0.0
+            
+            marker.pose.orientation.x = 0.0
+            marker.pose.orientation.y = 0.0
+            marker.pose.orientation.z = 0.0
+            marker.pose.orientation.w = 1.0
+
+            marker.color.a = 1.0
+            marker.color.r = 1.0
+            marker.color.g = 0.0
+            marker.color.b = 0.0
+            self.marker_pub.publish(marker)
+            self.marker_num += 1
+            
+            print("(x, y):", marker.pose.position.x, marker.pose.position.y)
+
 
         # Plot the rings on the image
         for c in candidates:
@@ -154,6 +196,7 @@ class RingDetector(Node):
             # drawing the ellipses on the image
             cv2.ellipse(cv_image, e1, (0, 255, 0), 2)
             cv2.ellipse(cv_image, e2, (0, 255, 0), 2)
+           
 
             # Get a bounding box, around the first ellipse ('average' of both elipsis)
             size = (e1[1][0]+e1[1][1])/2
@@ -168,6 +211,27 @@ class RingDetector(Node):
             y2 = int(center[1] + size / 2)
             y_min = y1 if y1 > 0 else 0
             y_max = y2 if y2 < cv_image.shape[1] else cv_image.shape[1]
+            
+            
+            # Extract the region of interest (ROI) for each ring
+            ring_roi = cv_image[x_min:x_max, y_min:y_max]
+
+            # Calculate the mean color of the ring ROI
+            mean_color = cv2.mean(ring_roi)
+
+            # Print the mean color of the ring
+            print("Mean color of the ring (BGR):", mean_color[:3])
+            
+            if ((mean_color[1] + mean_color[2] + mean_color[3] ) / 3 ) < 30:
+            	color_name = "Black"
+            elif mean_color[2] > mean_color[1] and mean_color[2] > mean_color[0] and mean_color[2]:
+            	color_name = "Red"
+            elif mean_color[1] > mean_color[0] and mean_color[1] > mean_color[2] and mean_color[1]:
+            	color_name = "Green"
+            elif mean_color[0] > mean_color[1] and mean_color[0] > mean_color[2] and mean_color[0]:
+            	color_name = "Blue"
+            	
+            print("Detected color of the ring:", color_name)
 
         if len(candidates)>0:
                 cv2.imshow("Detected rings",cv_image)

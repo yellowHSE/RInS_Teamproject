@@ -1,0 +1,4 @@
+Invoking command in '/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3 -- -j8 -l8
+Invoked command in '/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3 -- -j8 -l8
+Invoking command in '/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3
+Invoked command in '/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3

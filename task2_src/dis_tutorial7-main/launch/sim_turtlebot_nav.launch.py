@@ -31,7 +31,9 @@ ARGUMENTS = [
                           description='Robot namespace'),
     DeclareLaunchArgument('rviz', default_value='true',
                           choices=['true', 'false'], description='Start rviz.'),
-    DeclareLaunchArgument('world', default_value='dis',
+    #DeclareLaunchArgument('world', default_value='dis',
+    #                      description='Ignition World'),
+    DeclareLaunchArgument('world', default_value='task2_exam',
                           description='Ignition World'),
     DeclareLaunchArgument('model', default_value='standard',
                           choices=['standard', 'lite'],
@@ -44,7 +46,6 @@ ARGUMENTS = [
 for pose_element in ['x', 'y', 'z', 'yaw']:
     ARGUMENTS.append(DeclareLaunchArgument(pose_element, default_value='0.0',
                      description=f'{pose_element} component of the robot pose.'))
-
 
 def generate_launch_description():
     # Directories

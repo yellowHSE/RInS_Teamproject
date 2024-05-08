@@ -1,0 +1,12 @@
+/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3/CMakeFiles/uninstall.dir
+/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3/CMakeFiles/dis_tutorial3_uninstall.dir
+/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3/CMakeFiles/pcl_forwarder.dir
+/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3/CMakeFiles/planes.dir
+/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3/CMakeFiles/cylinder_segmentation.dir
+/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3/CMakeFiles/test.dir
+/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3/CMakeFiles/edit_cache.dir
+/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3/CMakeFiles/rebuild_cache.dir
+/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3/CMakeFiles/list_install_components.dir
+/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3/CMakeFiles/install.dir
+/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3/CMakeFiles/install/local.dir
+/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3/CMakeFiles/install/strip.dir

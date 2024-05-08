@@ -1,0 +1,610 @@
+[0.000000] (-) TimerEvent: {}
+[0.000175] (dis_tutorial3) JobQueued: {'identifier': 'dis_tutorial3', 'dependencies': OrderedDict()}
+[0.000225] (dis_tutorial7) JobQueued: {'identifier': 'dis_tutorial7', 'dependencies': OrderedDict()}
+[0.000243] (dis_tutorial3) JobStarted: {'identifier': 'dis_tutorial3'}
+[0.046374] (dis_tutorial7) JobStarted: {'identifier': 'dis_tutorial7'}
+[0.090270] (dis_tutorial3) JobProgress: {'identifier': 'dis_tutorial3', 'progress': 'cmake'}
+[0.090459] (dis_tutorial3) Command: {'cmd': ['/usr/bin/cmake', '/home/sienna/Desktop/combine_test/task2_src/RInS_Teamproject-task2/dis_tutorial3-main', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3'], 'cwd': '/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'sienna'), ('LC_TIME', 'sl_SI.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/sienna'), ('OLDPWD', '/home/sienna/Desktop/combine_test'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'sl_SI.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1468'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=567ab4e17b74baecaa16ed85663a9a32'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'sienna'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'sienna'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/sienna/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/sienna-950QCG:@/tmp/.ICE-unix/1468,unix/sienna-950QCG:/tmp/.ICE-unix/1468'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'sl_SI.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/7ea05061_4aac_48d3_b469_63ec6b8e2116'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'sl_SI.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.DE0LN2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.138'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'sl_SI.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'sl_SI.UTF-8'), ('LC_IDENTIFICATION', 'sl_SI.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=567ab4e17b74baecaa16ed85663a9a32'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'sl_SI.UTF-8'), ('LC_PAPER', 'sl_SI.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.093513] (dis_tutorial7) JobProgress: {'identifier': 'dis_tutorial7', 'progress': 'cmake'}
+[0.093781] (dis_tutorial7) Command: {'cmd': ['/usr/bin/cmake', '/home/sienna/Desktop/combine_test/task2_src/dis_tutorial7-main', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7'], 'cwd': '/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial7', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'sienna'), ('LC_TIME', 'sl_SI.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/sienna'), ('OLDPWD', '/home/sienna/Desktop/combine_test'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'sl_SI.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1468'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=567ab4e17b74baecaa16ed85663a9a32'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'sienna'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'sienna'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/sienna/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/sienna-950QCG:@/tmp/.ICE-unix/1468,unix/sienna-950QCG:/tmp/.ICE-unix/1468'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'sl_SI.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/7ea05061_4aac_48d3_b469_63ec6b8e2116'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'sl_SI.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.DE0LN2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.138'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'sl_SI.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'sl_SI.UTF-8'), ('LC_IDENTIFICATION', 'sl_SI.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial7'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=567ab4e17b74baecaa16ed85663a9a32'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'sl_SI.UTF-8'), ('LC_PAPER', 'sl_SI.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.098836] (-) TimerEvent: {}
+[0.175942] (dis_tutorial3) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.176136] (dis_tutorial7) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.198946] (-) TimerEvent: {}
+[0.249237] (dis_tutorial7) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.249426] (dis_tutorial3) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.257211] (dis_tutorial3) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.257372] (dis_tutorial7) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.299083] (-) TimerEvent: {}
+[0.317786] (dis_tutorial7) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.317978] (dis_tutorial3) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.324056] (dis_tutorial7) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.324291] (dis_tutorial3) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.324437] (dis_tutorial7) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.324527] (dis_tutorial3) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.325171] (dis_tutorial3) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.325386] (dis_tutorial7) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.328662] (dis_tutorial7) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.328832] (dis_tutorial3) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.396160] (dis_tutorial7) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.396321] (dis_tutorial3) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.399161] (-) TimerEvent: {}
+[0.403093] (dis_tutorial7) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.403277] (dis_tutorial7) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.403380] (dis_tutorial3) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.403578] (dis_tutorial3) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.403664] (dis_tutorial7) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.403966] (dis_tutorial3) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.408344] (dis_tutorial7) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.408484] (dis_tutorial3) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.499337] (-) TimerEvent: {}
+[0.545416] (dis_tutorial7) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.545603] (dis_tutorial3) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.599573] (-) TimerEvent: {}
+[0.606223] (dis_tutorial3) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.606395] (dis_tutorial7) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.636198] (dis_tutorial3) StdoutLine: {'line': b'-- Found rclcpp: 16.0.8 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.636361] (dis_tutorial7) StdoutLine: {'line': b'-- Found rclcpp: 16.0.8 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.683182] (dis_tutorial3) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.683488] (dis_tutorial7) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.688318] (dis_tutorial7) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.688457] (dis_tutorial3) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.697691] (dis_tutorial7) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.697870] (dis_tutorial3) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.699623] (-) TimerEvent: {}
+[0.712525] (dis_tutorial7) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.712959] (dis_tutorial3) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.734409] (dis_tutorial3) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.734724] (dis_tutorial7) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.799816] (-) TimerEvent: {}
+[0.800294] (dis_tutorial3) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.800441] (dis_tutorial7) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.803220] (dis_tutorial3) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.803401] (dis_tutorial7) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.896324] (dis_tutorial7) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[0.896498] (dis_tutorial3) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[0.899903] (-) TimerEvent: {}
+[0.921930] (dis_tutorial3) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[0.922117] (dis_tutorial7) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[0.964678] (dis_tutorial7) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.964882] (dis_tutorial3) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.975475] (dis_tutorial7) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[0.975656] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[1.000046] (-) TimerEvent: {}
+[1.042020] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[1.042274] (dis_tutorial3) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[1.046700] (dis_tutorial7) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[1.046987] (dis_tutorial7) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[1.100181] (-) TimerEvent: {}
+[1.108167] (dis_tutorial3) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[1.109194] (dis_tutorial3) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[1.109731] (dis_tutorial7) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[1.110729] (dis_tutorial7) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[1.200355] (-) TimerEvent: {}
+[1.250219] (dis_tutorial3) StdoutLine: {'line': b'-- Found rclpy: 3.3.12 (/opt/ros/humble/share/rclpy/cmake)\n'}
+[1.250535] (dis_tutorial7) StdoutLine: {'line': b'-- Found rclpy: 3.3.12 (/opt/ros/humble/share/rclpy/cmake)\n'}
+[1.251885] (dis_tutorial3) StdoutLine: {'line': b'-- Found std_srvs: 4.2.3 (/opt/ros/humble/share/std_srvs/cmake)\n'}
+[1.252040] (dis_tutorial7) StdoutLine: {'line': b'-- Found std_srvs: 4.2.3 (/opt/ros/humble/share/std_srvs/cmake)\n'}
+[1.270009] (dis_tutorial3) StdoutLine: {'line': b'-- Found geometry_msgs: 4.2.3 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[1.300444] (-) TimerEvent: {}
+[1.311899] (dis_tutorial3) StdoutLine: {'line': b'-- Found visualization_msgs: 4.2.3 (/opt/ros/humble/share/visualization_msgs/cmake)\n'}
+[1.328845] (dis_tutorial7) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.331951] (dis_tutorial7) StdoutLine: {'line': b'-- Generating done\n'}
+[1.333164] (dis_tutorial7) StdoutLine: {'line': b'-- Build files have been written to: /home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial7\n'}
+[1.340926] (dis_tutorial7) CommandEnded: {'returncode': 0}
+[1.341453] (dis_tutorial7) JobProgress: {'identifier': 'dis_tutorial7', 'progress': 'build'}
+[1.342709] (dis_tutorial7) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial7', '--', '-j8', '-l8'], 'cwd': '/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial7', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'sienna'), ('LC_TIME', 'sl_SI.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/sienna'), ('OLDPWD', '/home/sienna/Desktop/combine_test'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'sl_SI.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1468'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=567ab4e17b74baecaa16ed85663a9a32'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'sienna'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'sienna'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/sienna/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/sienna-950QCG:@/tmp/.ICE-unix/1468,unix/sienna-950QCG:/tmp/.ICE-unix/1468'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'sl_SI.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/7ea05061_4aac_48d3_b469_63ec6b8e2116'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'sl_SI.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.DE0LN2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.138'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'sl_SI.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'sl_SI.UTF-8'), ('LC_IDENTIFICATION', 'sl_SI.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial7'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=567ab4e17b74baecaa16ed85663a9a32'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'sl_SI.UTF-8'), ('LC_PAPER', 'sl_SI.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[1.376791] (dis_tutorial7) CommandEnded: {'returncode': 0}
+[1.394255] (dis_tutorial7) JobProgress: {'identifier': 'dis_tutorial7', 'progress': 'install'}
+[1.400564] (-) TimerEvent: {}
+[1.401872] (dis_tutorial7) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial7'], 'cwd': '/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial7', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'sienna'), ('LC_TIME', 'sl_SI.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/sienna'), ('OLDPWD', '/home/sienna/Desktop/combine_test'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'sl_SI.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1468'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=567ab4e17b74baecaa16ed85663a9a32'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'sienna'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'sienna'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/sienna/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/sienna-950QCG:@/tmp/.ICE-unix/1468,unix/sienna-950QCG:/tmp/.ICE-unix/1468'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'sl_SI.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/7ea05061_4aac_48d3_b469_63ec6b8e2116'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'sl_SI.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.DE0LN2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.138'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'sl_SI.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'sl_SI.UTF-8'), ('LC_IDENTIFICATION', 'sl_SI.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial7'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=567ab4e17b74baecaa16ed85663a9a32'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'sl_SI.UTF-8'), ('LC_PAPER', 'sl_SI.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[1.408617] (dis_tutorial7) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[1.408942] (dis_tutorial7) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[1.409510] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//launch/control.py\n'}
+[1.417085] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//launch/create3_ignition_nodes.launch.py\n'}
+[1.424868] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//launch/create3_nodes.launch.py\n'}
+[1.432454] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//launch/create3_ros_ignition_bridge.launch.py\n'}
+[1.440152] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//launch/robot_description.launch.py\n'}
+[1.448102] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//launch/ros_ign_bridge.launch.py\n'}
+[1.455663] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//launch/sim_turtlebot_nav.launch.py\n'}
+[1.463136] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//launch/turtlebot4_nodes.launch.py\n'}
+[1.471062] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//launch/turtlebot4_spawn.launch.py\n'}
+[1.478661] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//launch/view_robot.launch.py\n'}
+[1.486665] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//meshes/camera_bracket.dae\n'}
+[1.494441] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//meshes/oakd_lite.dae\n'}
+[1.500674] (-) TimerEvent: {}
+[1.501973] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//meshes/oakd_pro.dae\n'}
+[1.509360] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//meshes/rplidar.dae\n'}
+[1.517089] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//meshes/shell.dae\n'}
+[1.524622] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//meshes/shell_collision.dae\n'}
+[1.528579] (dis_tutorial3) StdoutLine: {'line': b'-- Found tf2: 0.25.6 (/opt/ros/humble/share/tf2/cmake)\n'}
+[1.532489] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//meshes/top_camera_pro.dae\n'}
+[1.540157] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//meshes/tower.dae\n'}
+[1.544299] (dis_tutorial3) StdoutLine: {'line': b'-- Found tf2_geometry_msgs: 0.25.6 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)\n'}
+[1.548770] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//meshes/tower_sensor_plate.dae\n'}
+[1.556360] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//meshes/tower_standoff.dae\n'}
+[1.560012] (dis_tutorial3) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)\n'}
+[1.561593] (dis_tutorial3) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[1.561744] (dis_tutorial3) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[1.563972] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//meshes/weight_block.dae\n'}
+[1.571821] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//urdf/arm/arm.urdf.xacro\n'}
+[1.579418] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//urdf/create/create3.urdf.xacro\n'}
+[1.587469] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//urdf/lite/turtlebot4.urdf.xacro\n'}
+[1.595304] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//urdf/sensors/camera_bracket.urdf.xacro\n'}
+[1.600768] (-) TimerEvent: {}
+[1.602850] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//urdf/sensors/oakd.urdf.xacro\n'}
+[1.610516] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//urdf/sensors/rplidar.urdf.xacro\n'}
+[1.617987] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//urdf/standard/tower_sensor_plate.urdf.xacro\n'}
+[1.625521] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//urdf/standard/tower_standoff.urdf.xacro\n'}
+[1.633109] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//urdf/standard/turtlebot4.urdf.xacro\n'}
+[1.640688] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//urdf/standard/weight_block.urdf.xacro\n'}
+[1.648651] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//config/all_controls.yaml\n'}
+[1.656248] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//config/all_controls_jtc.yaml\n'}
+[1.663592] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//config/arm_controller_position.yaml\n'}
+[1.671112] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7//config/control.yaml\n'}
+[1.679083] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/lib/dis_tutorial7/arm_mover_actions.py\n'}
+[1.687228] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/ament_index/resource_index/package_run_dependencies/dis_tutorial7\n'}
+[1.695761] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/ament_index/resource_index/parent_prefix_path/dis_tutorial7\n'}
+[1.700878] (-) TimerEvent: {}
+[1.703360] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7/environment/ament_prefix_path.sh\n'}
+[1.710869] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7/environment/ament_prefix_path.dsv\n'}
+[1.718564] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7/environment/path.sh\n'}
+[1.726391] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7/environment/path.dsv\n'}
+[1.734206] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7/local_setup.bash\n'}
+[1.741544] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7/local_setup.sh\n'}
+[1.749576] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7/local_setup.zsh\n'}
+[1.757101] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7/local_setup.dsv\n'}
+[1.765498] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7/package.dsv\n'}
+[1.773217] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/ament_index/resource_index/packages/dis_tutorial7\n'}
+[1.781471] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7/cmake/dis_tutorial7Config.cmake\n'}
+[1.789470] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7/cmake/dis_tutorial7Config-version.cmake\n'}
+[1.797169] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial7/share/dis_tutorial7/package.xml\n'}
+[1.801002] (-) TimerEvent: {}
+[1.807633] (dis_tutorial7) CommandEnded: {'returncode': 0}
+[1.901103] (-) TimerEvent: {}
+[1.901545] (dis_tutorial3) StdoutLine: {'line': b'-- Found pcl_conversions: 2.4.0 (/opt/ros/humble/share/pcl_conversions/cmake)\n'}
+[1.936644] (dis_tutorial7) JobEnded: {'identifier': 'dis_tutorial7', 'rc': 0}
+[2.001214] (-) TimerEvent: {}
+[2.021954] (dis_tutorial3) StdoutLine: {'line': b"-- Checking for module 'eigen3'\n"}
+[2.034034] (dis_tutorial3) StdoutLine: {'line': b'--   Found eigen3, version 3.4.0\n'}
+[2.065288] (dis_tutorial3) StdoutLine: {'line': b'-- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") \n'}
+[2.065486] (dis_tutorial3) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[2.090519] (dis_tutorial3) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found suitable version "1.74.0", minimum required is "1.65.0") found components: system filesystem date_time iostreams serialization \n'}
+[2.101364] (-) TimerEvent: {}
+[2.105068] (dis_tutorial3) StdoutLine: {'line': b"-- Checking for module 'flann'\n"}
+[2.115978] (dis_tutorial3) StdoutLine: {'line': b'--   Found flann, version 1.9.1\n'}
+[2.149834] (dis_tutorial3) StdoutLine: {'line': b'-- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  \n'}
+[2.150017] (dis_tutorial3) StdoutLine: {'line': b'-- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)\n'}
+[2.182111] (dis_tutorial3) StdoutLine: {'line': b'-- Found GLEW: /usr/lib/x86_64-linux-gnu/libGLEW.so  \n'}
+[2.187575] (dis_tutorial3) StdoutLine: {'line': b'-- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so  found components: OpenGL GLX \n'}
+[2.201410] (-) TimerEvent: {}
+[2.301745] (-) TimerEvent: {}
+[2.325425] (dis_tutorial3) StdoutLine: {'line': b'-- Found MPI_C: /usr/lib/x86_64-linux-gnu/libmpi.so (found version "3.1") \n'}
+[2.325679] (dis_tutorial3) StdoutLine: {'line': b'-- Found MPI: TRUE (found version "3.1") found components: C \n'}
+[2.328479] (dis_tutorial3) StdoutLine: {'line': b'-- Found JsonCpp: /usr/lib/x86_64-linux-gnu/libjsoncpp.so (found suitable version "1.9.5", minimum required is "0.7.0") \n'}
+[2.336351] (dis_tutorial3) StdoutLine: {'line': b'-- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11") \n'}
+[2.350932] (dis_tutorial3) StdoutLine: {'line': b'-- Found PNG: /usr/lib/x86_64-linux-gnu/libpng.so (found version "1.6.37") \n'}
+[2.369799] (dis_tutorial3) StdoutLine: {'line': b'-- Found Eigen3: /usr/include/eigen3 (found version "3.4.0") \n'}
+[2.401873] (-) TimerEvent: {}
+[2.447957] (dis_tutorial3) StdoutLine: {'line': b'-- Found X11: /usr/include   \n'}
+[2.448230] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so\n'}
+[2.502000] (-) TimerEvent: {}
+[2.512097] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so - found\n'}
+[2.512293] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for gethostbyname\n'}
+[2.574385] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for gethostbyname - found\n'}
+[2.574656] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for connect\n'}
+[2.602127] (-) TimerEvent: {}
+[2.632218] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for connect - found\n'}
+[2.632399] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for remove\n'}
+[2.690893] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for remove - found\n'}
+[2.691161] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for shmat\n'}
+[2.702415] (-) TimerEvent: {}
+[2.754423] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for shmat - found\n'}
+[2.754610] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for IceConnectionNumber in ICE\n'}
+[2.802542] (-) TimerEvent: {}
+[2.811718] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for IceConnectionNumber in ICE - found\n'}
+[2.878153] (dis_tutorial3) StdoutLine: {'line': b'-- Found EXPAT: /usr/lib/x86_64-linux-gnu/libexpat.so (found version "2.4.7") \n'}
+[2.880133] (dis_tutorial3) StdoutLine: {'line': b'-- Found double-conversion: /usr/lib/x86_64-linux-gnu/libdouble-conversion.so  \n'}
+[2.882577] (dis_tutorial3) StdoutLine: {'line': b'-- Found LZ4: /usr/lib/x86_64-linux-gnu/liblz4.so (found version "1.9.3") \n'}
+[2.884344] (dis_tutorial3) StdoutLine: {'line': b'-- Found LZMA: /usr/lib/x86_64-linux-gnu/liblzma.so (found version "5.2.5") \n'}
+[2.902661] (-) TimerEvent: {}
+[2.922422] (dis_tutorial3) StdoutLine: {'line': b'-- Found JPEG: /usr/lib/x86_64-linux-gnu/libjpeg.so (found version "80") \n'}
+[2.927031] (dis_tutorial3) StdoutLine: {'line': b'-- Found TIFF: /usr/lib/x86_64-linux-gnu/libtiff.so (found version "4.3.0")  \n'}
+[2.931317] (dis_tutorial3) StdoutLine: {'line': b'-- Found Freetype: /usr/lib/x86_64-linux-gnu/libfreetype.so (found version "2.11.1") \n'}
+[2.936990] (dis_tutorial3) StdoutLine: {'line': b'-- Found utf8cpp: /usr/include/utf8cpp  \n'}
+[3.002796] (-) TimerEvent: {}
+[3.009990] (dis_tutorial3) StdoutLine: {'line': b"-- Checking for module 'libusb-1.0'\n"}
+[3.021399] (dis_tutorial3) StdoutLine: {'line': b'--   Found libusb-1.0, version 1.0.25\n'}
+[3.054543] (dis_tutorial3) StdoutLine: {'line': b'-- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  \n'}
+[3.055666] (dis_tutorial3) StdoutLine: {'line': b'-- Found OpenNI: /usr/lib/libOpenNI.so;libusb::libusb (found version "1.5.4.0") \n'}
+[3.055771] (dis_tutorial3) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[3.102936] (-) TimerEvent: {}
+[3.104182] (dis_tutorial3) StdoutLine: {'line': b'-- Found OpenNI2: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb (found version "2.2.0.33") \n'}
+[3.104349] (dis_tutorial3) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[3.104479] (dis_tutorial3) StderrLine: {'line': b'\x1b[0m** WARNING ** io features related to pcap will be disabled\x1b[0m\n'}
+[3.203064] (-) TimerEvent: {}
+[3.233223] (dis_tutorial3) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[3.239205] (dis_tutorial3) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[3.245135] (dis_tutorial3) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[3.303205] (-) TimerEvent: {}
+[3.375359] (dis_tutorial3) StdoutLine: {'line': b'-- Found Qhull version 8.0.2\n'}
+[3.403338] (-) TimerEvent: {}
+[3.503570] (dis_tutorial3) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[3.503755] (-) TimerEvent: {}
+[3.604022] (-) TimerEvent: {}
+[3.625917] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_COMMON\n'}
+[3.634468] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  \n'}
+[3.634926] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_KDTREE\n'}
+[3.635924] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  \n'}
+[3.636020] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_OCTREE\n'}
+[3.636732] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  \n'}
+[3.636852] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_SEARCH\n'}
+[3.637579] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  \n'}
+[3.637703] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_SAMPLE_CONSENSUS\n'}
+[3.638408] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  \n'}
+[3.638531] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_FILTERS\n'}
+[3.639280] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  \n'}
+[3.639409] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_2D\n'}
+[3.639586] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_2D: /usr/include/pcl-1.12  \n'}
+[3.639717] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_GEOMETRY\n'}
+[3.639860] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_GEOMETRY: /usr/include/pcl-1.12  \n'}
+[3.639988] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_IO\n'}
+[3.640677] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  \n'}
+[3.640795] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_FEATURES\n'}
+[3.641545] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  \n'}
+[3.641872] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_ML\n'}
+[3.642681] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_ML: /usr/lib/x86_64-linux-gnu/libpcl_ml.so  \n'}
+[3.642810] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_SEGMENTATION\n'}
+[3.643740] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_SEGMENTATION: /usr/lib/x86_64-linux-gnu/libpcl_segmentation.so  \n'}
+[3.644032] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_VISUALIZATION\n'}
+[3.644973] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_VISUALIZATION: /usr/lib/x86_64-linux-gnu/libpcl_visualization.so  \n'}
+[3.645093] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_SURFACE\n'}
+[3.645873] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_SURFACE: /usr/lib/x86_64-linux-gnu/libpcl_surface.so  \n'}
+[3.645968] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_REGISTRATION\n'}
+[3.646749] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  \n'}
+[3.646877] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_KEYPOINTS\n'}
+[3.647650] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_KEYPOINTS: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so  \n'}
+[3.647749] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_TRACKING\n'}
+[3.648733] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_TRACKING: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so  \n'}
+[3.648824] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_RECOGNITION\n'}
+[3.649562] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_RECOGNITION: /usr/lib/x86_64-linux-gnu/libpcl_recognition.so  \n'}
+[3.649803] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_STEREO\n'}
+[3.650645] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_STEREO: /usr/lib/x86_64-linux-gnu/libpcl_stereo.so  \n'}
+[3.650835] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_APPS\n'}
+[3.651809] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_APPS: /usr/lib/x86_64-linux-gnu/libpcl_apps.so  \n'}
+[3.652374] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_IN_HAND_SCANNER\n'}
+[3.652580] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  \n'}
+[3.652688] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_MODELER\n'}
+[3.652913] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_MODELER: /usr/include/pcl-1.12  \n'}
+[3.653016] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_POINT_CLOUD_EDITOR\n'}
+[3.653484] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  \n'}
+[3.653649] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_OUTOFCORE\n'}
+[3.654552] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_OUTOFCORE: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so  \n'}
+[3.654669] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_PEOPLE\n'}
+[3.655653] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_PEOPLE: /usr/lib/x86_64-linux-gnu/libpcl_people.so  \n'}
+[3.656353] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL: pcl_common;pcl_kdtree;pcl_octree;pcl_search;pcl_sample_consensus;pcl_filters;pcl_io;pcl_features;pcl_ml;pcl_segmentation;pcl_visualization;pcl_surface;pcl_registration;pcl_keypoints;pcl_tracking;pcl_recognition;pcl_stereo;pcl_apps;pcl_outofcore;pcl_people;Boost::system;Boost::filesystem;Boost::date_time;Boost::iostreams;Boost::serialization;/usr/lib/libOpenNI.so;libusb::libusb;/usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb;VTK::ChartsCore;VTK::CommonColor;VTK::CommonComputationalGeometry;VTK::CommonCore;VTK::CommonDataModel;VTK::CommonExecutionModel;VTK::CommonMath;VTK::CommonMisc;VTK::CommonTransforms;VTK::FiltersCore;VTK::FiltersExtraction;VTK::FiltersGeneral;VTK::FiltersGeometry;VTK::FiltersModeling;VTK::FiltersSources;VTK::ImagingCore;VTK::ImagingSources;VTK::InteractionImage;VTK::InteractionStyle;VTK::InteractionWidgets;VTK::IOCore;VTK::IOGeometry;VTK::IOImage;VTK::IOLegacy;VTK::IOPLY;VTK::RenderingAnnotation;VTK::RenderingCore;VTK::RenderingContext2D;VTK::RenderingLOD;VTK::RenderingFreeType;VTK::ViewsCore;VTK::ViewsContext2D;VTK::RenderingOpenGL2;VTK::GUISupportQt;FLANN::FLANN;QHULL::QHULL (Required is at least version "1.10") \n'}
+[3.704142] (-) TimerEvent: {}
+[3.804506] (-) TimerEvent: {}
+[3.856602] (dis_tutorial3) StdoutLine: {'line': b'-- Configuring done\n'}
+[3.904687] (-) TimerEvent: {}
+[3.935292] (dis_tutorial3) StdoutLine: {'line': b'-- Generating done\n'}
+[3.938566] (dis_tutorial3) StdoutLine: {'line': b'-- Build files have been written to: /home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3\n'}
+[3.957177] (dis_tutorial3) CommandEnded: {'returncode': 0}
+[3.958392] (dis_tutorial3) JobProgress: {'identifier': 'dis_tutorial3', 'progress': 'build'}
+[3.959867] (dis_tutorial3) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3', '--', '-j8', '-l8'], 'cwd': '/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'sienna'), ('LC_TIME', 'sl_SI.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/sienna'), ('OLDPWD', '/home/sienna/Desktop/combine_test'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'sl_SI.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1468'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=567ab4e17b74baecaa16ed85663a9a32'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'sienna'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'sienna'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/sienna/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/sienna-950QCG:@/tmp/.ICE-unix/1468,unix/sienna-950QCG:/tmp/.ICE-unix/1468'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'sl_SI.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/7ea05061_4aac_48d3_b469_63ec6b8e2116'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'sl_SI.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.DE0LN2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.138'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'sl_SI.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'sl_SI.UTF-8'), ('LC_IDENTIFICATION', 'sl_SI.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=567ab4e17b74baecaa16ed85663a9a32'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'sl_SI.UTF-8'), ('LC_PAPER', 'sl_SI.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[4.004821] (-) TimerEvent: {}
+[4.005488] (dis_tutorial3) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/pcl_forwarder.dir/src/forwarder.cpp.o\x1b[0m\n'}
+[4.005665] (dis_tutorial3) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/planes.dir/src/planes.cpp.o\x1b[0m\n'}
+[4.005757] (dis_tutorial3) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/cylinder_segmentation.dir/src/cylinder_segmentation.cpp.o\x1b[0m\n'}
+[4.104970] (-) TimerEvent: {}
+[4.205308] (-) TimerEvent: {}
+[4.305635] (-) TimerEvent: {}
+[4.405929] (-) TimerEvent: {}
+[4.506295] (-) TimerEvent: {}
+[4.606630] (-) TimerEvent: {}
+[4.706970] (-) TimerEvent: {}
+[4.807325] (-) TimerEvent: {}
+[4.907688] (-) TimerEvent: {}
+[5.008043] (-) TimerEvent: {}
+[5.108369] (-) TimerEvent: {}
+[5.208761] (-) TimerEvent: {}
+[5.309080] (-) TimerEvent: {}
+[5.409409] (-) TimerEvent: {}
+[5.509776] (-) TimerEvent: {}
+[5.610184] (-) TimerEvent: {}
+[5.710582] (-) TimerEvent: {}
+[5.810949] (-) TimerEvent: {}
+[5.911331] (-) TimerEvent: {}
+[6.011711] (-) TimerEvent: {}
+[6.112082] (-) TimerEvent: {}
+[6.212457] (-) TimerEvent: {}
+[6.312847] (-) TimerEvent: {}
+[6.413231] (-) TimerEvent: {}
+[6.513635] (-) TimerEvent: {}
+[6.614009] (-) TimerEvent: {}
+[6.714390] (-) TimerEvent: {}
+[6.814780] (-) TimerEvent: {}
+[6.915183] (-) TimerEvent: {}
+[7.015604] (-) TimerEvent: {}
+[7.116015] (-) TimerEvent: {}
+[7.216406] (-) TimerEvent: {}
+[7.316795] (-) TimerEvent: {}
+[7.417188] (-) TimerEvent: {}
+[7.517582] (-) TimerEvent: {}
+[7.617948] (-) TimerEvent: {}
+[7.718324] (-) TimerEvent: {}
+[7.818705] (-) TimerEvent: {}
+[7.919105] (-) TimerEvent: {}
+[8.019497] (-) TimerEvent: {}
+[8.119893] (-) TimerEvent: {}
+[8.220283] (-) TimerEvent: {}
+[8.320679] (-) TimerEvent: {}
+[8.421088] (-) TimerEvent: {}
+[8.521498] (-) TimerEvent: {}
+[8.621879] (-) TimerEvent: {}
+[8.722266] (-) TimerEvent: {}
+[8.822649] (-) TimerEvent: {}
+[8.923043] (-) TimerEvent: {}
+[9.023436] (-) TimerEvent: {}
+[9.123831] (-) TimerEvent: {}
+[9.224241] (-) TimerEvent: {}
+[9.324646] (-) TimerEvent: {}
+[9.425054] (-) TimerEvent: {}
+[9.525435] (-) TimerEvent: {}
+[9.625849] (-) TimerEvent: {}
+[9.726225] (-) TimerEvent: {}
+[9.826608] (-) TimerEvent: {}
+[9.927050] (-) TimerEvent: {}
+[10.027432] (-) TimerEvent: {}
+[10.127847] (-) TimerEvent: {}
+[10.228219] (-) TimerEvent: {}
+[10.328598] (-) TimerEvent: {}
+[10.428977] (-) TimerEvent: {}
+[10.529381] (-) TimerEvent: {}
+[10.629758] (-) TimerEvent: {}
+[10.730129] (-) TimerEvent: {}
+[10.830514] (-) TimerEvent: {}
+[10.930898] (-) TimerEvent: {}
+[11.031281] (-) TimerEvent: {}
+[11.131646] (-) TimerEvent: {}
+[11.232034] (-) TimerEvent: {}
+[11.332470] (-) TimerEvent: {}
+[11.432893] (-) TimerEvent: {}
+[11.533330] (-) TimerEvent: {}
+[11.633713] (-) TimerEvent: {}
+[11.734110] (-) TimerEvent: {}
+[11.834545] (-) TimerEvent: {}
+[11.934990] (-) TimerEvent: {}
+[12.035367] (-) TimerEvent: {}
+[12.135775] (-) TimerEvent: {}
+[12.236173] (-) TimerEvent: {}
+[12.336560] (-) TimerEvent: {}
+[12.436959] (-) TimerEvent: {}
+[12.537384] (-) TimerEvent: {}
+[12.637755] (-) TimerEvent: {}
+[12.738122] (-) TimerEvent: {}
+[12.838498] (-) TimerEvent: {}
+[12.938878] (-) TimerEvent: {}
+[13.039251] (-) TimerEvent: {}
+[13.139622] (-) TimerEvent: {}
+[13.239986] (-) TimerEvent: {}
+[13.340355] (-) TimerEvent: {}
+[13.440728] (-) TimerEvent: {}
+[13.541104] (-) TimerEvent: {}
+[13.641496] (-) TimerEvent: {}
+[13.741865] (-) TimerEvent: {}
+[13.842233] (-) TimerEvent: {}
+[13.942620] (-) TimerEvent: {}
+[14.043031] (-) TimerEvent: {}
+[14.143432] (-) TimerEvent: {}
+[14.243791] (-) TimerEvent: {}
+[14.344155] (-) TimerEvent: {}
+[14.444522] (-) TimerEvent: {}
+[14.544945] (-) TimerEvent: {}
+[14.645354] (-) TimerEvent: {}
+[14.745813] (-) TimerEvent: {}
+[14.846197] (-) TimerEvent: {}
+[14.946623] (-) TimerEvent: {}
+[15.046983] (-) TimerEvent: {}
+[15.147357] (-) TimerEvent: {}
+[15.172130] (dis_tutorial3) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking CXX executable pcl_forwarder\x1b[0m\n'}
+[15.247489] (-) TimerEvent: {}
+[15.347887] (-) TimerEvent: {}
+[15.448334] (-) TimerEvent: {}
+[15.548742] (-) TimerEvent: {}
+[15.649134] (-) TimerEvent: {}
+[15.749528] (-) TimerEvent: {}
+[15.849930] (-) TimerEvent: {}
+[15.950298] (-) TimerEvent: {}
+[16.050660] (-) TimerEvent: {}
+[16.122874] (dis_tutorial3) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX executable planes\x1b[0m\n'}
+[16.150625] (dis_tutorial3) StdoutLine: {'line': b'[ 83%] Built target pcl_forwarder\n'}
+[16.150867] (-) TimerEvent: {}
+[16.251173] (-) TimerEvent: {}
+[16.351711] (-) TimerEvent: {}
+[16.452074] (-) TimerEvent: {}
+[16.552469] (-) TimerEvent: {}
+[16.652931] (-) TimerEvent: {}
+[16.753397] (-) TimerEvent: {}
+[16.853942] (-) TimerEvent: {}
+[16.954383] (-) TimerEvent: {}
+[17.054691] (-) TimerEvent: {}
+[17.155047] (-) TimerEvent: {}
+[17.255355] (-) TimerEvent: {}
+[17.355699] (-) TimerEvent: {}
+[17.456020] (-) TimerEvent: {}
+[17.556384] (-) TimerEvent: {}
+[17.583159] (dis_tutorial3) StdoutLine: {'line': b'[ 83%] Built target planes\n'}
+[17.656525] (-) TimerEvent: {}
+[17.756915] (-) TimerEvent: {}
+[17.857284] (-) TimerEvent: {}
+[17.957627] (-) TimerEvent: {}
+[18.057976] (-) TimerEvent: {}
+[18.158285] (-) TimerEvent: {}
+[18.258669] (-) TimerEvent: {}
+[18.359057] (-) TimerEvent: {}
+[18.459471] (-) TimerEvent: {}
+[18.559794] (-) TimerEvent: {}
+[18.660256] (-) TimerEvent: {}
+[18.760732] (-) TimerEvent: {}
+[18.861155] (-) TimerEvent: {}
+[18.961621] (-) TimerEvent: {}
+[19.061988] (-) TimerEvent: {}
+[19.092409] (dis_tutorial3) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable cylinder_segmentation\x1b[0m\n'}
+[19.162208] (-) TimerEvent: {}
+[19.262569] (-) TimerEvent: {}
+[19.362981] (-) TimerEvent: {}
+[19.463525] (-) TimerEvent: {}
+[19.563918] (-) TimerEvent: {}
+[19.664287] (-) TimerEvent: {}
+[19.764696] (-) TimerEvent: {}
+[19.865141] (-) TimerEvent: {}
+[19.965560] (-) TimerEvent: {}
+[20.065976] (-) TimerEvent: {}
+[20.166384] (-) TimerEvent: {}
+[20.266831] (-) TimerEvent: {}
+[20.367275] (-) TimerEvent: {}
+[20.467781] (-) TimerEvent: {}
+[20.568228] (-) TimerEvent: {}
+[20.668666] (-) TimerEvent: {}
+[20.769115] (-) TimerEvent: {}
+[20.869523] (-) TimerEvent: {}
+[20.969955] (-) TimerEvent: {}
+[21.070318] (-) TimerEvent: {}
+[21.170844] (-) TimerEvent: {}
+[21.271599] (-) TimerEvent: {}
+[21.372043] (-) TimerEvent: {}
+[21.399379] (dis_tutorial3) StdoutLine: {'line': b'[100%] Built target cylinder_segmentation\n'}
+[21.410005] (dis_tutorial3) CommandEnded: {'returncode': 0}
+[21.436760] (dis_tutorial3) JobProgress: {'identifier': 'dis_tutorial3', 'progress': 'install'}
+[21.438017] (dis_tutorial3) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3'], 'cwd': '/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'sienna'), ('LC_TIME', 'sl_SI.UTF-8'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/sienna'), ('OLDPWD', '/home/sienna/Desktop/combine_test'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'sl_SI.UTF-8'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '1468'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=567ab4e17b74baecaa16ed85663a9a32'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'sienna'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'sienna'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/sienna/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/sienna-950QCG:@/tmp/.ICE-unix/1468,unix/sienna-950QCG:/tmp/.ICE-unix/1468'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'sl_SI.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/7ea05061_4aac_48d3_b469_63ec6b8e2116'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'sl_SI.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.DE0LN2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.138'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'sl_SI.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'sl_SI.UTF-8'), ('LC_IDENTIFICATION', 'sl_SI.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/sienna/Desktop/combine_test/task2_src/build/dis_tutorial3'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=567ab4e17b74baecaa16ed85663a9a32'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'sl_SI.UTF-8'), ('LC_PAPER', 'sl_SI.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[21.444224] (dis_tutorial3) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[21.444603] (dis_tutorial3) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[21.444913] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/lib/dis_tutorial3/pcl_forwarder\n'}
+[21.453156] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/lib/dis_tutorial3/planes\n'}
+[21.461799] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/lib/dis_tutorial3/cylinder_segmentation\n'}
+[21.469851] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//launch/create3_nodes.launch.py\n'}
+[21.472128] (-) TimerEvent: {}
+[21.478247] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//launch/dis_sim.launch.py\n'}
+[21.486020] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//launch/ignition.launch.py\n'}
+[21.494607] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//launch/localization.launch.py\n'}
+[21.502969] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//launch/nav2.launch.py\n'}
+[21.510835] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//launch/sim_turtlebot_nav.launch.py\n'}
+[21.518846] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//launch/sim_turtlebot_slam.launch.py\n'}
+[21.526292] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//launch/slam.launch.py\n'}
+[21.533561] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//launch/turtlebot4_spawn.launch.py\n'}
+[21.541065] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//launch/turtlebot4_spawn_nav.launch.py\n'}
+[21.548576] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//config/laser_filter_chain.yaml\n'}
+[21.556257] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//config/localization.yaml\n'}
+[21.563896] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//config/nav2.yaml\n'}
+[21.571566] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//config/slam.yaml\n'}
+[21.572231] (-) TimerEvent: {}
+[21.580341] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1.sdf\n'}
+[21.588658] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/cylinders.jpg\n'}
+[21.596394] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/fakering1.jpg\n'}
+[21.604655] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/fakering2.jpg\n'}
+[21.612211] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/fakering3.jpg\n'}
+[21.619729] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/ground.jpg\n'}
+[21.627137] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/map.dae\n'}
+[21.635120] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/map_colliders.dae\n'}
+[21.643092] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/objects.jpg\n'}
+[21.650926] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/parking_space.jpg\n'}
+[21.659509] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/person1.png\n'}
+[21.667292] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/person11.png\n'}
+[21.672359] (-) TimerEvent: {}
+[21.675147] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/person2.png\n'}
+[21.683598] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/person3.png\n'}
+[21.691354] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/person4.png\n'}
+[21.699418] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/person5.png\n'}
+[21.708486] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/qr1.jpg\n'}
+[21.716163] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo1_meshes/qr2.jpg\n'}
+[21.723498] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2.sdf\n'}
+[21.730893] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/cylinders.jpg\n'}
+[21.738276] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/fakering1.jpg\n'}
+[21.745788] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/fakering2.jpg\n'}
+[21.753469] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/fakering3.jpg\n'}
+[21.762729] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/ground.jpg\n'}
+[21.771289] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/map.dae\n'}
+[21.772478] (-) TimerEvent: {}
+[21.779037] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/map_colliders.dae\n'}
+[21.786895] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/objects.jpg\n'}
+[21.794582] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/parking_space.jpg\n'}
+[21.802686] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/person18.png\n'}
+[21.810778] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/person20.png\n'}
+[21.818646] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/person6.png\n'}
+[21.825943] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/person7.png\n'}
+[21.833508] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/person8.png\n'}
+[21.840868] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/person9.png\n'}
+[21.848253] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/qr1.jpg\n'}
+[21.855946] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/demo2_meshes/qr2.jpg\n'}
+[21.864138] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/dis.sdf\n'}
+[21.872593] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/cylinders.jpg\n'}
+[21.872789] (-) TimerEvent: {}
+[21.880559] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/davinci.jpg\n'}
+[21.888223] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/fakering1.jpg\n'}
+[21.896449] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/fakering2.jpg\n'}
+[21.906362] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/fakering3.jpg\n'}
+[21.913925] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/ground.jpg\n'}
+[21.921659] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/map.dae\n'}
+[21.929031] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/map_colliders.dae\n'}
+[21.938242] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/mona1.jpg\n'}
+[21.946681] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/objects.jpg\n'}
+[21.955766] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/parking_space.jpg\n'}
+[21.963466] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/person1.jpg\n'}
+[21.971047] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/person2.jpg\n'}
+[21.972921] (-) TimerEvent: {}
+[21.978533] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/person3.jpg\n'}
+[21.986051] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/person4.jpg\n'}
+[21.993700] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/person5.jpg\n'}
+[22.001703] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/qr1.jpg\n'}
+[22.009804] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/qr2.jpg\n'}
+[22.017161] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/dis_meshes/wood.jpg\n'}
+[22.024674] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/empty.sdf\n'}
+[22.032134] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_demo1.sdf\n'}
+[22.039662] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_demo1_meshes/cylinders.jpg\n'}
+[22.047727] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_demo1_meshes/fakering1.jpg\n'}
+[22.055343] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_demo1_meshes/fakering2.jpg\n'}
+[22.062776] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_demo1_meshes/fakering3.jpg\n'}
+[22.070368] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_demo1_meshes/ground.jpg\n'}
+[22.073058] (-) TimerEvent: {}
+[22.077920] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_demo1_meshes/map.dae\n'}
+[22.085175] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_demo1_meshes/map_colliders.dae\n'}
+[22.092699] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_demo1_meshes/objects.jpg\n'}
+[22.101791] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_demo1_meshes/parking_space.jpg\n'}
+[22.109479] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_demo2.sdf\n'}
+[22.116805] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_demo2_meshes/cylinders.jpg\n'}
+[22.124239] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_demo2_meshes/fakering1.jpg\n'}
+[22.131841] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_demo2_meshes/fakering2.jpg\n'}
+[22.139229] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_demo2_meshes/fakering3.jpg\n'}
+[22.146975] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_demo2_meshes/ground.jpg\n'}
+[22.154330] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_demo2_meshes/map.dae\n'}
+[22.161719] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_demo2_meshes/map_colliders.dae\n'}
+[22.168924] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_demo2_meshes/objects.jpg\n'}
+[22.173217] (-) TimerEvent: {}
+[22.176244] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_demo2_meshes/parking_space.jpg\n'}
+[22.183987] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//maps/map.pgm\n'}
+[22.191593] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3//maps/map.yaml\n'}
+[22.199896] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/lib/dis_tutorial3/detect_people.py\n'}
+[22.208981] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/lib/dis_tutorial3/robot_commander.py\n'}
+[22.216941] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/lib/dis_tutorial3/detect_rings.py\n'}
+[22.224903] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/ament_index/resource_index/package_run_dependencies/dis_tutorial3\n'}
+[22.232299] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/ament_index/resource_index/parent_prefix_path/dis_tutorial3\n'}
+[22.240082] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3/environment/ament_prefix_path.sh\n'}
+[22.247476] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3/environment/ament_prefix_path.dsv\n'}
+[22.255000] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3/environment/path.sh\n'}
+[22.262666] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3/environment/path.dsv\n'}
+[22.270441] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3/local_setup.bash\n'}
+[22.273363] (-) TimerEvent: {}
+[22.278536] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3/local_setup.sh\n'}
+[22.286485] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3/local_setup.zsh\n'}
+[22.295287] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3/local_setup.dsv\n'}
+[22.303518] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3/package.dsv\n'}
+[22.312125] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/ament_index/resource_index/packages/dis_tutorial3\n'}
+[22.320574] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3/cmake/dis_tutorial3Config.cmake\n'}
+[22.328035] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3/cmake/dis_tutorial3Config-version.cmake\n'}
+[22.335646] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/sienna/Desktop/combine_test/task2_src/install/dis_tutorial3/share/dis_tutorial3/package.xml\n'}
+[22.345218] (dis_tutorial3) CommandEnded: {'returncode': 0}
+[22.373589] (-) TimerEvent: {}
+[22.474298] (-) TimerEvent: {}
+[22.482004] (dis_tutorial3) JobEnded: {'identifier': 'dis_tutorial3', 'rc': 0}
+[22.485477] (-) EventReactorShutdown: {}
