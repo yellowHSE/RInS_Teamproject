@@ -44,7 +44,7 @@ class RingDetector(Node):
 
         # Object we use for transforming between coordinate frames
         self.tf_buf = tf2_ros.Buffer()
-        self.tf_listener = tf2_ros.TransformListener(self.tf_buf)
+        self.tf_listener = tf2_ros.TransformListener(self.tf_buf, self)
 
         cv2.namedWindow("Binary Image", cv2.WINDOW_NORMAL)
         cv2.namedWindow("Detected contours", cv2.WINDOW_NORMAL)
@@ -151,40 +151,13 @@ class RingDetector(Node):
 
                 if border_diff>4:
                     continue
-                    
-                candidates.append((e1,e2))
+                # Only consider candidates with small size
+                if (le[1][0] + le[1][1]) / 2 < 5:
+                    candidates.append((e1, e2))
+                else:
+                    continue
 
         print("Processing is done! found", len(candidates), "candidates for rings")
-        
-        # Publish markers for detected rings
-        for c in candidates:
-            marker = Marker()
-            marker.header.frame_id = "/map"
-            marker.header.stamp = self.get_clock().now().to_msg()
-            marker.id = self.marker_num
-            marker.type = Marker.CYLINDER
-            marker.action = Marker.ADD
-            
-            transformed_point = self.transform_point(c[0][0])
-            
-            marker.pose.position.x = transformed_point.x
-            marker.pose.position.y = transformed_point.y
-            marker.pose.position.z = 0.0
-            
-            marker.pose.orientation.x = 0.0
-            marker.pose.orientation.y = 0.0
-            marker.pose.orientation.z = 0.0
-            marker.pose.orientation.w = 1.0
-
-            marker.color.a = 1.0
-            marker.color.r = 1.0
-            marker.color.g = 0.0
-            marker.color.b = 0.0
-            self.marker_pub.publish(marker)
-            self.marker_num += 1
-            
-            print("(x, y):", marker.pose.position.x, marker.pose.position.y)
-
 
         # Plot the rings on the image
         for c in candidates:
@@ -220,7 +193,7 @@ class RingDetector(Node):
             mean_color = cv2.mean(ring_roi)
 
             # Print the mean color of the ring
-            print("Mean color of the ring (BGR):", mean_color[:3])
+            # print("Mean color of the ring (BGR):", mean_color[:3])
             
             if ((mean_color[1] + mean_color[2] + mean_color[3] ) / 3 ) < 30:
             	color_name = "Black"
