@@ -159,8 +159,8 @@ class RobotCommander(Node):
         goal_msg.pose = pose
         goal_msg.behavior_tree = behavior_tree
 
-        self.info('Navigating to goal: ' + str(pose.pose.position.x) + ' ' +
-                  str(pose.pose.position.y) + '...')
+        #self.info('Navigating to goal: ' + str(pose.pose.position.x) + ' ' +
+        #          str(pose.pose.position.y) + '...')
         send_goal_future = self.nav_to_pose_client.send_goal_async(goal_msg,
                                                                    self._feedbackCallback)
         rclpy.spin_until_future_complete(self, send_goal_future)
@@ -423,13 +423,12 @@ def main(args=None):
         {'x': 2.6, 'y': -1.3, 'yaw': 0.57},
         {'x': 2.3, 'y': -1.3, 'yaw': 0.57},
         {'x': 1.0, 'y': -0.5, 'yaw': 1.0},
-        {'x': 2.5, 'y': 0.0, 'yaw': 0.57},
+        {'x': 2.5, 'y': -0.5, 'yaw': 0.57},
         {'x': 2.5, 'y': 2.2, 'yaw': 0.57},
         {'x': 0.0, 'y': 3.2, 'yaw': 0.57},
         {'x': -1.0, 'y': 3.2, 'yaw': 0.57},
         {'x': -1.5, 'y': 4.1, 'yaw': 0.57},
-        {'x': -1.0, 'y': 1.0, 'yaw': 0.57},
-        {'x': 1.0, 'y': 1.0, 'yaw': 0.57}
+        {'x': -1.0, 'y': 1.0, 'yaw': 0.57}
     ]
 
 
