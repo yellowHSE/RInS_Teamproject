@@ -419,8 +419,13 @@ def main(args=None):
     goal_positions = [
         #{'x': -1.0, 'y': -0.5, 'yaw': 0.57},
         {'x': 0.0, 'y': -1.8, 'yaw': 0.57},
+        {'x': 1.2, 'y': -1.8, 'yaw': 0.57},
         {'x': 2.6, 'y': -1.3, 'yaw': 0.57},
+        {'x': 2.3, 'y': -1.3, 'yaw': 0.57},
         {'x': 1.0, 'y': -0.5, 'yaw': 1.0},
+        {'x': 2.5, 'y': 0.0, 'yaw': 0.57},
+        {'x': 2.5, 'y': 2.2, 'yaw': 0.57},
+        {'x': 0.0, 'y': 3.2, 'yaw': 0.57},
         {'x': -1.0, 'y': 3.2, 'yaw': 0.57},
         {'x': -1.5, 'y': 4.1, 'yaw': 0.57},
         {'x': -1.0, 'y': 1.0, 'yaw': 0.57},
@@ -462,11 +467,11 @@ def main(args=None):
                     break
 
             else:
-                rc.info("Waiting")
+                #rc.info("Waiting")
                 time.sleep(1)
         if(rc.detected_face_num > 2):
             break
-        rc.info("Goal reached")
+        #rc.info("Goal reached")
 
 
     rc.destroyNode()
