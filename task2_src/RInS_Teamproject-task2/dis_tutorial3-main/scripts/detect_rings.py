@@ -24,6 +24,8 @@ class RingDetector(Node):
     def __init__(self):
         super().__init__('transform_point')
 
+        self.ring_count = 0
+
         # Basic ROS stuff
         timer_frequency = 2
         timer_period = 1/timer_frequency
@@ -33,7 +35,6 @@ class RingDetector(Node):
 
         # Marker array object used for visualizations
         self.marker_array = MarkerArray()
-        self.marker_num = 1
 
         # Subscribe to the image and/or depth topic
         self.image_sub = self.create_subscription(Image, "/oakd/rgb/preview/image_raw", self.image_callback, 1)
@@ -52,7 +53,7 @@ class RingDetector(Node):
         cv2.namedWindow("Depth window", cv2.WINDOW_NORMAL)        
 
     def image_callback(self, data):
-        self.get_logger().info(f"I got a new image! Will try to find rings...")
+        #self.get_logger().info(f"I got a new image! Will try to find rings...")
 
         try:
             cv_image = self.bridge.imgmsg_to_cv2(data, "bgr8")
@@ -152,12 +153,12 @@ class RingDetector(Node):
                 if border_diff>4:
                     continue
                 # Only consider candidates with small size
-                if (le[1][0] + le[1][1]) / 2 < 5:
+                l = (le[1][0] + le[1][1]) / 2
+                #print(l)
+                if l < 38:
                     candidates.append((e1, e2))
                 else:
                     continue
-
-        print("Processing is done! found", len(candidates), "candidates for rings")
 
         # Plot the rings on the image
         for c in candidates:
@@ -195,13 +196,15 @@ class RingDetector(Node):
             # Print the mean color of the ring
             # print("Mean color of the ring (BGR):", mean_color[:3])
             
-            if ((mean_color[1] + mean_color[2] + mean_color[3] ) / 3 ) < 30:
+
+
+            if ((mean_color[1] + mean_color[2] + mean_color[3] ) / 3 ) < 60:
             	color_name = "Black"
-            elif mean_color[2] > mean_color[1] and mean_color[2] > mean_color[0] and mean_color[2]:
+            elif mean_color[2] > 150:
             	color_name = "Red"
-            elif mean_color[1] > mean_color[0] and mean_color[1] > mean_color[2] and mean_color[1]:
+            elif mean_color[1] > 150:
             	color_name = "Green"
-            elif mean_color[0] > mean_color[1] and mean_color[0] > mean_color[2] and mean_color[0]:
+            elif mean_color[0] > 150:
             	color_name = "Blue"
             	
             print("Detected color of the ring:", color_name)
