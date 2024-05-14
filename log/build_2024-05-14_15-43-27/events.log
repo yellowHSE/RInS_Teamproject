@@ -1,0 +1,515 @@
+[0.000000] (-) TimerEvent: {}
+[0.000553] (dis_tutorial3) JobQueued: {'identifier': 'dis_tutorial3', 'dependencies': OrderedDict()}
+[0.000597] (dis_tutorial7) JobQueued: {'identifier': 'dis_tutorial7', 'dependencies': OrderedDict()}
+[0.000625] (dis_tutorial3) JobStarted: {'identifier': 'dis_tutorial3'}
+[0.070751] (dis_tutorial7) JobStarted: {'identifier': 'dis_tutorial7'}
+[0.100327] (-) TimerEvent: {}
+[0.130024] (dis_tutorial3) JobProgress: {'identifier': 'dis_tutorial3', 'progress': 'cmake'}
+[0.130427] (dis_tutorial3) Command: {'cmd': ['/usr/bin/cmake', '/home/upsilon/Desktop/fresh/src/dis_tutorial3', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/upsilon/Desktop/fresh/install/dis_tutorial3'], 'cwd': '/home/upsilon/Desktop/fresh/build/dis_tutorial3', 'env': OrderedDict([('PROFILEHOME', ''), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('KDE_FULL_SESSION', 'true'), ('IGN_IP', '127.0.0.1'), ('LANGUAGE', ''), ('USER', 'upsilon'), ('PAM_KWALLET5_LOGIN', '/run/user/1021/kwallet5.socket'), ('LC_TIME', 'sl_SI.UTF-8'), ('XDG_SEAT', 'seat0'), ('SSH_AGENT_PID', '1294'), ('XDG_SESSION_TYPE', 'x11'), ('XCURSOR_SIZE', '24'), ('KONSOLE_VERSION', '211203'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/upsilon'), ('KDE_APPLICATIONS_AS_SCOPE', '1'), ('OLDPWD', '/home/upsilon'), ('DESKTOP_SESSION', 'plasma'), ('ROS_PYTHON_VERSION', '3'), ('SHELL_SESSION_ID', '23fd33e19977483e9894760325594f89'), ('GTK_RC_FILES', '/etc/gtk/gtkrc:/home/upsilon/.gtkrc:/home/upsilon/.config/gtkrc'), ('XDG_SEAT_PATH', '/org/freedesktop/DisplayManager/Seat0'), ('KDE_SESSION_VERSION', '5'), ('LC_MONETARY', 'sl_SI.UTF-8'), ('KONSOLE_DBUS_SESSION', '/Sessions/1'), ('SYSTEMD_EXEC_PID', '1159'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1021/bus'), ('COLORTERM', 'truecolor'), ('KONSOLE_DBUS_WINDOW', '/Windows/1'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/upsilon/colcon_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'upsilon'), ('WINDOWID', '71303175'), ('QT_AUTO_SCREEN_SCALE_FACTOR', '0'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('COLORFGBG', '15;0'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '3'), ('ROS_LOCALHOST_ONLY', '1'), ('GTK2_RC_FILES', '/etc/gtk-2.0/gtkrc:/home/upsilon/.gtkrc-2.0:/home/upsilon/.config/gtkrc-2.0'), ('PATH', '/opt/ros/humble/bin:/home/upsilon/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/aragorn:@/tmp/.ICE-unix/1459,unix/aragorn:/tmp/.ICE-unix/1459'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session1'), ('LC_ADDRESS', 'sl_SI.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1021'), ('XCURSOR_THEME', 'breeze_cursors'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'KDE'), ('LC_TELEPHONE', 'sl_SI.UTF-8'), ('XDG_SESSION_DESKTOP', 'KDE'), ('XAUTHORITY', '/home/upsilon/.Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/tmp/ssh-XXXXXXLBaDTy/agent.1176'), ('ROS_DOMAIN_ID', '22'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'sl_SI.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('KONSOLE_DBUS_SERVICE', ':1.63'), ('LC_MEASUREMENT', 'sl_SI.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1021/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'sl_SI.UTF-8'), ('XDG_VTNR', '1'), ('PWD', '/home/upsilon/Desktop/fresh/build/dis_tutorial3'), ('XDG_CONFIG_DIRS', '/home/upsilon/.config/kdedefaults:/etc/xdg/xdg-plasma:/etc/xdg:/usr/share/kubuntu-default-settings/kf5-settings'), ('XDG_DATA_DIRS', '/usr/share/plasma:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'sl_SI.UTF-8'), ('LC_PAPER', 'sl_SI.UTF-8'), ('KDE_SESSION_UID', '1021'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.134302] (dis_tutorial7) JobProgress: {'identifier': 'dis_tutorial7', 'progress': 'cmake'}
+[0.135065] (dis_tutorial7) Command: {'cmd': ['/usr/bin/cmake', '/home/upsilon/Desktop/fresh/src/dis_tutorial7', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/upsilon/Desktop/fresh/install/dis_tutorial7'], 'cwd': '/home/upsilon/Desktop/fresh/build/dis_tutorial7', 'env': OrderedDict([('PROFILEHOME', ''), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('KDE_FULL_SESSION', 'true'), ('IGN_IP', '127.0.0.1'), ('LANGUAGE', ''), ('USER', 'upsilon'), ('PAM_KWALLET5_LOGIN', '/run/user/1021/kwallet5.socket'), ('LC_TIME', 'sl_SI.UTF-8'), ('XDG_SEAT', 'seat0'), ('SSH_AGENT_PID', '1294'), ('XDG_SESSION_TYPE', 'x11'), ('XCURSOR_SIZE', '24'), ('KONSOLE_VERSION', '211203'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/upsilon'), ('KDE_APPLICATIONS_AS_SCOPE', '1'), ('OLDPWD', '/home/upsilon'), ('DESKTOP_SESSION', 'plasma'), ('ROS_PYTHON_VERSION', '3'), ('SHELL_SESSION_ID', '23fd33e19977483e9894760325594f89'), ('GTK_RC_FILES', '/etc/gtk/gtkrc:/home/upsilon/.gtkrc:/home/upsilon/.config/gtkrc'), ('XDG_SEAT_PATH', '/org/freedesktop/DisplayManager/Seat0'), ('KDE_SESSION_VERSION', '5'), ('LC_MONETARY', 'sl_SI.UTF-8'), ('KONSOLE_DBUS_SESSION', '/Sessions/1'), ('SYSTEMD_EXEC_PID', '1159'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1021/bus'), ('COLORTERM', 'truecolor'), ('KONSOLE_DBUS_WINDOW', '/Windows/1'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/upsilon/colcon_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'upsilon'), ('WINDOWID', '71303175'), ('QT_AUTO_SCREEN_SCALE_FACTOR', '0'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('COLORFGBG', '15;0'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '3'), ('ROS_LOCALHOST_ONLY', '1'), ('GTK2_RC_FILES', '/etc/gtk-2.0/gtkrc:/home/upsilon/.gtkrc-2.0:/home/upsilon/.config/gtkrc-2.0'), ('PATH', '/opt/ros/humble/bin:/home/upsilon/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/aragorn:@/tmp/.ICE-unix/1459,unix/aragorn:/tmp/.ICE-unix/1459'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session1'), ('LC_ADDRESS', 'sl_SI.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1021'), ('XCURSOR_THEME', 'breeze_cursors'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'KDE'), ('LC_TELEPHONE', 'sl_SI.UTF-8'), ('XDG_SESSION_DESKTOP', 'KDE'), ('XAUTHORITY', '/home/upsilon/.Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/tmp/ssh-XXXXXXLBaDTy/agent.1176'), ('ROS_DOMAIN_ID', '22'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'sl_SI.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('KONSOLE_DBUS_SERVICE', ':1.63'), ('LC_MEASUREMENT', 'sl_SI.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1021/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'sl_SI.UTF-8'), ('XDG_VTNR', '1'), ('PWD', '/home/upsilon/Desktop/fresh/build/dis_tutorial7'), ('XDG_CONFIG_DIRS', '/home/upsilon/.config/kdedefaults:/etc/xdg/xdg-plasma:/etc/xdg:/usr/share/kubuntu-default-settings/kf5-settings'), ('XDG_DATA_DIRS', '/usr/share/plasma:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'sl_SI.UTF-8'), ('LC_PAPER', 'sl_SI.UTF-8'), ('KDE_SESSION_UID', '1021'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.200439] (-) TimerEvent: {}
+[0.221781] (dis_tutorial3) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.221984] (dis_tutorial7) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.292936] (dis_tutorial3) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.294904] (dis_tutorial7) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.300507] (-) TimerEvent: {}
+[0.300933] (dis_tutorial7) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.301104] (dis_tutorial3) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.359544] (dis_tutorial3) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.359723] (dis_tutorial7) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.364408] (dis_tutorial3) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.364510] (dis_tutorial7) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.364728] (dis_tutorial7) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.364889] (dis_tutorial3) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.365202] (dis_tutorial7) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.365289] (dis_tutorial3) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.367820] (dis_tutorial7) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.367917] (dis_tutorial3) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.400638] (-) TimerEvent: {}
+[0.432225] (dis_tutorial7) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.432455] (dis_tutorial3) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.437260] (dis_tutorial7) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.437392] (dis_tutorial3) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.437523] (dis_tutorial7) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.437643] (dis_tutorial3) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.437841] (dis_tutorial3) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.437952] (dis_tutorial7) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.440686] (dis_tutorial3) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.440811] (dis_tutorial7) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.500746] (-) TimerEvent: {}
+[0.552592] (dis_tutorial3) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.552762] (dis_tutorial7) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.600722] (dis_tutorial3) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.600890] (-) TimerEvent: {}
+[0.600994] (dis_tutorial7) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.632026] (dis_tutorial3) StdoutLine: {'line': b'-- Found rclcpp: 16.0.8 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.632159] (dis_tutorial7) StdoutLine: {'line': b'-- Found rclcpp: 16.0.8 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.677461] (dis_tutorial3) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.677643] (dis_tutorial7) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.683053] (dis_tutorial3) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.683167] (dis_tutorial7) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.691876] (dis_tutorial3) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.692088] (dis_tutorial7) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.700988] (-) TimerEvent: {}
+[0.705634] (dis_tutorial3) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.705733] (dis_tutorial7) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.724059] (dis_tutorial7) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.724171] (dis_tutorial3) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.785615] (dis_tutorial3) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.785776] (dis_tutorial7) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.788603] (dis_tutorial3) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.788703] (dis_tutorial7) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.801079] (-) TimerEvent: {}
+[0.884672] (dis_tutorial3) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[0.884904] (dis_tutorial7) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[0.901188] (-) TimerEvent: {}
+[0.910331] (dis_tutorial3) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[0.910580] (dis_tutorial7) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[0.952596] (dis_tutorial7) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.953236] (dis_tutorial3) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.963063] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[0.963179] (dis_tutorial7) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[1.001305] (-) TimerEvent: {}
+[1.028127] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[1.028409] (dis_tutorial3) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[1.028485] (dis_tutorial7) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[1.028555] (dis_tutorial7) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[1.087624] (dis_tutorial7) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[1.087817] (dis_tutorial3) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[1.088488] (dis_tutorial7) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[1.088586] (dis_tutorial3) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[1.101391] (-) TimerEvent: {}
+[1.201608] (-) TimerEvent: {}
+[1.207891] (dis_tutorial7) StdoutLine: {'line': b'-- Found rclpy: 3.3.12 (/opt/ros/humble/share/rclpy/cmake)\n'}
+[1.208059] (dis_tutorial3) StdoutLine: {'line': b'-- Found rclpy: 3.3.12 (/opt/ros/humble/share/rclpy/cmake)\n'}
+[1.209605] (dis_tutorial7) StdoutLine: {'line': b'-- Found std_srvs: 4.2.3 (/opt/ros/humble/share/std_srvs/cmake)\n'}
+[1.209683] (dis_tutorial3) StdoutLine: {'line': b'-- Found std_srvs: 4.2.3 (/opt/ros/humble/share/std_srvs/cmake)\n'}
+[1.224915] (dis_tutorial3) StdoutLine: {'line': b'-- Found geometry_msgs: 4.2.3 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[1.258989] (dis_tutorial3) StdoutLine: {'line': b'-- Found visualization_msgs: 4.2.3 (/opt/ros/humble/share/visualization_msgs/cmake)\n'}
+[1.271399] (dis_tutorial7) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.275291] (dis_tutorial7) StdoutLine: {'line': b'-- Generating done\n'}
+[1.276413] (dis_tutorial7) StdoutLine: {'line': b'-- Build files have been written to: /home/upsilon/Desktop/fresh/build/dis_tutorial7\n'}
+[1.283981] (dis_tutorial7) CommandEnded: {'returncode': 0}
+[1.284540] (dis_tutorial7) JobProgress: {'identifier': 'dis_tutorial7', 'progress': 'build'}
+[1.285624] (dis_tutorial7) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/upsilon/Desktop/fresh/build/dis_tutorial7', '--', '-j16', '-l16'], 'cwd': '/home/upsilon/Desktop/fresh/build/dis_tutorial7', 'env': OrderedDict([('PROFILEHOME', ''), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('KDE_FULL_SESSION', 'true'), ('IGN_IP', '127.0.0.1'), ('LANGUAGE', ''), ('USER', 'upsilon'), ('PAM_KWALLET5_LOGIN', '/run/user/1021/kwallet5.socket'), ('LC_TIME', 'sl_SI.UTF-8'), ('XDG_SEAT', 'seat0'), ('SSH_AGENT_PID', '1294'), ('XDG_SESSION_TYPE', 'x11'), ('XCURSOR_SIZE', '24'), ('KONSOLE_VERSION', '211203'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/upsilon'), ('KDE_APPLICATIONS_AS_SCOPE', '1'), ('OLDPWD', '/home/upsilon'), ('DESKTOP_SESSION', 'plasma'), ('ROS_PYTHON_VERSION', '3'), ('SHELL_SESSION_ID', '23fd33e19977483e9894760325594f89'), ('GTK_RC_FILES', '/etc/gtk/gtkrc:/home/upsilon/.gtkrc:/home/upsilon/.config/gtkrc'), ('XDG_SEAT_PATH', '/org/freedesktop/DisplayManager/Seat0'), ('KDE_SESSION_VERSION', '5'), ('LC_MONETARY', 'sl_SI.UTF-8'), ('KONSOLE_DBUS_SESSION', '/Sessions/1'), ('SYSTEMD_EXEC_PID', '1159'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1021/bus'), ('COLORTERM', 'truecolor'), ('KONSOLE_DBUS_WINDOW', '/Windows/1'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/upsilon/colcon_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'upsilon'), ('WINDOWID', '71303175'), ('QT_AUTO_SCREEN_SCALE_FACTOR', '0'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('COLORFGBG', '15;0'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '3'), ('ROS_LOCALHOST_ONLY', '1'), ('GTK2_RC_FILES', '/etc/gtk-2.0/gtkrc:/home/upsilon/.gtkrc-2.0:/home/upsilon/.config/gtkrc-2.0'), ('PATH', '/opt/ros/humble/bin:/home/upsilon/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/aragorn:@/tmp/.ICE-unix/1459,unix/aragorn:/tmp/.ICE-unix/1459'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session1'), ('LC_ADDRESS', 'sl_SI.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1021'), ('XCURSOR_THEME', 'breeze_cursors'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'KDE'), ('LC_TELEPHONE', 'sl_SI.UTF-8'), ('XDG_SESSION_DESKTOP', 'KDE'), ('XAUTHORITY', '/home/upsilon/.Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/tmp/ssh-XXXXXXLBaDTy/agent.1176'), ('ROS_DOMAIN_ID', '22'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'sl_SI.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('KONSOLE_DBUS_SERVICE', ':1.63'), ('LC_MEASUREMENT', 'sl_SI.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1021/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'sl_SI.UTF-8'), ('XDG_VTNR', '1'), ('PWD', '/home/upsilon/Desktop/fresh/build/dis_tutorial7'), ('XDG_CONFIG_DIRS', '/home/upsilon/.config/kdedefaults:/etc/xdg/xdg-plasma:/etc/xdg:/usr/share/kubuntu-default-settings/kf5-settings'), ('XDG_DATA_DIRS', '/usr/share/plasma:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'sl_SI.UTF-8'), ('LC_PAPER', 'sl_SI.UTF-8'), ('KDE_SESSION_UID', '1021'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[1.301962] (-) TimerEvent: {}
+[1.319298] (dis_tutorial7) CommandEnded: {'returncode': 0}
+[1.339084] (dis_tutorial7) JobProgress: {'identifier': 'dis_tutorial7', 'progress': 'install'}
+[1.347236] (dis_tutorial7) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/upsilon/Desktop/fresh/build/dis_tutorial7'], 'cwd': '/home/upsilon/Desktop/fresh/build/dis_tutorial7', 'env': OrderedDict([('PROFILEHOME', ''), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('KDE_FULL_SESSION', 'true'), ('IGN_IP', '127.0.0.1'), ('LANGUAGE', ''), ('USER', 'upsilon'), ('PAM_KWALLET5_LOGIN', '/run/user/1021/kwallet5.socket'), ('LC_TIME', 'sl_SI.UTF-8'), ('XDG_SEAT', 'seat0'), ('SSH_AGENT_PID', '1294'), ('XDG_SESSION_TYPE', 'x11'), ('XCURSOR_SIZE', '24'), ('KONSOLE_VERSION', '211203'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/upsilon'), ('KDE_APPLICATIONS_AS_SCOPE', '1'), ('OLDPWD', '/home/upsilon'), ('DESKTOP_SESSION', 'plasma'), ('ROS_PYTHON_VERSION', '3'), ('SHELL_SESSION_ID', '23fd33e19977483e9894760325594f89'), ('GTK_RC_FILES', '/etc/gtk/gtkrc:/home/upsilon/.gtkrc:/home/upsilon/.config/gtkrc'), ('XDG_SEAT_PATH', '/org/freedesktop/DisplayManager/Seat0'), ('KDE_SESSION_VERSION', '5'), ('LC_MONETARY', 'sl_SI.UTF-8'), ('KONSOLE_DBUS_SESSION', '/Sessions/1'), ('SYSTEMD_EXEC_PID', '1159'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1021/bus'), ('COLORTERM', 'truecolor'), ('KONSOLE_DBUS_WINDOW', '/Windows/1'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/upsilon/colcon_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'upsilon'), ('WINDOWID', '71303175'), ('QT_AUTO_SCREEN_SCALE_FACTOR', '0'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('COLORFGBG', '15;0'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '3'), ('ROS_LOCALHOST_ONLY', '1'), ('GTK2_RC_FILES', '/etc/gtk-2.0/gtkrc:/home/upsilon/.gtkrc-2.0:/home/upsilon/.config/gtkrc-2.0'), ('PATH', '/opt/ros/humble/bin:/home/upsilon/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/aragorn:@/tmp/.ICE-unix/1459,unix/aragorn:/tmp/.ICE-unix/1459'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session1'), ('LC_ADDRESS', 'sl_SI.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1021'), ('XCURSOR_THEME', 'breeze_cursors'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'KDE'), ('LC_TELEPHONE', 'sl_SI.UTF-8'), ('XDG_SESSION_DESKTOP', 'KDE'), ('XAUTHORITY', '/home/upsilon/.Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/tmp/ssh-XXXXXXLBaDTy/agent.1176'), ('ROS_DOMAIN_ID', '22'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'sl_SI.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('KONSOLE_DBUS_SERVICE', ':1.63'), ('LC_MEASUREMENT', 'sl_SI.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1021/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'sl_SI.UTF-8'), ('XDG_VTNR', '1'), ('PWD', '/home/upsilon/Desktop/fresh/build/dis_tutorial7'), ('XDG_CONFIG_DIRS', '/home/upsilon/.config/kdedefaults:/etc/xdg/xdg-plasma:/etc/xdg:/usr/share/kubuntu-default-settings/kf5-settings'), ('XDG_DATA_DIRS', '/usr/share/plasma:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'sl_SI.UTF-8'), ('LC_PAPER', 'sl_SI.UTF-8'), ('KDE_SESSION_UID', '1021'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[1.352914] (dis_tutorial7) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[1.353305] (dis_tutorial7) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[1.353792] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//launch/control.py\n'}
+[1.360929] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//launch/create3_ignition_nodes.launch.py\n'}
+[1.367966] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//launch/create3_nodes.launch.py\n'}
+[1.374815] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//launch/create3_ros_ignition_bridge.launch.py\n'}
+[1.382019] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//launch/robot_description.launch.py\n'}
+[1.389119] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//launch/ros_ign_bridge.launch.py\n'}
+[1.396354] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//launch/sim_turtlebot_nav.launch.py\n'}
+[1.402294] (-) TimerEvent: {}
+[1.402823] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//launch/turtlebot4_nodes.launch.py\n'}
+[1.410672] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//launch/turtlebot4_spawn.launch.py\n'}
+[1.418324] (dis_tutorial3) StdoutLine: {'line': b'-- Found tf2: 0.25.6 (/opt/ros/humble/share/tf2/cmake)\n'}
+[1.418586] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//launch/view_robot.launch.py\n'}
+[1.426019] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//meshes/camera_bracket.dae\n'}
+[1.433126] (dis_tutorial3) StdoutLine: {'line': b'-- Found tf2_geometry_msgs: 0.25.6 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)\n'}
+[1.433483] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//meshes/oakd_lite.dae\n'}
+[1.440674] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//meshes/oakd_pro.dae\n'}
+[1.447708] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//meshes/rplidar.dae\n'}
+[1.449274] (dis_tutorial3) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)\n'}
+[1.450511] (dis_tutorial3) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[1.450637] (dis_tutorial3) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[1.454825] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//meshes/shell.dae\n'}
+[1.462551] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//meshes/shell_collision.dae\n'}
+[1.469578] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//meshes/top_camera_pro.dae\n'}
+[1.476677] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//meshes/tower.dae\n'}
+[1.483471] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//meshes/tower_sensor_plate.dae\n'}
+[1.490290] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//meshes/tower_standoff.dae\n'}
+[1.497520] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//meshes/weight_block.dae\n'}
+[1.502670] (-) TimerEvent: {}
+[1.505087] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//urdf/arm/arm.urdf.xacro\n'}
+[1.512459] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//urdf/create/create3.urdf.xacro\n'}
+[1.520502] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//urdf/lite/turtlebot4.urdf.xacro\n'}
+[1.527745] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//urdf/sensors/camera_bracket.urdf.xacro\n'}
+[1.534826] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//urdf/sensors/oakd.urdf.xacro\n'}
+[1.542121] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//urdf/sensors/rplidar.urdf.xacro\n'}
+[1.549373] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//urdf/standard/tower_sensor_plate.urdf.xacro\n'}
+[1.556765] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//urdf/standard/tower_standoff.urdf.xacro\n'}
+[1.563866] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//urdf/standard/turtlebot4.urdf.xacro\n'}
+[1.570607] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//urdf/standard/weight_block.urdf.xacro\n'}
+[1.578059] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//config/all_controls.yaml\n'}
+[1.585211] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//config/all_controls_jtc.yaml\n'}
+[1.592612] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//config/arm_controller_position.yaml\n'}
+[1.599444] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7//config/control.yaml\n'}
+[1.602977] (-) TimerEvent: {}
+[1.606476] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/lib/dis_tutorial7/arm_mover_actions.py\n'}
+[1.614335] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/ament_index/resource_index/package_run_dependencies/dis_tutorial7\n'}
+[1.621958] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/ament_index/resource_index/parent_prefix_path/dis_tutorial7\n'}
+[1.629179] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7/environment/ament_prefix_path.sh\n'}
+[1.636667] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7/environment/ament_prefix_path.dsv\n'}
+[1.643817] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7/environment/path.sh\n'}
+[1.650830] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7/environment/path.dsv\n'}
+[1.657845] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7/local_setup.bash\n'}
+[1.664975] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7/local_setup.sh\n'}
+[1.672455] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7/local_setup.zsh\n'}
+[1.679786] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7/local_setup.dsv\n'}
+[1.686689] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7/package.dsv\n'}
+[1.693944] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/ament_index/resource_index/packages/dis_tutorial7\n'}
+[1.701342] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7/cmake/dis_tutorial7Config.cmake\n'}
+[1.703069] (-) TimerEvent: {}
+[1.708559] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7/cmake/dis_tutorial7Config-version.cmake\n'}
+[1.713933] (dis_tutorial3) StdoutLine: {'line': b'-- Found pcl_conversions: 2.4.0 (/opt/ros/humble/share/pcl_conversions/cmake)\n'}
+[1.716188] (dis_tutorial7) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial7/share/dis_tutorial7/package.xml\n'}
+[1.725795] (dis_tutorial7) CommandEnded: {'returncode': 0}
+[1.804584] (-) TimerEvent: {}
+[1.817062] (dis_tutorial3) StdoutLine: {'line': b"-- Checking for module 'eigen3'\n"}
+[1.828176] (dis_tutorial3) StdoutLine: {'line': b'--   Found eigen3, version 3.4.0\n'}
+[1.845950] (dis_tutorial7) JobEnded: {'identifier': 'dis_tutorial7', 'rc': 0}
+[1.859958] (dis_tutorial3) StdoutLine: {'line': b'-- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") \n'}
+[1.860132] (dis_tutorial3) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[1.882791] (dis_tutorial3) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found suitable version "1.74.0", minimum required is "1.65.0") found components: system filesystem date_time iostreams serialization \n'}
+[1.899326] (dis_tutorial3) StdoutLine: {'line': b"-- Checking for module 'flann'\n"}
+[1.904672] (-) TimerEvent: {}
+[1.912163] (dis_tutorial3) StdoutLine: {'line': b'--   Found flann, version 1.9.1\n'}
+[1.948223] (dis_tutorial3) StdoutLine: {'line': b'-- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  \n'}
+[1.948386] (dis_tutorial3) StdoutLine: {'line': b'-- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)\n'}
+[1.976656] (dis_tutorial3) StdoutLine: {'line': b'-- Found GLEW: /usr/lib/x86_64-linux-gnu/libGLEW.so  \n'}
+[1.982443] (dis_tutorial3) StdoutLine: {'line': b'-- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so  found components: OpenGL GLX \n'}
+[2.004804] (-) TimerEvent: {}
+[2.104152] (dis_tutorial3) StdoutLine: {'line': b'-- Found MPI_C: /usr/lib/x86_64-linux-gnu/libmpi.so (found version "3.1") \n'}
+[2.104372] (dis_tutorial3) StdoutLine: {'line': b'-- Found MPI: TRUE (found version "3.1") found components: C \n'}
+[2.104894] (-) TimerEvent: {}
+[2.107074] (dis_tutorial3) StdoutLine: {'line': b'-- Found JsonCpp: /usr/lib/x86_64-linux-gnu/libjsoncpp.so (found suitable version "1.9.5", minimum required is "0.7.0") \n'}
+[2.114140] (dis_tutorial3) StdoutLine: {'line': b'-- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11") \n'}
+[2.127091] (dis_tutorial3) StdoutLine: {'line': b'-- Found PNG: /usr/lib/x86_64-linux-gnu/libpng.so (found version "1.6.37") \n'}
+[2.144812] (dis_tutorial3) StdoutLine: {'line': b'-- Found Eigen3: /usr/include/eigen3 (found version "3.4.0") \n'}
+[2.205427] (-) TimerEvent: {}
+[2.224172] (dis_tutorial3) StdoutLine: {'line': b'-- Found X11: /usr/include   \n'}
+[2.224447] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so\n'}
+[2.305557] (-) TimerEvent: {}
+[2.309826] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so - found\n'}
+[2.310083] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for gethostbyname\n'}
+[2.369218] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for gethostbyname - found\n'}
+[2.369428] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for connect\n'}
+[2.405681] (-) TimerEvent: {}
+[2.426076] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for connect - found\n'}
+[2.426356] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for remove\n'}
+[2.483083] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for remove - found\n'}
+[2.483256] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for shmat\n'}
+[2.505804] (-) TimerEvent: {}
+[2.540303] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for shmat - found\n'}
+[2.540481] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for IceConnectionNumber in ICE\n'}
+[2.597565] (dis_tutorial3) StdoutLine: {'line': b'-- Looking for IceConnectionNumber in ICE - found\n'}
+[2.605896] (-) TimerEvent: {}
+[2.669628] (dis_tutorial3) StdoutLine: {'line': b'-- Found EXPAT: /usr/lib/x86_64-linux-gnu/libexpat.so (found version "2.4.7") \n'}
+[2.671085] (dis_tutorial3) StdoutLine: {'line': b'-- Found double-conversion: /usr/lib/x86_64-linux-gnu/libdouble-conversion.so  \n'}
+[2.672813] (dis_tutorial3) StdoutLine: {'line': b'-- Found LZ4: /usr/lib/x86_64-linux-gnu/liblz4.so (found version "1.9.3") \n'}
+[2.675131] (dis_tutorial3) StdoutLine: {'line': b'-- Found LZMA: /usr/lib/x86_64-linux-gnu/liblzma.so (found version "5.2.5") \n'}
+[2.705993] (-) TimerEvent: {}
+[2.722417] (dis_tutorial3) StdoutLine: {'line': b'-- Found JPEG: /usr/lib/x86_64-linux-gnu/libjpeg.so (found version "80") \n'}
+[2.726998] (dis_tutorial3) StdoutLine: {'line': b'-- Found TIFF: /usr/lib/x86_64-linux-gnu/libtiff.so (found version "4.3.0")  \n'}
+[2.730106] (dis_tutorial3) StdoutLine: {'line': b'-- Found Freetype: /usr/lib/x86_64-linux-gnu/libfreetype.so (found version "2.11.1") \n'}
+[2.734678] (dis_tutorial3) StdoutLine: {'line': b'-- Found utf8cpp: /usr/include/utf8cpp  \n'}
+[2.806124] (-) TimerEvent: {}
+[2.806562] (dis_tutorial3) StdoutLine: {'line': b"-- Checking for module 'libusb-1.0'\n"}
+[2.819136] (dis_tutorial3) StdoutLine: {'line': b'--   Found libusb-1.0, version 1.0.25\n'}
+[2.852893] (dis_tutorial3) StdoutLine: {'line': b'-- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  \n'}
+[2.853736] (dis_tutorial3) StdoutLine: {'line': b'-- Found OpenNI: /usr/lib/libOpenNI.so;libusb::libusb (found version "1.5.4.0") \n'}
+[2.853831] (dis_tutorial3) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[2.905081] (dis_tutorial3) StdoutLine: {'line': b'-- Found OpenNI2: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb (found version "2.2.0.33") \n'}
+[2.905301] (dis_tutorial3) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[2.905375] (dis_tutorial3) StderrLine: {'line': b'\x1b[0m** WARNING ** io features related to pcap will be disabled\x1b[0m\n'}
+[2.906211] (-) TimerEvent: {}
+[3.006436] (-) TimerEvent: {}
+[3.018699] (dis_tutorial3) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[3.024052] (dis_tutorial3) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[3.029436] (dis_tutorial3) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[3.106562] (-) TimerEvent: {}
+[3.139725] (dis_tutorial3) StdoutLine: {'line': b'-- Found Qhull version 8.0.2\n'}
+[3.206665] (-) TimerEvent: {}
+[3.248675] (dis_tutorial3) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[3.306788] (-) TimerEvent: {}
+[3.354674] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_COMMON\n'}
+[3.355662] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  \n'}
+[3.355799] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_KDTREE\n'}
+[3.356590] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  \n'}
+[3.356716] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_OCTREE\n'}
+[3.357332] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  \n'}
+[3.357457] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_SEARCH\n'}
+[3.358034] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  \n'}
+[3.358156] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_SAMPLE_CONSENSUS\n'}
+[3.358764] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  \n'}
+[3.358889] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_FILTERS\n'}
+[3.359468] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  \n'}
+[3.359607] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_2D\n'}
+[3.359739] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_2D: /usr/include/pcl-1.12  \n'}
+[3.359846] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_GEOMETRY\n'}
+[3.359951] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_GEOMETRY: /usr/include/pcl-1.12  \n'}
+[3.360034] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_IO\n'}
+[3.360608] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  \n'}
+[3.360751] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_FEATURES\n'}
+[3.361336] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  \n'}
+[3.361463] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_ML\n'}
+[3.362024] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_ML: /usr/lib/x86_64-linux-gnu/libpcl_ml.so  \n'}
+[3.362105] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_SEGMENTATION\n'}
+[3.362684] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_SEGMENTATION: /usr/lib/x86_64-linux-gnu/libpcl_segmentation.so  \n'}
+[3.362843] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_VISUALIZATION\n'}
+[3.363425] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_VISUALIZATION: /usr/lib/x86_64-linux-gnu/libpcl_visualization.so  \n'}
+[3.363579] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_SURFACE\n'}
+[3.364189] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_SURFACE: /usr/lib/x86_64-linux-gnu/libpcl_surface.so  \n'}
+[3.364314] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_REGISTRATION\n'}
+[3.364900] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  \n'}
+[3.365044] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_KEYPOINTS\n'}
+[3.365610] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_KEYPOINTS: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so  \n'}
+[3.365744] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_TRACKING\n'}
+[3.366319] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_TRACKING: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so  \n'}
+[3.366435] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_RECOGNITION\n'}
+[3.367022] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_RECOGNITION: /usr/lib/x86_64-linux-gnu/libpcl_recognition.so  \n'}
+[3.367202] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_STEREO\n'}
+[3.367784] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_STEREO: /usr/lib/x86_64-linux-gnu/libpcl_stereo.so  \n'}
+[3.367906] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_APPS\n'}
+[3.368486] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_APPS: /usr/lib/x86_64-linux-gnu/libpcl_apps.so  \n'}
+[3.368837] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_IN_HAND_SCANNER\n'}
+[3.368996] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  \n'}
+[3.369069] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_MODELER\n'}
+[3.369229] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_MODELER: /usr/include/pcl-1.12  \n'}
+[3.369297] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_POINT_CLOUD_EDITOR\n'}
+[3.369664] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  \n'}
+[3.369730] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_OUTOFCORE\n'}
+[3.370334] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_OUTOFCORE: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so  \n'}
+[3.370463] (dis_tutorial3) StdoutLine: {'line': b'-- looking for PCL_PEOPLE\n'}
+[3.371051] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL_PEOPLE: /usr/lib/x86_64-linux-gnu/libpcl_people.so  \n'}
+[3.371578] (dis_tutorial3) StdoutLine: {'line': b'-- Found PCL: pcl_common;pcl_kdtree;pcl_octree;pcl_search;pcl_sample_consensus;pcl_filters;pcl_io;pcl_features;pcl_ml;pcl_segmentation;pcl_visualization;pcl_surface;pcl_registration;pcl_keypoints;pcl_tracking;pcl_recognition;pcl_stereo;pcl_apps;pcl_outofcore;pcl_people;Boost::system;Boost::filesystem;Boost::date_time;Boost::iostreams;Boost::serialization;/usr/lib/libOpenNI.so;libusb::libusb;/usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb;VTK::ChartsCore;VTK::CommonColor;VTK::CommonComputationalGeometry;VTK::CommonCore;VTK::CommonDataModel;VTK::CommonExecutionModel;VTK::CommonMath;VTK::CommonMisc;VTK::CommonTransforms;VTK::FiltersCore;VTK::FiltersExtraction;VTK::FiltersGeneral;VTK::FiltersGeometry;VTK::FiltersModeling;VTK::FiltersSources;VTK::ImagingCore;VTK::ImagingSources;VTK::InteractionImage;VTK::InteractionStyle;VTK::InteractionWidgets;VTK::IOCore;VTK::IOGeometry;VTK::IOImage;VTK::IOLegacy;VTK::IOPLY;VTK::RenderingAnnotation;VTK::RenderingCore;VTK::RenderingContext2D;VTK::RenderingLOD;VTK::RenderingFreeType;VTK::ViewsCore;VTK::ViewsContext2D;VTK::RenderingOpenGL2;VTK::GUISupportQt;FLANN::FLANN;QHULL::QHULL (Required is at least version "1.10") \n'}
+[3.406874] (-) TimerEvent: {}
+[3.507093] (-) TimerEvent: {}
+[3.530466] (dis_tutorial3) StdoutLine: {'line': b'-- Configuring done\n'}
+[3.607280] (-) TimerEvent: {}
+[3.677864] (dis_tutorial3) StdoutLine: {'line': b'-- Generating done\n'}
+[3.680341] (dis_tutorial3) StdoutLine: {'line': b'-- Build files have been written to: /home/upsilon/Desktop/fresh/build/dis_tutorial3\n'}
+[3.694427] (dis_tutorial3) CommandEnded: {'returncode': 0}
+[3.695168] (dis_tutorial3) JobProgress: {'identifier': 'dis_tutorial3', 'progress': 'build'}
+[3.696276] (dis_tutorial3) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/upsilon/Desktop/fresh/build/dis_tutorial3', '--', '-j16', '-l16'], 'cwd': '/home/upsilon/Desktop/fresh/build/dis_tutorial3', 'env': OrderedDict([('PROFILEHOME', ''), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('KDE_FULL_SESSION', 'true'), ('IGN_IP', '127.0.0.1'), ('LANGUAGE', ''), ('USER', 'upsilon'), ('PAM_KWALLET5_LOGIN', '/run/user/1021/kwallet5.socket'), ('LC_TIME', 'sl_SI.UTF-8'), ('XDG_SEAT', 'seat0'), ('SSH_AGENT_PID', '1294'), ('XDG_SESSION_TYPE', 'x11'), ('XCURSOR_SIZE', '24'), ('KONSOLE_VERSION', '211203'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/upsilon'), ('KDE_APPLICATIONS_AS_SCOPE', '1'), ('OLDPWD', '/home/upsilon'), ('DESKTOP_SESSION', 'plasma'), ('ROS_PYTHON_VERSION', '3'), ('SHELL_SESSION_ID', '23fd33e19977483e9894760325594f89'), ('GTK_RC_FILES', '/etc/gtk/gtkrc:/home/upsilon/.gtkrc:/home/upsilon/.config/gtkrc'), ('XDG_SEAT_PATH', '/org/freedesktop/DisplayManager/Seat0'), ('KDE_SESSION_VERSION', '5'), ('LC_MONETARY', 'sl_SI.UTF-8'), ('KONSOLE_DBUS_SESSION', '/Sessions/1'), ('SYSTEMD_EXEC_PID', '1159'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1021/bus'), ('COLORTERM', 'truecolor'), ('KONSOLE_DBUS_WINDOW', '/Windows/1'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/upsilon/colcon_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'upsilon'), ('WINDOWID', '71303175'), ('QT_AUTO_SCREEN_SCALE_FACTOR', '0'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('COLORFGBG', '15;0'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '3'), ('ROS_LOCALHOST_ONLY', '1'), ('GTK2_RC_FILES', '/etc/gtk-2.0/gtkrc:/home/upsilon/.gtkrc-2.0:/home/upsilon/.config/gtkrc-2.0'), ('PATH', '/opt/ros/humble/bin:/home/upsilon/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/aragorn:@/tmp/.ICE-unix/1459,unix/aragorn:/tmp/.ICE-unix/1459'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session1'), ('LC_ADDRESS', 'sl_SI.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1021'), ('XCURSOR_THEME', 'breeze_cursors'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'KDE'), ('LC_TELEPHONE', 'sl_SI.UTF-8'), ('XDG_SESSION_DESKTOP', 'KDE'), ('XAUTHORITY', '/home/upsilon/.Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/tmp/ssh-XXXXXXLBaDTy/agent.1176'), ('ROS_DOMAIN_ID', '22'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'sl_SI.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('KONSOLE_DBUS_SERVICE', ':1.63'), ('LC_MEASUREMENT', 'sl_SI.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1021/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'sl_SI.UTF-8'), ('XDG_VTNR', '1'), ('PWD', '/home/upsilon/Desktop/fresh/build/dis_tutorial3'), ('XDG_CONFIG_DIRS', '/home/upsilon/.config/kdedefaults:/etc/xdg/xdg-plasma:/etc/xdg:/usr/share/kubuntu-default-settings/kf5-settings'), ('XDG_DATA_DIRS', '/usr/share/plasma:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'sl_SI.UTF-8'), ('LC_PAPER', 'sl_SI.UTF-8'), ('KDE_SESSION_UID', '1021'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[3.707358] (-) TimerEvent: {}
+[3.741710] (dis_tutorial3) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/pcl_forwarder.dir/src/forwarder.cpp.o\x1b[0m\n'}
+[3.741905] (dis_tutorial3) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/cylinder_segmentation.dir/src/cylinder_segmentation.cpp.o\x1b[0m\n'}
+[3.741985] (dis_tutorial3) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/planes.dir/src/planes.cpp.o\x1b[0m\n'}
+[3.807490] (-) TimerEvent: {}
+[3.907783] (-) TimerEvent: {}
+[4.008092] (-) TimerEvent: {}
+[4.108390] (-) TimerEvent: {}
+[4.208688] (-) TimerEvent: {}
+[4.308997] (-) TimerEvent: {}
+[4.409314] (-) TimerEvent: {}
+[4.509632] (-) TimerEvent: {}
+[4.609948] (-) TimerEvent: {}
+[4.710241] (-) TimerEvent: {}
+[4.810536] (-) TimerEvent: {}
+[4.910848] (-) TimerEvent: {}
+[5.011159] (-) TimerEvent: {}
+[5.111482] (-) TimerEvent: {}
+[5.211801] (-) TimerEvent: {}
+[5.312121] (-) TimerEvent: {}
+[5.412422] (-) TimerEvent: {}
+[5.512723] (-) TimerEvent: {}
+[5.613024] (-) TimerEvent: {}
+[5.713321] (-) TimerEvent: {}
+[5.813620] (-) TimerEvent: {}
+[5.913918] (-) TimerEvent: {}
+[6.014213] (-) TimerEvent: {}
+[6.114519] (-) TimerEvent: {}
+[6.214834] (-) TimerEvent: {}
+[6.315139] (-) TimerEvent: {}
+[6.415456] (-) TimerEvent: {}
+[6.515779] (-) TimerEvent: {}
+[6.616111] (-) TimerEvent: {}
+[6.716425] (-) TimerEvent: {}
+[6.816741] (-) TimerEvent: {}
+[6.917067] (-) TimerEvent: {}
+[7.017390] (-) TimerEvent: {}
+[7.117704] (-) TimerEvent: {}
+[7.218022] (-) TimerEvent: {}
+[7.318335] (-) TimerEvent: {}
+[7.418651] (-) TimerEvent: {}
+[7.518977] (-) TimerEvent: {}
+[7.619299] (-) TimerEvent: {}
+[7.719619] (-) TimerEvent: {}
+[7.819924] (-) TimerEvent: {}
+[7.920241] (-) TimerEvent: {}
+[8.020560] (-) TimerEvent: {}
+[8.120894] (-) TimerEvent: {}
+[8.221241] (-) TimerEvent: {}
+[8.321553] (-) TimerEvent: {}
+[8.421884] (-) TimerEvent: {}
+[8.522198] (-) TimerEvent: {}
+[8.622522] (-) TimerEvent: {}
+[8.722844] (-) TimerEvent: {}
+[8.823167] (-) TimerEvent: {}
+[8.923483] (-) TimerEvent: {}
+[9.023798] (-) TimerEvent: {}
+[9.124121] (-) TimerEvent: {}
+[9.224421] (-) TimerEvent: {}
+[9.324721] (-) TimerEvent: {}
+[9.425021] (-) TimerEvent: {}
+[9.525333] (-) TimerEvent: {}
+[9.625640] (-) TimerEvent: {}
+[9.725956] (-) TimerEvent: {}
+[9.826271] (-) TimerEvent: {}
+[9.926597] (-) TimerEvent: {}
+[10.026936] (-) TimerEvent: {}
+[10.127257] (-) TimerEvent: {}
+[10.227573] (-) TimerEvent: {}
+[10.327878] (-) TimerEvent: {}
+[10.428183] (-) TimerEvent: {}
+[10.528482] (-) TimerEvent: {}
+[10.628779] (-) TimerEvent: {}
+[10.729087] (-) TimerEvent: {}
+[10.829385] (-) TimerEvent: {}
+[10.929685] (-) TimerEvent: {}
+[11.029978] (-) TimerEvent: {}
+[11.130280] (-) TimerEvent: {}
+[11.230593] (-) TimerEvent: {}
+[11.330890] (-) TimerEvent: {}
+[11.431184] (-) TimerEvent: {}
+[11.531478] (-) TimerEvent: {}
+[11.631780] (-) TimerEvent: {}
+[11.732114] (-) TimerEvent: {}
+[11.832451] (-) TimerEvent: {}
+[11.932761] (-) TimerEvent: {}
+[12.033063] (-) TimerEvent: {}
+[12.133372] (-) TimerEvent: {}
+[12.231379] (dis_tutorial3) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking CXX executable pcl_forwarder\x1b[0m\n'}
+[12.233470] (-) TimerEvent: {}
+[12.333730] (-) TimerEvent: {}
+[12.434066] (-) TimerEvent: {}
+[12.534392] (-) TimerEvent: {}
+[12.634713] (-) TimerEvent: {}
+[12.735032] (-) TimerEvent: {}
+[12.835369] (-) TimerEvent: {}
+[12.863014] (dis_tutorial3) StdoutLine: {'line': b'[ 66%] Built target pcl_forwarder\n'}
+[12.892819] (dis_tutorial3) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX executable planes\x1b[0m\n'}
+[12.935952] (-) TimerEvent: {}
+[13.036252] (-) TimerEvent: {}
+[13.136603] (-) TimerEvent: {}
+[13.236914] (-) TimerEvent: {}
+[13.337292] (-) TimerEvent: {}
+[13.437664] (-) TimerEvent: {}
+[13.538005] (-) TimerEvent: {}
+[13.638285] (-) TimerEvent: {}
+[13.738562] (-) TimerEvent: {}
+[13.838834] (-) TimerEvent: {}
+[13.849641] (dis_tutorial3) StdoutLine: {'line': b'[ 83%] Built target planes\n'}
+[13.938959] (-) TimerEvent: {}
+[14.039249] (-) TimerEvent: {}
+[14.139545] (-) TimerEvent: {}
+[14.239851] (-) TimerEvent: {}
+[14.340153] (-) TimerEvent: {}
+[14.440457] (-) TimerEvent: {}
+[14.540771] (-) TimerEvent: {}
+[14.641082] (-) TimerEvent: {}
+[14.741396] (-) TimerEvent: {}
+[14.812280] (dis_tutorial3) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable cylinder_segmentation\x1b[0m\n'}
+[14.841526] (-) TimerEvent: {}
+[14.941839] (-) TimerEvent: {}
+[15.042150] (-) TimerEvent: {}
+[15.142520] (-) TimerEvent: {}
+[15.242845] (-) TimerEvent: {}
+[15.343163] (-) TimerEvent: {}
+[15.443470] (-) TimerEvent: {}
+[15.543780] (-) TimerEvent: {}
+[15.644110] (-) TimerEvent: {}
+[15.744438] (-) TimerEvent: {}
+[15.844817] (-) TimerEvent: {}
+[15.945177] (-) TimerEvent: {}
+[16.045522] (-) TimerEvent: {}
+[16.145887] (-) TimerEvent: {}
+[16.246273] (-) TimerEvent: {}
+[16.346651] (-) TimerEvent: {}
+[16.447120] (-) TimerEvent: {}
+[16.547521] (-) TimerEvent: {}
+[16.647825] (-) TimerEvent: {}
+[16.660064] (dis_tutorial3) StdoutLine: {'line': b'[100%] Built target cylinder_segmentation\n'}
+[16.670017] (dis_tutorial3) CommandEnded: {'returncode': 0}
+[16.700618] (dis_tutorial3) JobProgress: {'identifier': 'dis_tutorial3', 'progress': 'install'}
+[16.701546] (dis_tutorial3) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/upsilon/Desktop/fresh/build/dis_tutorial3'], 'cwd': '/home/upsilon/Desktop/fresh/build/dis_tutorial3', 'env': OrderedDict([('PROFILEHOME', ''), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('KDE_FULL_SESSION', 'true'), ('IGN_IP', '127.0.0.1'), ('LANGUAGE', ''), ('USER', 'upsilon'), ('PAM_KWALLET5_LOGIN', '/run/user/1021/kwallet5.socket'), ('LC_TIME', 'sl_SI.UTF-8'), ('XDG_SEAT', 'seat0'), ('SSH_AGENT_PID', '1294'), ('XDG_SESSION_TYPE', 'x11'), ('XCURSOR_SIZE', '24'), ('KONSOLE_VERSION', '211203'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/upsilon'), ('KDE_APPLICATIONS_AS_SCOPE', '1'), ('OLDPWD', '/home/upsilon'), ('DESKTOP_SESSION', 'plasma'), ('ROS_PYTHON_VERSION', '3'), ('SHELL_SESSION_ID', '23fd33e19977483e9894760325594f89'), ('GTK_RC_FILES', '/etc/gtk/gtkrc:/home/upsilon/.gtkrc:/home/upsilon/.config/gtkrc'), ('XDG_SEAT_PATH', '/org/freedesktop/DisplayManager/Seat0'), ('KDE_SESSION_VERSION', '5'), ('LC_MONETARY', 'sl_SI.UTF-8'), ('KONSOLE_DBUS_SESSION', '/Sessions/1'), ('SYSTEMD_EXEC_PID', '1159'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1021/bus'), ('COLORTERM', 'truecolor'), ('KONSOLE_DBUS_WINDOW', '/Windows/1'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/upsilon/colcon_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'upsilon'), ('WINDOWID', '71303175'), ('QT_AUTO_SCREEN_SCALE_FACTOR', '0'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('COLORFGBG', '15;0'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '3'), ('ROS_LOCALHOST_ONLY', '1'), ('GTK2_RC_FILES', '/etc/gtk-2.0/gtkrc:/home/upsilon/.gtkrc-2.0:/home/upsilon/.config/gtkrc-2.0'), ('PATH', '/opt/ros/humble/bin:/home/upsilon/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/aragorn:@/tmp/.ICE-unix/1459,unix/aragorn:/tmp/.ICE-unix/1459'), ('XDG_SESSION_PATH', '/org/freedesktop/DisplayManager/Session1'), ('LC_ADDRESS', 'sl_SI.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1021'), ('XCURSOR_THEME', 'breeze_cursors'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'KDE'), ('LC_TELEPHONE', 'sl_SI.UTF-8'), ('XDG_SESSION_DESKTOP', 'KDE'), ('XAUTHORITY', '/home/upsilon/.Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/tmp/ssh-XXXXXXLBaDTy/agent.1176'), ('ROS_DOMAIN_ID', '22'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'sl_SI.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('KONSOLE_DBUS_SERVICE', ':1.63'), ('LC_MEASUREMENT', 'sl_SI.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1021/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'sl_SI.UTF-8'), ('XDG_VTNR', '1'), ('PWD', '/home/upsilon/Desktop/fresh/build/dis_tutorial3'), ('XDG_CONFIG_DIRS', '/home/upsilon/.config/kdedefaults:/etc/xdg/xdg-plasma:/etc/xdg:/usr/share/kubuntu-default-settings/kf5-settings'), ('XDG_DATA_DIRS', '/usr/share/plasma:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'sl_SI.UTF-8'), ('LC_PAPER', 'sl_SI.UTF-8'), ('KDE_SESSION_UID', '1021'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[16.707544] (dis_tutorial3) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[16.707946] (dis_tutorial3) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[16.708268] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/lib/dis_tutorial3/pcl_forwarder\n'}
+[16.715852] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/lib/dis_tutorial3/planes\n'}
+[16.722642] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/lib/dis_tutorial3/cylinder_segmentation\n'}
+[16.729944] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//launch/dis_sim.launch.py\n'}
+[16.737073] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//launch/ignition.launch.py\n'}
+[16.744423] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//launch/localization.launch.py\n'}
+[16.747869] (-) TimerEvent: {}
+[16.751561] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//launch/nav2.launch.py\n'}
+[16.758575] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//launch/sim_turtlebot_nav.launch.py\n'}
+[16.766314] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//launch/sim_turtlebot_slam.launch.py\n'}
+[16.773242] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//launch/slam.launch.py\n'}
+[16.780725] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//launch/turtlebot4_spawn.launch.py\n'}
+[16.787824] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//launch/turtlebot4_spawn_nav.launch.py\n'}
+[16.794888] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//config/laser_filter_chain.yaml\n'}
+[16.801753] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//config/localization.yaml\n'}
+[16.808704] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//config/nav2.yaml\n'}
+[16.816055] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//config/slam.yaml\n'}
+[16.823406] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/dis.sdf\n'}
+[16.830412] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/cylinders.jpg\n'}
+[16.837446] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/davinci.jpg\n'}
+[16.844111] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/fakering1.jpg\n'}
+[16.848110] (-) TimerEvent: {}
+[16.851437] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/fakering2.jpg\n'}
+[16.858253] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/fakering3.jpg\n'}
+[16.866226] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/ground.jpg\n'}
+[16.873599] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/map.dae\n'}
+[16.880505] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/map_colliders.dae\n'}
+[16.887518] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/mona1.jpg\n'}
+[16.894549] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/objects.jpg\n'}
+[16.901562] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/parking_space.jpg\n'}
+[16.908244] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/person1.jpg\n'}
+[16.915238] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/person2.jpg\n'}
+[16.922301] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/person3.jpg\n'}
+[16.928990] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/person4.jpg\n'}
+[16.936180] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/person5.jpg\n'}
+[16.943043] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/qr1.jpg\n'}
+[16.948204] (-) TimerEvent: {}
+[16.949909] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/qr2.jpg\n'}
+[16.957146] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/wood.jpg\n'}
+[16.964324] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_exam.sdf\n'}
+[16.971859] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_exam_meshes/cylinders.jpg\n'}
+[16.979049] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_exam_meshes/fakering1.jpg\n'}
+[16.986245] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_exam_meshes/fakering2.jpg\n'}
+[16.993756] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_exam_meshes/fakering3.jpg\n'}
+[17.000467] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_exam_meshes/ground.jpg\n'}
+[17.007395] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_exam_meshes/map.dae\n'}
+[17.014774] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_exam_meshes/map_colliders.dae\n'}
+[17.021816] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_exam_meshes/objects.jpg\n'}
+[17.028424] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_exam_meshes/parking_space.jpg\n'}
+[17.035855] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//maps/.pgm\n'}
+[17.042477] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//maps/.yaml\n'}
+[17.048310] (-) TimerEvent: {}
+[17.048898] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//maps/map.pgm\n'}
+[17.055843] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//maps/map.yaml\n'}
+[17.062639] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//maps/upsilon.pgm\n'}
+[17.070159] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//maps/upsilon.yaml\n'}
+[17.077159] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/lib/dis_tutorial3/detect_people.py\n'}
+[17.084433] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/lib/dis_tutorial3/robot_commander.py\n'}
+[17.091683] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/lib/dis_tutorial3/detect_rings.py\n'}
+[17.098451] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/lib/dis_tutorial3/detect_parking.py\n'}
+[17.105959] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/ament_index/resource_index/package_run_dependencies/dis_tutorial3\n'}
+[17.112794] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/ament_index/resource_index/parent_prefix_path/dis_tutorial3\n'}
+[17.120168] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3/environment/ament_prefix_path.sh\n'}
+[17.126986] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3/environment/ament_prefix_path.dsv\n'}
+[17.133521] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3/environment/path.sh\n'}
+[17.140553] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3/environment/path.dsv\n'}
+[17.147694] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3/local_setup.bash\n'}
+[17.148411] (-) TimerEvent: {}
+[17.154857] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3/local_setup.sh\n'}
+[17.162860] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3/local_setup.zsh\n'}
+[17.170206] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3/local_setup.dsv\n'}
+[17.177119] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3/package.dsv\n'}
+[17.184174] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/ament_index/resource_index/packages/dis_tutorial3\n'}
+[17.191383] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3/cmake/dis_tutorial3Config.cmake\n'}
+[17.198473] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3/cmake/dis_tutorial3Config-version.cmake\n'}
+[17.205435] (dis_tutorial3) StdoutLine: {'line': b'-- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3/package.xml\n'}
+[17.214181] (dis_tutorial3) CommandEnded: {'returncode': 0}
+[17.248524] (-) TimerEvent: {}
+[17.338427] (dis_tutorial3) JobEnded: {'identifier': 'dis_tutorial3', 'rc': 0}
+[17.339115] (-) EventReactorShutdown: {}

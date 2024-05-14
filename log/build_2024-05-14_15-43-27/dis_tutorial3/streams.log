@@ -1,0 +1,234 @@
+[0.130s] Invoking command in '/home/upsilon/Desktop/fresh/build/dis_tutorial3': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/upsilon/Desktop/fresh/src/dis_tutorial3 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/upsilon/Desktop/fresh/install/dis_tutorial3
+[0.221s] -- The C compiler identification is GNU 11.4.0
+[0.292s] -- The CXX compiler identification is GNU 11.4.0
+[0.301s] -- Detecting C compiler ABI info
+[0.359s] -- Detecting C compiler ABI info - done
+[0.364s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.364s] -- Detecting C compile features
+[0.365s] -- Detecting C compile features - done
+[0.367s] -- Detecting CXX compiler ABI info
+[0.432s] -- Detecting CXX compiler ABI info - done
+[0.437s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.437s] -- Detecting CXX compile features
+[0.437s] -- Detecting CXX compile features - done
+[0.440s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.552s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.600s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.631s] -- Found rclcpp: 16.0.8 (/opt/ros/humble/share/rclcpp/cmake)
+[0.677s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.683s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.691s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.705s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.724s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.785s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.788s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.884s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.910s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.953s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.963s] -- Looking for pthread.h
+[1.028s] -- Looking for pthread.h - found
+[1.028s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.087s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.088s] -- Found Threads: TRUE  
+[1.207s] -- Found rclpy: 3.3.12 (/opt/ros/humble/share/rclpy/cmake)
+[1.209s] -- Found std_srvs: 4.2.3 (/opt/ros/humble/share/std_srvs/cmake)
+[1.224s] -- Found geometry_msgs: 4.2.3 (/opt/ros/humble/share/geometry_msgs/cmake)
+[1.258s] -- Found visualization_msgs: 4.2.3 (/opt/ros/humble/share/visualization_msgs/cmake)
+[1.418s] -- Found tf2: 0.25.6 (/opt/ros/humble/share/tf2/cmake)
+[1.433s] -- Found tf2_geometry_msgs: 0.25.6 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[1.449s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[1.450s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[1.450s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.713s] -- Found pcl_conversions: 2.4.0 (/opt/ros/humble/share/pcl_conversions/cmake)
+[1.817s] -- Checking for module 'eigen3'
+[1.828s] --   Found eigen3, version 3.4.0
+[1.859s] -- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") 
+[1.860s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[1.882s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found suitable version "1.74.0", minimum required is "1.65.0") found components: system filesystem date_time iostreams serialization 
+[1.899s] -- Checking for module 'flann'
+[1.912s] --   Found flann, version 1.9.1
+[1.948s] -- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  
+[1.948s] -- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)
+[1.976s] -- Found GLEW: /usr/lib/x86_64-linux-gnu/libGLEW.so  
+[1.982s] -- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so  found components: OpenGL GLX 
+[2.104s] -- Found MPI_C: /usr/lib/x86_64-linux-gnu/libmpi.so (found version "3.1") 
+[2.104s] -- Found MPI: TRUE (found version "3.1") found components: C 
+[2.107s] -- Found JsonCpp: /usr/lib/x86_64-linux-gnu/libjsoncpp.so (found suitable version "1.9.5", minimum required is "0.7.0") 
+[2.114s] -- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11") 
+[2.127s] -- Found PNG: /usr/lib/x86_64-linux-gnu/libpng.so (found version "1.6.37") 
+[2.144s] -- Found Eigen3: /usr/include/eigen3 (found version "3.4.0") 
+[2.224s] -- Found X11: /usr/include   
+[2.224s] -- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so
+[2.309s] -- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so - found
+[2.310s] -- Looking for gethostbyname
+[2.369s] -- Looking for gethostbyname - found
+[2.369s] -- Looking for connect
+[2.426s] -- Looking for connect - found
+[2.426s] -- Looking for remove
+[2.483s] -- Looking for remove - found
+[2.483s] -- Looking for shmat
+[2.540s] -- Looking for shmat - found
+[2.540s] -- Looking for IceConnectionNumber in ICE
+[2.597s] -- Looking for IceConnectionNumber in ICE - found
+[2.669s] -- Found EXPAT: /usr/lib/x86_64-linux-gnu/libexpat.so (found version "2.4.7") 
+[2.671s] -- Found double-conversion: /usr/lib/x86_64-linux-gnu/libdouble-conversion.so  
+[2.672s] -- Found LZ4: /usr/lib/x86_64-linux-gnu/liblz4.so (found version "1.9.3") 
+[2.675s] -- Found LZMA: /usr/lib/x86_64-linux-gnu/liblzma.so (found version "5.2.5") 
+[2.722s] -- Found JPEG: /usr/lib/x86_64-linux-gnu/libjpeg.so (found version "80") 
+[2.726s] -- Found TIFF: /usr/lib/x86_64-linux-gnu/libtiff.so (found version "4.3.0")  
+[2.730s] -- Found Freetype: /usr/lib/x86_64-linux-gnu/libfreetype.so (found version "2.11.1") 
+[2.734s] -- Found utf8cpp: /usr/include/utf8cpp  
+[2.806s] -- Checking for module 'libusb-1.0'
+[2.819s] --   Found libusb-1.0, version 1.0.25
+[2.852s] -- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  
+[2.853s] -- Found OpenNI: /usr/lib/libOpenNI.so;libusb::libusb (found version "1.5.4.0") 
+[2.853s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[2.905s] -- Found OpenNI2: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb (found version "2.2.0.33") 
+[2.905s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[2.905s] [0m** WARNING ** io features related to pcap will be disabled[0m
+[3.018s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[3.024s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[3.029s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[3.139s] -- Found Qhull version 8.0.2
+[3.248s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[3.354s] -- looking for PCL_COMMON
+[3.355s] -- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  
+[3.355s] -- looking for PCL_KDTREE
+[3.356s] -- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  
+[3.356s] -- looking for PCL_OCTREE
+[3.357s] -- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  
+[3.357s] -- looking for PCL_SEARCH
+[3.357s] -- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  
+[3.358s] -- looking for PCL_SAMPLE_CONSENSUS
+[3.358s] -- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  
+[3.358s] -- looking for PCL_FILTERS
+[3.359s] -- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  
+[3.359s] -- looking for PCL_2D
+[3.359s] -- Found PCL_2D: /usr/include/pcl-1.12  
+[3.359s] -- looking for PCL_GEOMETRY
+[3.359s] -- Found PCL_GEOMETRY: /usr/include/pcl-1.12  
+[3.359s] -- looking for PCL_IO
+[3.360s] -- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  
+[3.360s] -- looking for PCL_FEATURES
+[3.361s] -- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  
+[3.361s] -- looking for PCL_ML
+[3.361s] -- Found PCL_ML: /usr/lib/x86_64-linux-gnu/libpcl_ml.so  
+[3.362s] -- looking for PCL_SEGMENTATION
+[3.362s] -- Found PCL_SEGMENTATION: /usr/lib/x86_64-linux-gnu/libpcl_segmentation.so  
+[3.362s] -- looking for PCL_VISUALIZATION
+[3.363s] -- Found PCL_VISUALIZATION: /usr/lib/x86_64-linux-gnu/libpcl_visualization.so  
+[3.363s] -- looking for PCL_SURFACE
+[3.364s] -- Found PCL_SURFACE: /usr/lib/x86_64-linux-gnu/libpcl_surface.so  
+[3.364s] -- looking for PCL_REGISTRATION
+[3.364s] -- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  
+[3.364s] -- looking for PCL_KEYPOINTS
+[3.365s] -- Found PCL_KEYPOINTS: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so  
+[3.365s] -- looking for PCL_TRACKING
+[3.366s] -- Found PCL_TRACKING: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so  
+[3.366s] -- looking for PCL_RECOGNITION
+[3.366s] -- Found PCL_RECOGNITION: /usr/lib/x86_64-linux-gnu/libpcl_recognition.so  
+[3.367s] -- looking for PCL_STEREO
+[3.367s] -- Found PCL_STEREO: /usr/lib/x86_64-linux-gnu/libpcl_stereo.so  
+[3.367s] -- looking for PCL_APPS
+[3.368s] -- Found PCL_APPS: /usr/lib/x86_64-linux-gnu/libpcl_apps.so  
+[3.368s] -- looking for PCL_IN_HAND_SCANNER
+[3.368s] -- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  
+[3.368s] -- looking for PCL_MODELER
+[3.369s] -- Found PCL_MODELER: /usr/include/pcl-1.12  
+[3.369s] -- looking for PCL_POINT_CLOUD_EDITOR
+[3.369s] -- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  
+[3.369s] -- looking for PCL_OUTOFCORE
+[3.370s] -- Found PCL_OUTOFCORE: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so  
+[3.370s] -- looking for PCL_PEOPLE
+[3.370s] -- Found PCL_PEOPLE: /usr/lib/x86_64-linux-gnu/libpcl_people.so  
+[3.371s] -- Found PCL: pcl_common;pcl_kdtree;pcl_octree;pcl_search;pcl_sample_consensus;pcl_filters;pcl_io;pcl_features;pcl_ml;pcl_segmentation;pcl_visualization;pcl_surface;pcl_registration;pcl_keypoints;pcl_tracking;pcl_recognition;pcl_stereo;pcl_apps;pcl_outofcore;pcl_people;Boost::system;Boost::filesystem;Boost::date_time;Boost::iostreams;Boost::serialization;/usr/lib/libOpenNI.so;libusb::libusb;/usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb;VTK::ChartsCore;VTK::CommonColor;VTK::CommonComputationalGeometry;VTK::CommonCore;VTK::CommonDataModel;VTK::CommonExecutionModel;VTK::CommonMath;VTK::CommonMisc;VTK::CommonTransforms;VTK::FiltersCore;VTK::FiltersExtraction;VTK::FiltersGeneral;VTK::FiltersGeometry;VTK::FiltersModeling;VTK::FiltersSources;VTK::ImagingCore;VTK::ImagingSources;VTK::InteractionImage;VTK::InteractionStyle;VTK::InteractionWidgets;VTK::IOCore;VTK::IOGeometry;VTK::IOImage;VTK::IOLegacy;VTK::IOPLY;VTK::RenderingAnnotation;VTK::RenderingCore;VTK::RenderingContext2D;VTK::RenderingLOD;VTK::RenderingFreeType;VTK::ViewsCore;VTK::ViewsContext2D;VTK::RenderingOpenGL2;VTK::GUISupportQt;FLANN::FLANN;QHULL::QHULL (Required is at least version "1.10") 
+[3.530s] -- Configuring done
+[3.677s] -- Generating done
+[3.680s] -- Build files have been written to: /home/upsilon/Desktop/fresh/build/dis_tutorial3
+[3.694s] Invoked command in '/home/upsilon/Desktop/fresh/build/dis_tutorial3' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/upsilon/Desktop/fresh/src/dis_tutorial3 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/upsilon/Desktop/fresh/install/dis_tutorial3
+[3.696s] Invoking command in '/home/upsilon/Desktop/fresh/build/dis_tutorial3': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/upsilon/Desktop/fresh/build/dis_tutorial3 -- -j16 -l16
+[3.741s] [ 50%] [32mBuilding CXX object CMakeFiles/pcl_forwarder.dir/src/forwarder.cpp.o[0m
+[3.741s] [ 50%] [32mBuilding CXX object CMakeFiles/cylinder_segmentation.dir/src/cylinder_segmentation.cpp.o[0m
+[3.741s] [ 50%] [32mBuilding CXX object CMakeFiles/planes.dir/src/planes.cpp.o[0m
+[12.231s] [ 66%] [32m[1mLinking CXX executable pcl_forwarder[0m
+[12.863s] [ 66%] Built target pcl_forwarder
+[12.892s] [ 83%] [32m[1mLinking CXX executable planes[0m
+[13.849s] [ 83%] Built target planes
+[14.812s] [100%] [32m[1mLinking CXX executable cylinder_segmentation[0m
+[16.660s] [100%] Built target cylinder_segmentation
+[16.670s] Invoked command in '/home/upsilon/Desktop/fresh/build/dis_tutorial3' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/upsilon/Desktop/fresh/build/dis_tutorial3 -- -j16 -l16
+[16.701s] Invoking command in '/home/upsilon/Desktop/fresh/build/dis_tutorial3': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/upsilon/Desktop/fresh/build/dis_tutorial3
+[16.707s] -- Install configuration: ""
+[16.707s] -- Execute custom install script
+[16.708s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/lib/dis_tutorial3/pcl_forwarder
+[16.715s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/lib/dis_tutorial3/planes
+[16.722s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/lib/dis_tutorial3/cylinder_segmentation
+[16.729s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//launch/dis_sim.launch.py
+[16.737s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//launch/ignition.launch.py
+[16.744s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//launch/localization.launch.py
+[16.751s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//launch/nav2.launch.py
+[16.758s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//launch/sim_turtlebot_nav.launch.py
+[16.766s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//launch/sim_turtlebot_slam.launch.py
+[16.773s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//launch/slam.launch.py
+[16.780s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//launch/turtlebot4_spawn.launch.py
+[16.787s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//launch/turtlebot4_spawn_nav.launch.py
+[16.794s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//config/laser_filter_chain.yaml
+[16.801s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//config/localization.yaml
+[16.808s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//config/nav2.yaml
+[16.815s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//config/slam.yaml
+[16.823s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/dis.sdf
+[16.830s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/cylinders.jpg
+[16.837s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/davinci.jpg
+[16.844s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/fakering1.jpg
+[16.851s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/fakering2.jpg
+[16.858s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/fakering3.jpg
+[16.866s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/ground.jpg
+[16.873s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/map.dae
+[16.880s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/map_colliders.dae
+[16.887s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/mona1.jpg
+[16.894s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/objects.jpg
+[16.901s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/parking_space.jpg
+[16.908s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/person1.jpg
+[16.915s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/person2.jpg
+[16.922s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/person3.jpg
+[16.928s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/person4.jpg
+[16.936s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/person5.jpg
+[16.942s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/qr1.jpg
+[16.949s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/qr2.jpg
+[16.957s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/meshes/wood.jpg
+[16.964s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_exam.sdf
+[16.971s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_exam_meshes/cylinders.jpg
+[16.978s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_exam_meshes/fakering1.jpg
+[16.986s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_exam_meshes/fakering2.jpg
+[16.993s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_exam_meshes/fakering3.jpg
+[17.000s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_exam_meshes/ground.jpg
+[17.007s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_exam_meshes/map.dae
+[17.014s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_exam_meshes/map_colliders.dae
+[17.021s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_exam_meshes/objects.jpg
+[17.028s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//worlds/task2_exam_meshes/parking_space.jpg
+[17.035s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//maps/.pgm
+[17.042s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//maps/.yaml
+[17.048s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//maps/map.pgm
+[17.055s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//maps/map.yaml
+[17.062s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//maps/upsilon.pgm
+[17.070s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3//maps/upsilon.yaml
+[17.077s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/lib/dis_tutorial3/detect_people.py
+[17.084s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/lib/dis_tutorial3/robot_commander.py
+[17.091s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/lib/dis_tutorial3/detect_rings.py
+[17.098s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/lib/dis_tutorial3/detect_parking.py
+[17.105s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/ament_index/resource_index/package_run_dependencies/dis_tutorial3
+[17.112s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/ament_index/resource_index/parent_prefix_path/dis_tutorial3
+[17.120s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3/environment/ament_prefix_path.sh
+[17.126s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3/environment/ament_prefix_path.dsv
+[17.133s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3/environment/path.sh
+[17.140s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3/environment/path.dsv
+[17.147s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3/local_setup.bash
+[17.154s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3/local_setup.sh
+[17.162s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3/local_setup.zsh
+[17.170s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3/local_setup.dsv
+[17.177s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3/package.dsv
+[17.184s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/ament_index/resource_index/packages/dis_tutorial3
+[17.191s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3/cmake/dis_tutorial3Config.cmake
+[17.198s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3/cmake/dis_tutorial3Config-version.cmake
+[17.205s] -- Symlinking: /home/upsilon/Desktop/fresh/install/dis_tutorial3/share/dis_tutorial3/package.xml
+[17.214s] Invoked command in '/home/upsilon/Desktop/fresh/build/dis_tutorial3' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/upsilon/Desktop/fresh/build/dis_tutorial3

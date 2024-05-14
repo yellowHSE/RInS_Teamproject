@@ -1,0 +1,1 @@
+/home/upsilon/Desktop/fresh/src/dis_tutorial3/scripts/detect_rings.py

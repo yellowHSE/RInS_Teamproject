@@ -1,0 +1,1 @@
+/home/upsilon/Desktop/fresh/build/dis_tutorial7/ament_cmake_core/dis_tutorial7Config-version.cmake
