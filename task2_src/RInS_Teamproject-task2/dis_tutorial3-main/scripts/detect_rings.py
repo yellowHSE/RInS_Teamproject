@@ -60,6 +60,18 @@ class RingDetector(Node):
         except CvBridgeError as e:
             print(e)
 
+
+        # Transform image to HSV(Robust to detect the color when the light is changing)
+        hsv_image = cv2.cvtColor(cv_image, cv2.COLOR_BGR2HSV)
+
+        # Define color ranges for red, black, green, and blue in HSV
+        color_ranges = {
+            "red": [(0, 50, 50), (10, 255, 255)],
+            "green": [(50, 50, 50), (70, 255, 255)],
+            "blue": [(110, 50, 50), (130, 255, 255)],
+            "black": [(0, 0, 0), (180, 255, 30)]
+        }
+
         blue = cv_image[:,:,0]
         green = cv_image[:,:,1]
         red = cv_image[:,:,2]
@@ -186,28 +198,23 @@ class RingDetector(Node):
             y_min = y1 if y1 > 0 else 0
             y_max = y2 if y2 < cv_image.shape[1] else cv_image.shape[1]
             
-            
-            # Extract the region of interest (ROI) for each ring
-            ring_roi = cv_image[x_min:x_max, y_min:y_max]
 
-            # Calculate the mean color of the ring ROI
-            mean_color = cv2.mean(ring_roi)
+            # Extract the ring's inner region
+            ring_inner_region = hsv_image[x_min:x_max, y_min:y_max]
 
-            # Print the mean color of the ring
-            # print("Mean color of the ring (BGR):", mean_color[:3])
-            
+            # Determine the color of the ring
+            ring_color = "unknown"
+            max_color_pixels = 0
 
+            for color, (lower, upper) in color_ranges.items():
+                mask = cv2.inRange(ring_inner_region, np.array(lower), np.array(upper))
+                color_pixels = cv2.countNonZero(mask)
 
-            if ((mean_color[1] + mean_color[2] + mean_color[3] ) / 3 ) < 60:
-            	color_name = "Black"
-            elif mean_color[2] > 150:
-            	color_name = "Red"
-            elif mean_color[1] > 150:
-            	color_name = "Green"
-            elif mean_color[0] > 150:
-            	color_name = "Blue"
-            	
-            print("Detected color of the ring:", color_name)
+                if color_pixels > max_color_pixels:
+                    max_color_pixels = color_pixels
+                    ring_color = color
+
+            self.get_logger().info(f"Detected ring color: {ring_color}")
 
         if len(candidates)>0:
                 cv2.imshow("Detected rings",cv_image)
