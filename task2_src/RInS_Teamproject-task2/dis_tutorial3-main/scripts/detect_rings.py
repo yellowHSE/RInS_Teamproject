@@ -6,6 +6,11 @@ import cv2
 import numpy as np
 import tf2_ros
 
+from gtts import gTTS
+import pygame
+from tempfile import TemporaryFile
+import time
+
 from sensor_msgs.msg import Image
 from geometry_msgs.msg import PointStamped, Vector3, Pose
 from cv_bridge import CvBridge, CvBridgeError
@@ -13,6 +18,8 @@ from visualization_msgs.msg import Marker, MarkerArray
 from std_msgs.msg import ColorRGBA
 from rclpy.qos import QoSDurabilityPolicy, QoSHistoryPolicy
 from rclpy.qos import QoSProfile, QoSReliabilityPolicy
+
+
 
 qos_profile = QoSProfile(
           durability=QoSDurabilityPolicy.TRANSIENT_LOCAL,
@@ -47,10 +54,24 @@ class RingDetector(Node):
         self.tf_buf = tf2_ros.Buffer()
         self.tf_listener = tf2_ros.TransformListener(self.tf_buf, self)
 
+        # Initialize Pygame mixer for playing audio
+        pygame.mixer.init()
+
         cv2.namedWindow("Binary Image", cv2.WINDOW_NORMAL)
         cv2.namedWindow("Detected contours", cv2.WINDOW_NORMAL)
         cv2.namedWindow("Detected rings", cv2.WINDOW_NORMAL)
-        cv2.namedWindow("Depth window", cv2.WINDOW_NORMAL)        
+        cv2.namedWindow("Depth window", cv2.WINDOW_NORMAL)
+
+        # Initialize pygame mixer for TTS
+        pygame.mixer.init()
+
+    def speak(self, text):
+        tts = gTTS(text=text, lang='en')
+        temp_file = TemporaryFile()
+        tts.write_to_fp(temp_file)
+        temp_file.seek(0)
+        pygame.mixer.music.load(temp_file)
+        pygame.mixer.music.play()
 
     def image_callback(self, data):
         #self.get_logger().info(f"I got a new image! Will try to find rings...")
@@ -215,6 +236,8 @@ class RingDetector(Node):
                     ring_color = color
 
             self.get_logger().info(f"Detected ring color: {ring_color}")
+            if ring_color != "unknown":
+                self.speak(f"Detected ring color is {ring_color}")
 
         if len(candidates)>0:
                 cv2.imshow("Detected rings",cv_image)
