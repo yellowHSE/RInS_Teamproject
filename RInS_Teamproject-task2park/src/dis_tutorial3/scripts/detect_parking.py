@@ -24,6 +24,9 @@ from tf2_ros import TransformException
 from tf2_ros.buffer import Buffer
 from tf2_ros.transform_listener import TransformListener
 
+from gtts import gTTS
+import pygame
+from tempfile import TemporaryFile
 import time
 
 qos_profile = QoSProfile(
@@ -49,6 +52,8 @@ class RingDetector(Node):
         self.elipses = []
         self.rings = []
         self.center_array = []
+        self.previous_centers = []
+        self.ring_color = "unknown"
         self.detect_type = 0
 
         # Subscribe to the image and/or depth topic
@@ -59,17 +64,33 @@ class RingDetector(Node):
         # Publiser for the visualization markers
         self.marker_pub = self.create_publisher(Marker,"/parkMarker", QoSReliabilityPolicy.BEST_EFFORT)
 
-        self.ring_marker_pub = self.create_publisher(Marker,"/rings", QoSReliabilityPolicy.BEST_EFFORT)
+        self.ring_marker_pub = self.create_publisher(Marker,"/ringMarker", QoSReliabilityPolicy.BEST_EFFORT)
 
         self.tf_buffer = Buffer()
         self.tf_listener = TransformListener(self.tf_buffer, self)
 
-        self.tf_buffer_ring = Buffer()
-        self.tf_listener_ring = TransformListener(self.tf_buffer_ring, self)
+        # Initialize Pygame mixer for playing audio
+        pygame.mixer.init()
+
         # Object we use for transforming between coordinate frames
         # self.tf_buf = tf2_ros.Buffer()
         # self.tf_listener = tf2_ros.TransformListener(self.tf_buf)
-        cv2.namedWindow("Detected contours", cv2.WINDOW_NORMAL)      
+        cv2.namedWindow("Detected contours", cv2.WINDOW_NORMAL)
+
+    def speak(self, text):
+        tts = gTTS(text=text, lang='en')
+        temp_file = TemporaryFile()
+        tts.write_to_fp(temp_file)
+        temp_file.seek(0)
+        pygame.mixer.music.load(temp_file)
+        pygame.mixer.music.play()
+
+    def is_new_ring(self, new_center):
+        for center in self.previous_centers:
+            dist = np.sqrt((new_center.x - center[0])**2 + (new_center.y - center[1])**2 + (new_center.z - center[2])**2)
+            if dist < 1.6:
+                return False
+        return True
 
     def image_callback(self, data):
 
@@ -108,7 +129,8 @@ class RingDetector(Node):
         edges = cv2.Canny(gray, 50, 150)
 
         thresh = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 15, 10)
-
+        cv2.imshow("Binary Image", thresh)
+        cv2.waitKey(1)
 
         # Extract contours
         contours, hierarchy = cv2.findContours(thresh, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
@@ -123,7 +145,7 @@ class RingDetector(Node):
         for cnt in contours:
             #     print cnt
             #     print cnt.shape
-            if cnt.shape[0] >= 20 and len(cnt) >= 9:
+            if cnt.shape[0] >= 20:
                 ellipse = cv2.fitEllipse(cnt)
                 elps.append(ellipse)
 
@@ -133,7 +155,7 @@ class RingDetector(Node):
         for n in range(len(elps)):
             for m in range(n + 1, len(elps)):
                 # e[0] is the center of the ellipse (x,y), e[1] are the lengths of major and minor axis (major, minor), e[2] is the rotation in degrees
-                
+
                 e1 = elps[n]
                 e2 = elps[m]
                 dist = np.sqrt(((e1[0][0] - e2[0][0]) ** 2 + (e1[0][1] - e2[0][1]) ** 2))
@@ -161,7 +183,7 @@ class RingDetector(Node):
                     se = e1 # e1 is smaller ellipse
                 else:
                     continue # if one ellipse does not contain the other, it is not a ring
-                
+
                 # The widths of the ring along the major and minor axis should be roughly the same
                 border_major = (le[1][1]-se[1][1])/2
                 border_minor = (le[1][0]-se[1][0])/2
@@ -175,13 +197,13 @@ class RingDetector(Node):
                     #continue
 
                 # Only consider candidates with small size
-                #l = (le[1][0] + le[1][1]) / 2
+                l = (le[1][0] + le[1][1]) / 2
                 ##print(l)
-                #if l < 38:
-                    #candidates.append((e1, e2))
-                #else:
-                    #continue
-                candidates.append((e1, e2))
+                if l < 60:
+                    candidates.append((e1, e2))
+                else:
+                    continue
+                #candidates.append((e1, e2))
 
         #print("Processing is done! found", len(candidates), "candidates for rings")
 
@@ -200,6 +222,33 @@ class RingDetector(Node):
             size = (e1[1][0]+e1[1][1])/2
             center = (e1[0][1], e1[0][0])
 
+            x1 = int(center[0] - size / 2)
+            x2 = int(center[0] + size / 2)
+            x_min = x1 if x1>0 else 0
+            x_max = x2 if x2<cv_image.shape[0] else cv_image.shape[0]
+
+            y1 = int(center[1] - size / 2)
+            y2 = int(center[1] + size / 2)
+            y_min = y1 if y1 > 0 else 0
+            y_max = y2 if y2 < cv_image.shape[1] else cv_image.shape[1]
+
+
+            # Extract the ring's inner region
+            ring_inner_region = hsv_image[x_min:x_max, y_min:y_max]
+
+            # Determine the color of the ring
+            max_color_pixels = 0
+
+            for color, (lower, upper) in color_ranges.items():
+                mask = cv2.inRange(ring_inner_region, np.array(lower), np.array(upper))
+                color_pixels = cv2.countNonZero(mask)
+
+                if color_pixels > max_color_pixels:
+                    max_color_pixels = color_pixels
+                    self.ring_color = color
+
+            #self.get_logger().info(f"Detected ring color: {ring_color}")
+
             #self.elipses.append(center)
             #print(center, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
 
@@ -214,8 +263,9 @@ class RingDetector(Node):
                 #self.detect_type = 1
 
 
-            cv2.imshow("image", cv_image)
-            key = cv2.waitKey(1)
+            if len(candidates)>0:
+                cv2.imshow("image", cv_image)
+                key = cv2.waitKey(1)
 
             if key==27:
                 print("exiting")
@@ -289,9 +339,8 @@ class RingDetector(Node):
                 #print(scadiry)
                 #print()
 
-
                 #rings
-                if(face_point_map.z > -0.2):
+                if(face_point_map.z > -0.2) and self.is_new_ring(face_point_map):
                     # Rings
                     # create marker
                     marker_ring = Marker()
@@ -299,7 +348,7 @@ class RingDetector(Node):
                     marker_ring.header.stamp = data.header.stamp
 
                     marker_ring.type = Marker.SPHERE
-                    marker_ring.id = 0
+                    marker_ring.id = len(self.center_array) - 1
 
                     # Set the scale of the marker
                     scale = 0.2
@@ -321,6 +370,11 @@ class RingDetector(Node):
                     self.ring_marker_pub.publish(marker_ring)
 
                     self.detect_type = 0
+
+                    self.previous_centers.append((face_point_map.x, face_point_map.y, face_point_map.z))
+
+                    if self.ring_color != "unknown":
+                        self.speak(f"{self.ring_color}")
 
                 elif(self.detect_type < -0.2):
                     # create marker
@@ -353,9 +407,10 @@ class RingDetector(Node):
 
                     self.detect_type = 0
 
+                self.center_array = []
+
             except TransformException as e:
                 self.get_logger().error(f"Transform exception: {e}")
-
 
     def depth_callback(self,data):
 
@@ -365,7 +420,7 @@ class RingDetector(Node):
             print(e)
 
         depth_image[depth_image==np.inf] = 0
-        
+
         # Do the necessairy conversion so we can visuzalize it in OpenCV
         image_1 = depth_image / 65536.0 * 255
         image_1 = image_1/np.max(image_1)*255
@@ -374,7 +429,7 @@ class RingDetector(Node):
 
         cv2.imshow("Depth window", image_viz)
         cv2.waitKey(1)
-        
+
 
 def createPS(self, frame_id, point):
     point_robot_frame = PointStamped()
