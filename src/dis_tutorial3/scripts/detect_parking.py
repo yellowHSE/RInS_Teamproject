@@ -24,6 +24,9 @@ from tf2_ros import TransformException
 from tf2_ros.buffer import Buffer
 from tf2_ros.transform_listener import TransformListener
 
+from gtts import gTTS
+import pygame
+from tempfile import TemporaryFile
 import time
 
 qos_profile = QoSProfile(
@@ -47,6 +50,10 @@ class RingDetector(Node):
         self.marker_array = MarkerArray()
         self.marker_num = 1
         self.elipses = []
+        self.rings = []
+        self.center_array = []
+        self.previous_centers = []
+        self.ring_color = "unknown"
 
         # Subscribe to the image and/or depth topic
         self.image_sub = self.create_subscription(Image, "/oakd/rgb/preview/image_raw", self.image_callback, 1)
@@ -56,12 +63,33 @@ class RingDetector(Node):
         # Publiser for the visualization markers
         self.marker_pub = self.create_publisher(Marker,"/parkMarker", QoSReliabilityPolicy.BEST_EFFORT)
 
+        self.ring_marker_pub = self.create_publisher(Marker,"/ringMarker", QoSReliabilityPolicy.BEST_EFFORT)
+
         self.tf_buffer = Buffer()
         self.tf_listener = TransformListener(self.tf_buffer, self)
+
+        # Initialize Pygame mixer for playing audio
+        pygame.mixer.init()
+
         # Object we use for transforming between coordinate frames
         # self.tf_buf = tf2_ros.Buffer()
         # self.tf_listener = tf2_ros.TransformListener(self.tf_buf)
-        cv2.namedWindow("Detected contours", cv2.WINDOW_NORMAL)      
+        cv2.namedWindow("Detected contours", cv2.WINDOW_NORMAL)
+
+    def speak(self, text):
+        tts = gTTS(text=text, lang='en')
+        temp_file = TemporaryFile()
+        tts.write_to_fp(temp_file)
+        temp_file.seek(0)
+        pygame.mixer.music.load(temp_file)
+        pygame.mixer.music.play()
+
+    def is_new_ring(self, new_center):
+        for center in self.previous_centers:
+            dist = np.sqrt((new_center.x - center[0])**2 + (new_center.y - center[1])**2 + (new_center.z - center[2])**2)
+            if dist < 1.6:
+                return False
+        return True
 
     def image_callback(self, data):
 
@@ -72,22 +100,36 @@ class RingDetector(Node):
         except CvBridgeError as e:
             print(e)
 
+
+        # Transform image to HSV(Robust to detect the color when the light is changing)
+        hsv_image = cv2.cvtColor(cv_image, cv2.COLOR_BGR2HSV)
+
+        # Define color ranges for red, black, green, and blue in HSV
+        color_ranges = {
+            "red": [(0, 50, 50), (10, 255, 255)],
+            "green": [(50, 50, 50), (70, 255, 255)],
+            "blue": [(110, 50, 50), (130, 255, 255)],
+            "black": [(0, 0, 0), (180, 255, 30)]
+        }
+
         blue = cv_image[:,:,0]
         green = cv_image[:,:,1]
         red = cv_image[:,:,2]
 
         # Tranform image to grayscale
         gray = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
-        # gray = red
 
         # Apply Gaussian Blur
-        gray = cv2.GaussianBlur(gray,(3,3),0)
+        #gray = cv2.GaussianBlur(gray,(3,3),0)
 
         # Do histogram equalization
-        gray = cv2.equalizeHist(gray)
+        #gray = cv2.equalizeHist(gray)
 
-        thresh = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 15, 30)
+        edges = cv2.Canny(gray, 50, 150)
 
+        thresh = cv2.adaptiveThreshold(edges, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 15, 10)
+        cv2.imshow("Binary Image", thresh)
+        cv2.waitKey(1)
 
         # Extract contours
         contours, hierarchy = cv2.findContours(thresh, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
@@ -102,7 +144,7 @@ class RingDetector(Node):
         for cnt in contours:
             #     print cnt
             #     print cnt.shape
-            if cnt.shape[0] >= 20:
+            if cnt.shape[0] >= 20 and len(cnt) >= 9:
                 ellipse = cv2.fitEllipse(cnt)
                 elps.append(ellipse)
 
@@ -112,14 +154,14 @@ class RingDetector(Node):
         for n in range(len(elps)):
             for m in range(n + 1, len(elps)):
                 # e[0] is the center of the ellipse (x,y), e[1] are the lengths of major and minor axis (major, minor), e[2] is the rotation in degrees
-                
+
                 e1 = elps[n]
                 e2 = elps[m]
                 dist = np.sqrt(((e1[0][0] - e2[0][0]) ** 2 + (e1[0][1] - e2[0][1]) ** 2))
                 angle_diff = np.abs(e1[2] - e2[2])
 
                 # The centers of the two elipses should be within 5 pixels of each other (is there a better treshold?)
-                if dist >= 5:
+                if dist >= 3:
                     continue
 
                 # The rotation of the elipses should be whitin 4 degrees of eachother
@@ -140,19 +182,29 @@ class RingDetector(Node):
                     se = e1 # e1 is smaller ellipse
                 else:
                     continue # if one ellipse does not contain the other, it is not a ring
-                
-                # # The widths of the ring along the major and minor axis should be roughly the same
-                # border_major = (le[1][1]-se[1][1])/2
-                # border_minor = (le[1][0]-se[1][0])/2
-                # border_diff = np.abs(border_major - border_minor)
 
-                if e1[0][1] < cv_image.shape[1]/2:
-                    self.get_logger().info(f"UPPER HALF OF IMAGE")
+                # The widths of the ring along the major and minor axis should be roughly the same
+                border_major = (le[1][1]-se[1][1])/2
+                border_minor = (le[1][0]-se[1][0])/2
+                border_diff = np.abs(border_major - border_minor)
+
+                if border_diff>4:
                     continue
-                    
-                candidates.append((e1,e2))
 
-        print("Processing is done! found", len(candidates), "candidates for rings")
+                #if e1[0][1] < cv_image.shape[1]/2:
+                    #self.get_logger().info(f"UPPER HALF OF IMAGE")
+                    #continue
+
+                # Only consider candidates with small size
+                l = (le[1][0] + le[1][1]) / 2
+                ##print(l)
+                if l < 50:
+                    candidates.append((e1, e2))
+                else:
+                    continue
+                #candidates.append((e1, e2))
+
+        #print("Processing is done! found", len(candidates), "candidates for rings")
 
         # Plot the rings on the image
         for c in candidates:
@@ -167,13 +219,54 @@ class RingDetector(Node):
 
             # Get a bounding box, around the first ellipse ('average' of both elipsis)
             size = (e1[1][0]+e1[1][1])/2
-            center = (e1[0][1], e1[0][0])
+            center = (e1[0][1], e1[0][0], size)
+            print("center1", e1[0][1])
+            print("center2", e1[0][0])
 
-            self.elipses.append(center)
-            print(center, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+            x1 = int(center[0] - size / 2)
+            x2 = int(center[0] + size / 2)
+            x_min = x1 if x1>0 else 0
+            x_max = x2 if x2<cv_image.shape[0] else cv_image.shape[0]
 
-            cv2.imshow("image", cv_image)
-            key = cv2.waitKey(1)
+            y1 = int(center[1] - size / 2)
+            y2 = int(center[1] + size / 2)
+            y_min = y1 if y1 > 0 else 0
+            y_max = y2 if y2 < cv_image.shape[1] else cv_image.shape[1]
+
+
+            ring_inner_region = hsv_image[x_min:x_max, y_min:y_max]
+            
+            # Determine the color of the ring
+            max_color_pixels = 0
+
+            for color, (lower, upper) in color_ranges.items():
+                mask = cv2.inRange(ring_inner_region, np.array(lower), np.array(upper))
+                color_pixels = cv2.countNonZero(mask)
+
+                if color_pixels > max_color_pixels:
+                    max_color_pixels = color_pixels
+                    self.ring_color = color
+
+            #self.get_logger().info(f"Detected ring color: {ring_color}")
+
+            #self.elipses.append(center)
+            #print(center, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+
+            self.center_array.append(center)
+            #if e1[0][1] > cv_image.shape[1]/2:
+                #self.get_logger().info(f"eclipses")
+                #self.elipses.append(center)
+                #self.detect_type = 2
+            #else:
+                #self.get_logger().info(f"rings")
+                #self.rings.append(center)
+                #self.detect_type = 1
+
+
+            if len(candidates)>0:
+                cv2.imshow("image", cv_image)
+                key = cv2.waitKey(1)
+
             if key==27:
                 print("exiting")
                 exit()
@@ -186,8 +279,8 @@ class RingDetector(Node):
         point_step = data.point_step
         row_step = data.row_step
 
-        # iterate over face coordinates
-        for x,y in self.elipses:
+        # iterate over point coordinates
+        for x,y,size in self.center_array:
             try:
                 # Get transform from "/base_link" to "/map" frame
                 trans = self.tf_buffer.lookup_transform("map", "base_link", rclpy.time.Time(), rclpy.duration.Duration(seconds=0.1))
@@ -198,84 +291,172 @@ class RingDetector(Node):
                 # read center coordinates
                 x = int(x)
                 y = int(y)
-                d = a[x,y,:]
+                print("x",x)
+                print("y",y)    
+                
+                half_length = int(size/2)
+                x_min = max(0, x - half_length)
+                x_max = min(width - 1, x + half_length)
+                y_min = max(0, y - half_length)
+                y_max = min(height - 1, y + half_length)
 
-                #print("a", d)
-                point_robot_frame = PointStamped()
-                point_robot_frame.header.frame_id = "oakd_link"
-                point_robot_frame.header.stamp = self.get_clock().now().to_msg()
-                point_robot_frame.header = data.header
-                point_robot_frame.point.x = 0.0
-                point_robot_frame.point.y = 0.0
-                point_robot_frame.point.z = 0.0
+                valid_points = []
+                for x in range(x_min, x_max + 1):
+                    for y in range(y_min, y_max + 1):
+                        point = a[x, y, :]
+                        if not np.any(np.isnan(point)) and not np.any(np.isinf(point)):
+                            valid_points.append(point)
 
-                robot_on_map = tfg.do_transform_point(point_robot_frame, trans)
+                # Calculate the average of valid points
+                if valid_points:
+                    average_point = np.mean(valid_points, axis=0)
+                    print("Average point within the square:", average_point)
 
-                print("ROBOT ON MAP")
-                print(robot_on_map)
+                    # Convert the average point from the sensor frame to the map frame
+                    average_point_sensor_frame = PointStamped()
+                    average_point_sensor_frame.header = data.header
+                    average_point_sensor_frame.point.x = float(average_point[0])
+                    average_point_sensor_frame.point.y = float(average_point[1])
+                    average_point_sensor_frame.point.z = float(average_point[2])
 
-                # Convert face point from robot frame to map frame
-                face_point_robot_frame = PointStamped()
-                face_point_robot_frame.header = data.header
-                face_point_robot_frame.point.x = float(d[0])
-                face_point_robot_frame.point.y = float(d[1])
-                face_point_robot_frame.point.z = float(d[2])
+                    #print("as", average_point_sensor_frame.point.x)
+                    #print("as", average_point_sensor_frame.point.y)
+                    #print("as", average_point_sensor_frame.point.z)
 
-                #print("b", face_point_robot_frame.point.z)
+                    ring_point_map_stamped = tfg.do_transform_point(average_point_sensor_frame, trans)
+                    #print("c", face_point_map_stamped)
 
-                face_point_map_stamped = tfg.do_transform_point(face_point_robot_frame, trans)
-                #print("c", face_point_map_stamped)
+                    # Extract transformed face point
+                    ring_point_map = ring_point_map_stamped.point
+                    print("qq", ring_point_map.x)
+                    print("dq", ring_point_map.y)
+                    print("dqqq", ring_point_map.z)
+                    marker_ring = Marker()
+                    marker_ring.header.frame_id = "/map"
+                    marker_ring.header.stamp = data.header.stamp
 
-                # Extract transformed face point
-                face_point_map = face_point_map_stamped.point
-                print("d", face_point_map)
+                    marker_ring.type = Marker.SPHERE
+                    marker_ring.id = len(self.center_array) - 1
+
+                    # Set the scale of the marker
+                    scale = 0.2
+                    marker_ring.scale.x = scale
+                    marker_ring.scale.y = scale
+                    marker_ring.scale.z = scale
+
+                    # Set the color
+                    marker_ring.color.r = 0.0
+                    marker_ring.color.g = 0.0
+                    marker_ring.color.b = 1.0
+                    marker_ring.color.a = 1.0
+
+                    # Set the pose of the marker
+                    marker_ring.pose.position.x = ring_point_map.x
+                    marker_ring.pose.position.y = ring_point_map.y
+                    marker_ring.pose.position.z = ring_point_map.z
+
+                    self.ring_marker_pub.publish(marker_ring)
+                    self.previous_centers.append((ring_point_map.x, ring_point_map.y, ring_point_map.z))
+
+                    if self.ring_color != "unknown":
+                        self.speak(f"{self.ring_color}")
+
+                    #dont touch
+                    point_robot_frame = PointStamped()
+                    point_robot_frame.header.frame_id = "oakd_link"
+                    point_robot_frame.header.stamp = self.get_clock().now().to_msg()
+                    point_robot_frame.header = data.header
+                    point_robot_frame.point.x = 0.0
+                    point_robot_frame.point.y = 0.0
+                    point_robot_frame.point.z = 0.0
+
+                    robot_on_map = tfg.do_transform_point(point_robot_frame, trans)
+
+                    #print("ROBOT ON MAP")
+                    #print(robot_on_map)
 
 
-                dx = robot_on_map.point.x - face_point_map.x
-                dy = robot_on_map.point.y - face_point_map.y
-                dis = math.sqrt(dx**2 + dy**2)
-                direct_x = dx / dis
-                direct_y = dy / dis
-                scadirx = direct_x * 0.2
-                scadiry = direct_y * 0.2
+                    dx = robot_on_map.point.x - ring_point_map.x
+                    dy = robot_on_map.point.y - ring_point_map.y
+                    dis = math.sqrt(dx**2 + dy**2)
+                    direct_x = dx / dis
+                    direct_y = dy / dis
+                    scadirx = direct_x * 0.2
+                    scadiry = direct_y * 0.2
 
-                print()
-                print(scadirx)
-                print(scadiry)
-                print()
+                    #print()
+                    #print(scadirx)
+                    #print(scadiry)
+                    #print()
 
-                # create marker
-                marker = Marker()
-                marker.header.frame_id = "/map"
-                marker.header.stamp = data.header.stamp
+                    #rings
+                    if ring_point_map.x < data.height/2 and self.is_new_ring(ring_point_map):
+                        # Rings
+                        # create marker
+                        marker_ring = Marker()
+                        marker_ring.header.frame_id = "/map"
+                        marker_ring.header.stamp = data.header.stamp
 
-                marker.type = Marker.SPHERE
-                marker.id = 0
+                        marker_ring.type = Marker.SPHERE
+                        marker_ring.id = len(self.center_array) - 1
 
-                # Set the scale of the marker
-                scale = 0.2
-                marker.scale.x = scale
-                marker.scale.y = scale
-                marker.scale.z = scale
+                        # Set the scale of the marker
+                        scale = 0.2
+                        marker_ring.scale.x = scale
+                        marker_ring.scale.y = scale
+                        marker_ring.scale.z = scale
 
-                # Set the color
-                marker.color.r = 1.0
-                marker.color.g = 0.0
-                marker.color.b = 0.0
-                marker.color.a = 1.0
+                        # Set the color
+                        marker_ring.color.r = 0.0
+                        marker_ring.color.g = 0.0
+                        marker_ring.color.b = 1.0
+                        marker_ring.color.a = 1.0
 
-                # Set the pose of the marker
-                marker.pose.position.x = face_point_map.x - scadirx
-                marker.pose.position.y = face_point_map.y - scadiry
-                marker.pose.position.z = face_point_map.z
+                        # Set the pose of the marker
+                        marker_ring.pose.position.x = ring_point_map.x
+                        marker_ring.pose.position.y = ring_point_map.y
+                        marker_ring.pose.position.z = ring_point_map.z
 
-                self.get_logger().info(f"Publishing marker: {marker} on topic: {self.marker_pub.topic_name}")
-                self.marker_pub.publish(marker)
+                        self.ring_marker_pub.publish(marker_ring)
 
+                        self.previous_centers.append((ring_point_map.x, ring_point_map.y, ring_point_map.z))
+
+                        if self.ring_color != "unknown":
+                            self.speak(f"{self.ring_color}")
+
+                    else:
+                        # create marker
+                        marker = Marker()
+                        marker.header.frame_id = "/map"
+                        marker.header.stamp = data.header.stamp
+
+                        marker.type = Marker.SPHERE
+                        marker.id = 0
+
+                        # Set the scale of the marker
+                        scale = 0.2
+                        marker.scale.x = scale
+                        marker.scale.y = scale
+                        marker.scale.z = scale
+
+                        # Set the color 
+                        marker.color.r = 1.0
+                        marker.color.g = 0.0
+                        marker.color.b = 0.0
+                        marker.color.a = 1.0
+
+                        # Set the pose of the marker
+                        marker.pose.position.x = ring_point_map.x - scadirx
+                        marker.pose.position.y = ring_point_map.y - scadiry
+                        marker.pose.position.z = ring_point_map.z
+
+                        #self.get_logger().info(f"Publishing marker: {marker} on topic: {self.marker_pub.topic_name}")
+                        self.marker_pub.publish(marker)
+
+                    self.center_array = []
 
             except TransformException as e:
                 self.get_logger().error(f"Transform exception: {e}")
-
 
     def depth_callback(self,data):
 
@@ -285,7 +466,7 @@ class RingDetector(Node):
             print(e)
 
         depth_image[depth_image==np.inf] = 0
-        
+
         # Do the necessairy conversion so we can visuzalize it in OpenCV
         image_1 = depth_image / 65536.0 * 255
         image_1 = image_1/np.max(image_1)*255
@@ -294,7 +475,7 @@ class RingDetector(Node):
 
         cv2.imshow("Depth window", image_viz)
         cv2.waitKey(1)
-        
+
 
 def createPS(self, frame_id, point):
     point_robot_frame = PointStamped()
@@ -306,6 +487,8 @@ def createPS(self, frame_id, point):
     point_robot_frame.point.z = point[2]
     return point_robot_frame
 
+def is_valid_value(value):
+    return not (np.isnan(value) or np.isinf(value))
 
 
 
