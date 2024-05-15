@@ -54,7 +54,6 @@ class RingDetector(Node):
         self.center_array = []
         self.previous_centers = []
         self.ring_color = "unknown"
-        self.detect_type = 0
 
         # Subscribe to the image and/or depth topic
         self.image_sub = self.create_subscription(Image, "/oakd/rgb/preview/image_raw", self.image_callback, 1)
@@ -145,7 +144,7 @@ class RingDetector(Node):
         for cnt in contours:
             #     print cnt
             #     print cnt.shape
-            if cnt.shape[0] >= 20:
+            if cnt.shape[0] >= 20 len(cnt) >= 9:
                 ellipse = cv2.fitEllipse(cnt)
                 elps.append(ellipse)
 
@@ -199,7 +198,7 @@ class RingDetector(Node):
                 # Only consider candidates with small size
                 l = (le[1][0] + le[1][1]) / 2
                 ##print(l)
-                if l < 60:
+                if l < 50:
                     candidates.append((e1, e2))
                 else:
                     continue
@@ -369,14 +368,12 @@ class RingDetector(Node):
 
                     self.ring_marker_pub.publish(marker_ring)
 
-                    self.detect_type = 0
-
                     self.previous_centers.append((face_point_map.x, face_point_map.y, face_point_map.z))
 
                     if self.ring_color != "unknown":
                         self.speak(f"{self.ring_color}")
 
-                elif(self.detect_type < -0.2):
+                elif(face_point_map.z < -0.2):
                     # create marker
                     marker = Marker()
                     marker.header.frame_id = "/map"
@@ -404,8 +401,6 @@ class RingDetector(Node):
 
                     #self.get_logger().info(f"Publishing marker: {marker} on topic: {self.marker_pub.topic_name}")
                     self.marker_pub.publish(marker)
-
-                    self.detect_type = 0
 
                 self.center_array = []
 
