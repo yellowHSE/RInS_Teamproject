@@ -144,7 +144,7 @@ class RingDetector(Node):
         for cnt in contours:
             #     print cnt
             #     print cnt.shape
-            if cnt.shape[0] >= 20 len(cnt) >= 9:
+            if cnt.shape[0] >= 20 and len(cnt) >= 9:
                 ellipse = cv2.fitEllipse(cnt)
                 elps.append(ellipse)
 
