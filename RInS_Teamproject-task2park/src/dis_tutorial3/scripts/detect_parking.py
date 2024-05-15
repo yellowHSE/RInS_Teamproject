@@ -127,7 +127,7 @@ class RingDetector(Node):
 
         edges = cv2.Canny(gray, 50, 150)
 
-        thresh = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 15, 10)
+        thresh = cv2.adaptiveThreshold(edges, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 15, 10)
         cv2.imshow("Binary Image", thresh)
         cv2.waitKey(1)
 
