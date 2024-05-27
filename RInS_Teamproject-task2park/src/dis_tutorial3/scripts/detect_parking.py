@@ -54,6 +54,7 @@ class RingDetector(Node):
         self.center_array = []
         self.previous_centers = []
         self.ring_color = "unknown"
+        self.ring_markerN = 0
 
         # Subscribe to the image and/or depth topic
         self.image_sub = self.create_subscription(Image, "/oakd/rgb/preview/image_raw", self.image_callback, 1)
@@ -201,7 +202,7 @@ class RingDetector(Node):
                 # Only consider candidates with small size
                 l = (le[1][0] + le[1][1]) / 2
                 ##print(l)
-                if l < 50:
+                if l < 45:
                     candidates.append((e1, e2))
                 else:
                     continue
@@ -363,14 +364,17 @@ class RingDetector(Node):
                     #print(scadiry)
                     #print()
 
-                    print(ring_point_map.z)
+                    #print(ring_point_map.z)
                     if ring_point_map.z > -0.03 and self.is_new_ring(ring_point_map):
                         marker_ring = Marker()
                         marker_ring.header.frame_id = "/map"
                         marker_ring.header.stamp = data.header.stamp
 
                         marker_ring.type = Marker.SPHERE
-                        marker_ring.id = len(self.center_array) - 1
+                        #marker_ring.id = len(self.center_array) - 1
+                        marker_ring.id = self.ring_markerN
+
+                        self.ring_markerN += 1
 
                         # Set the scale of the marker
                         scale = 0.2
@@ -379,7 +383,7 @@ class RingDetector(Node):
                         marker_ring.scale.z = scale
 
                         # Set the color
-                        if ring_point_map.z > 0.5:
+                        if ring_point_map.z >= 0.5:
                             marker_ring.color.r = 0.0
                             marker_ring.color.g = 1.0
                             marker_ring.color.b = 0.0
@@ -398,8 +402,11 @@ class RingDetector(Node):
                         self.ring_marker_pub.publish(marker_ring)
                         self.previous_centers.append((ring_point_map.x, ring_point_map.y, ring_point_map.z))
 
+                        self.center_array = []
+
                         if self.ring_color != "unknown":
                             self.speak(f"{self.ring_color}")
+                            self.get_logger().info(f"Detected ring color: {self.ring_color}")
                     else:
                         # create marker
                         marker = Marker()
@@ -429,8 +436,7 @@ class RingDetector(Node):
                         #self.get_logger().info(f"Publishing marker: {marker} on topic: {self.marker_pub.topic_name}")
                         self.marker_pub.publish(marker)
 
-                    self.center_array = []
-
+                        self.center_array = []
             except TransformException as e:
                 self.get_logger().error(f"Transform exception: {e}")
 
