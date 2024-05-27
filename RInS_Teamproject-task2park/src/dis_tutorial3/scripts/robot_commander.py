@@ -156,21 +156,26 @@ class RobotCommander(Node):
         return True
 
     def parking(self, msg):
-        
-        self.info(f'AAAAAAAAAAAAAAAAAAAAAAAAAAA{msg}')
-        self.park_msg = msg
-        # Callback function to handel face coordinate messages
-        # self.get_logger().info(f"Received face marker: {msg}")
 
-        park_pose = msg.pose
-        park_position = park_pose.position
+        #self.info(f"Color: {msg.color.r}, {msg.color.g}, {msg.color.b}")
 
-        x = park_position.x
-        y = park_position.y
-        z = park_position.z
+        if msg.color.r == 0.0 and msg.color.g == 1.0 and msg.color.b == 0.0:
+            self.info("Parking space - under the 3D green ring")
+            self.info(f"Parking position: {msg.pose.position.x}, {msg.pose.position.y}, {msg.pose.position.z}")
+            #self.info(f'AAAAAAAAAAAAAAAAAAAAAAAAAAA{msg}')
+            self.park_msg = msg
+            # Callback function to handel face coordinate messages
+            # self.get_logger().info(f"Received face marker: {msg}")
 
-        self.get_logger().info(f"Parking coordinates: ({x}, {y}, {z})")
-        self.park_coordinate_received = True
+            park_pose = msg.pose
+            park_position = park_pose.position
+
+            x = park_position.x
+            y = park_position.y
+            z = park_position.z
+
+            #self.get_logger().info(f"Parking coordinates: ({x}, {y}, {z})")
+            self.park_coordinate_received = True
 
     def goPark(self, marker):
         # Create a PoseStamped message for the face coordinate
@@ -184,7 +189,7 @@ class RobotCommander(Node):
         pose.pose.position.z = marker.pose.position.z
         pose.pose.orientation.w = 1.0  # Assuming no rotation is needed
 
-        self.info(f'Parking - {pose}')
+        #self.info(f'Parking - {pose}')
 
         if self.approachToFace(pose):
             self.info("Robot parked")
@@ -211,8 +216,8 @@ class RobotCommander(Node):
         goal_msg.pose = pose
         goal_msg.behavior_tree = behavior_tree
 
-        self.info('Navigating to goal: ' + str(pose.pose.position.x) + ' ' +
-                  str(pose.pose.position.y) + '...')
+        #self.info('Navigating to goal: ' + str(pose.pose.position.x) + ' ' +
+        #          str(pose.pose.position.y) + '...')
         send_goal_future = self.nav_to_pose_client.send_goal_async(goal_msg,
                                                                    self._feedbackCallback)
         rclpy.spin_until_future_complete(self, send_goal_future)
@@ -471,13 +476,13 @@ def main(args=None):
     # Finally send it a goal to reach
 
     goal_positions = [
-        #{'x': -1.0, 'y': -0.5, 'yaw': 0.57},
-        #{'x': -0.2, 'y': 0.1, 'yaw': 0.0},
-        #{'x': -1.5, 'y': 1.1, 'yaw': 0.57},
-        #{'x': -1.5, 'y': 4.1, 'yaw': 1.0},
-        #{'x': 2.5, 'y': 2.0, 'yaw': 0.57},
-        #{'x': 0.0, 'y': 1.9, 'yaw': 0.57},
-        #{'x': 2.3, 'y': 0.0, 'yaw': 0.57},
+        {'x': -1.0, 'y': -0.5, 'yaw': 0.57},
+        {'x': -0.2, 'y': 0.1, 'yaw': 0.0},
+        {'x': -1.5, 'y': 1.1, 'yaw': 0.57},
+        {'x': -1.5, 'y': 4.1, 'yaw': 1.0},
+        {'x': 2.5, 'y': 2.0, 'yaw': 0.57},
+        {'x': 0.0, 'y': 1.9, 'yaw': 0.57},
+        {'x': 2.3, 'y': 0.0, 'yaw': 0.57},
         {'x': 1.6, 'y': -1.8, 'yaw': 1.0}
     ]
 
