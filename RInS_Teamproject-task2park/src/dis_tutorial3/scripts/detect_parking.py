@@ -384,10 +384,17 @@ class RingDetector(Node):
 
                         # Set the color
                         if ring_point_map.z >= 0.5:
-                            marker_ring.color.r = 0.0
-                            marker_ring.color.g = 1.0
-                            marker_ring.color.b = 0.0
-                            marker_ring.color.a = 1.0
+
+                            if self.ring_color == "green":
+                                marker_ring.color.r = 0.0
+                                marker_ring.color.g = 1.0
+                                marker_ring.color.b = 0.0
+                                marker_ring.color.a = 1.0
+                            else:
+                                marker_ring.color.r = 1.0
+                                marker_ring.color.g = 1.0
+                                marker_ring.color.b = 1.0
+                                marker_ring.color.a = 1.0
                         else:
                             marker_ring.color.r = 0.0
                             marker_ring.color.g = 0.0
