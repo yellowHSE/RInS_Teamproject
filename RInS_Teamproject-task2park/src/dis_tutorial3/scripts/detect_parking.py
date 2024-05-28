@@ -95,6 +95,15 @@ class RingDetector(Node):
                 return False
         return True
 
+    def is_circle(self, cnt):
+        peri = cv2.arcLength(cnt, True)
+        approx = cv2.approxPolyDP(cnt, 0.03 * peri, True)
+
+        if len(approx) > 6:
+            print("approx", len(approx))
+            return True
+        return False
+
     def image_callback(self, data):
 
         self.elipses = []
@@ -146,9 +155,9 @@ class RingDetector(Node):
         # Fit elipses to all extracted contours
         elps = []
         for cnt in contours:
-            #     print cnt
-            #     print cnt.shape
-            if cnt.shape[0] >= 20 and len(cnt) >= 9:
+            if cnt.shape[0] >= 15 and len(cnt) >= 9 and self.is_circle(cnt):
+                print("len(cnt)", len(cnt))
+                print("cnt.shape[0]", cnt.shape[0])
                 ellipse = cv2.fitEllipse(cnt)
                 elps.append(ellipse)
 
