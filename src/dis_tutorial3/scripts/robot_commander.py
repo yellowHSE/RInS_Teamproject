@@ -565,9 +565,9 @@ def main(args=None):
         rc.undock()
 
     
-    rc.set_arm_command("garage")
+    rc.set_arm_command("look_for_qr")
     time.sleep(5)
-
+    
     # Finally send it a goal to reach
 
     goal_positions = [
@@ -620,8 +620,6 @@ def main(args=None):
             break
         rc.info("Goal reached")
 
-    rc.set_arm_command("look_for_qr")
-    time.sleep(5)
     
     rc.info("spinning now")
     time.sleep(2)
