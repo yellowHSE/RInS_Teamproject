@@ -75,7 +75,7 @@ class RingDetector(Node):
         # Object we use for transforming between coordinate frames
         # self.tf_buf = tf2_ros.Buffer()
         # self.tf_listener = tf2_ros.TransformListener(self.tf_buf)
-        #cv2.namedWindow("Detected contours", cv2.WINDOW_NORMAL)
+        cv2.namedWindow("Detected contours", cv2.WINDOW_NORMAL)
 
     def speak(self, text):
         tts = gTTS(text=text, lang='en')
@@ -141,16 +141,16 @@ class RingDetector(Node):
         edges = cv2.Canny(gray, 50, 150)
 
         thresh = cv2.adaptiveThreshold(edges, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 15, 10)
-        #cv2.imshow("Binary Image", thresh)
-        #cv2.waitKey(1)
+        cv2.imshow("Binary Image", thresh)
+        cv2.waitKey(1)
 
         # Extract contours
         contours, hierarchy = cv2.findContours(thresh, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
 
         # Example of how to draw the contours, only for visualization purposes
         cv2.drawContours(gray, contours, -1, (255, 0, 0), 3)
-        #cv2.imshow("Detected contours", gray)
-        #cv2.waitKey(1)
+        cv2.imshow("Detected contours", gray)
+        cv2.waitKey(1)
 
         # Fit elipses to all extracted contours
         elps = []
@@ -395,7 +395,36 @@ class RingDetector(Node):
                             self.get_logger().info(f"Detected ring color: {self.ring_color}")
 
 
-                    self.center_array = []
+                    else:
+                        # create marker
+                        marker = Marker()
+                        marker.header.frame_id = "/map"
+                        marker.header.stamp = data.header.stamp
+
+                        marker.type = Marker.SPHERE
+                        marker.id = 0
+
+                        # Set the scale of the marker
+                        scale = 0.2
+                        marker.scale.x = scale
+                        marker.scale.y = scale
+                        marker.scale.z = scale
+
+                        # Set the color 
+                        marker.color.r = 1.0
+                        marker.color.g = 0.0
+                        marker.color.b = 0.0
+                        marker.color.a = 1.0
+
+                        # Set the pose of the marker
+                        marker.pose.position.x = ring_point_map.x
+                        marker.pose.position.y = ring_point_map.y
+                        marker.pose.position.z = ring_point_map.z
+
+                        #self.get_logger().info(f"Publishing marker: {marker} on topic: {self.marker_pub.topic_name}")
+                        self.ring_marker_pub.publish(marker)
+
+                        self.center_array = []
 
 
             except TransformException as e:
@@ -416,8 +445,8 @@ class RingDetector(Node):
 
         image_viz = np.array(image_1, dtype= np.uint8)
 
-        #cv2.imshow("Depth window", image_viz)
-        #cv2.waitKey(1)
+        cv2.imshow("Depth window", image_viz)
+        cv2.waitKey(1)
 
 
 def main():
