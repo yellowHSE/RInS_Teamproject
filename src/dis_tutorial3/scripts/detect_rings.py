@@ -112,8 +112,6 @@ class RingDetector(Node):
             return False
         circularity = 4 * math.pi * (area / (peri * peri))
 
-        print(circularity)
-
         if 0.9 < circularity < 1.2:
             return 1
         return 0
@@ -121,12 +119,10 @@ class RingDetector(Node):
     def is_3dcircle(self, cnt):
 
         peri = cv2.arcLength(cnt, True)
-        approx = cv2.approxPolyDP(cnt, 0.03 * peri, True)
-
-        #print("approx", len(approx))
+        approx = cv2.approxPolyDP(cnt, 0.025 * peri, True)
 
         if len(approx) > 7:
-            #print("approx", len(approx))
+            print("approx", len(approx))
             return True
         return False
 
