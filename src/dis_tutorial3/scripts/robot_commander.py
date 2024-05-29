@@ -242,8 +242,11 @@ class RobotCommander(Node):
 
         self.info("Robot parked under the ring")
         # Clear face coordinate message
-        self.park_msg = None
-        self.park_coordinate_received = False
+        #self.park_msg = None
+        #self.park_coordinate_received = False
+        # Clear face coordinate message
+        self.face_coordinate_msg = None
+        self.face_coordinate_received = False
 
     def goCircle(self, marker):
         # Create a PoseStamped message for the face coordinate
@@ -558,7 +561,7 @@ def main(args=None):
 
     # Check if the robot is docked, only continue when a message is recieved
     while rc.is_docked is None:
-        rclpy.spin_once(rc, timeout_sec=0.5)
+        rclpy.spin_once(rc, timeout_sec=0.1)
 
     # If it is docked, undock it first
     if rc.is_docked:
@@ -571,12 +574,18 @@ def main(args=None):
     # Finally send it a goal to reach
 
     goal_positions = [
-        {'x': -1.0, 'y': -0.5, 'yaw': 0.57},
-        {'x': -0.2, 'y': 0.1, 'yaw': 0.0},
-        {'x': -1.5, 'y': 4.1, 'yaw': 1.0},
-        {'x': 2.3, 'y': 0.0, 'yaw': 0.57},
-        {'x': 1.5, 'y': -2.0, 'yaw': 1.0},
-        {'x': 2.4, 'y': -2.0, 'yaw': 1.0}        
+        {'x': -1.5, 'y': 1.1, 'yaw': -1.57},
+        {'x': -1.0, 'y': 1.1, 'yaw': 0.57},
+        {'x': -1.5, 'y': 4.4, 'yaw': 1.0},
+        {'x': -1.5, 'y': 3.2, 'yaw': 0.0},
+        {'x': 1.7, 'y': 3.2, 'yaw': 1.0},
+        {'x': 2.3, 'y': 1.7, 'yaw': -1.57},
+        {'x': 2.4, 'y': 0.0, 'yaw': 0.27},
+        {'x': 2.3, 'y': -1.0, 'yaw': 0.57},
+        {'x': 3.7, 'y': -1.0, 'yaw': 0.57},
+        {'x': 1.0, 'y': 1.8, 'yaw': 1.0},
+        {'x': -1.0, 'y': -0.8, 'yaw': 0.0},
+        {'x': 0.0, 'y': -0.9, 'yaw': 0.57}
     ]
 
 
