@@ -91,16 +91,42 @@ class RingDetector(Node):
 
             #print("dist:")
             #print(dist)
-            if dist < 0.35:
+            if dist < 0.5:
                 return False
         return True
 
-    def is_circle(self, cnt):
+    def is_2dcircle(self, cnt):
+        '''
+        peri = cv2.arcLength(cnt, True)
+        approx = cv2.approxPolyDP(cnt, 0.0376 * peri, True)
+
+        if len(approx) > 7:
+            print("approx", len(approx))
+            return True
+        return False
+        '''
+
+        peri = cv2.arcLength(cnt, True)
+        area = cv2.contourArea(cnt)
+        if peri == 0:
+            return False
+        circularity = 4 * math.pi * (area / (peri * peri))
+
+        print(circularity)
+
+        if 0.9 < circularity < 1.2:
+            return 1
+        return 0
+
+    def is_3dcircle(self, cnt):
+
         peri = cv2.arcLength(cnt, True)
         approx = cv2.approxPolyDP(cnt, 0.03 * peri, True)
 
-        if len(approx) > 6:
-            print("approx", len(approx))
+        #print("approx", len(approx))
+
+        if len(approx) > 7:
+            #print("approx", len(approx))
             return True
         return False
 
@@ -155,11 +181,18 @@ class RingDetector(Node):
         # Fit elipses to all extracted contours
         elps = []
         for cnt in contours:
-            if cnt.shape[0] >= 15 and len(cnt) >= 9 and self.is_circle(cnt):
-                print("len(cnt)", len(cnt))
-                print("cnt.shape[0]", cnt.shape[0])
-                ellipse = cv2.fitEllipse(cnt)
-                elps.append(ellipse)
+            if cnt.shape[0] >= 15 and len(cnt) >= 9:
+                if(self.is_2dcircle(cnt) == 1):
+                    ellipse = cv2.fitEllipse(cnt)
+                    elps.append(ellipse)
+                elif(self.is_3dcircle(cnt)):
+                    #print("3d")
+                    ellipse = cv2.fitEllipse(cnt)
+                    (x,y),(MA,ma),angle = ellipse
+
+                    if MA != 0 and ma/MA < 1.2:
+                        print("ma", ma/MA)
+                        elps.append(ellipse)
 
 
         # Find two elipses with same centers
@@ -277,7 +310,7 @@ class RingDetector(Node):
 
 
             if len(candidates)>0:
-                cv2.("image", cv_image)
+                cv2.imshow("image", cv_image)
                 key = cv2.waitKey(1)
 
             if key==27:
@@ -342,8 +375,39 @@ class RingDetector(Node):
                     # Extract transformed face point
                     ring_point_map = ring_point_map_stamped.point
                     #print("qq", ring_point_map.x)
+                    #print("dq", ring_point_map.y)
+                    #print("dqqq", ring_point_map.z)
+
+                    #dont touch
+                    point_robot_frame = PointStamped()
+                    point_robot_frame.header.frame_id = "oakd_link"
+                    point_robot_frame.header.stamp = self.get_clock().now().to_msg()
+                    point_robot_frame.header = data.header
+                    point_robot_frame.point.x = 0.0
+                    point_robot_frame.point.y = 0.0
+                    point_robot_frame.point.z = 0.0
+
+                    robot_on_map = tfg.do_transform_point(point_robot_frame, trans)
+
+                    #print("ROBOT ON MAP")
+                    #print(robot_on_map)
+
+
+                    dx = robot_on_map.point.x - ring_point_map.x
+                    dy = robot_on_map.point.y - ring_point_map.y
+                    dis = math.sqrt(dx**2 + dy**2)
+                    direct_x = dx / dis
+                    direct_y = dy / dis
+                    scadirx = direct_x * 0.2
+                    scadiry = direct_y * 0.2
+
+                    #print()
+                    #print(scadirx)
+                    #print(scadiry)
+                    #print()
 
                     #print(ring_point_map.z)
+                    print(self.is_new_ring(ring_point_map))
                     if ring_point_map.z > -0.03 and self.is_new_ring(ring_point_map):
                         marker_ring = Marker()
                         marker_ring.header.frame_id = "/map"
@@ -393,8 +457,6 @@ class RingDetector(Node):
                         if self.ring_color != "unknown":
                             self.speak(f"{self.ring_color}")
                             self.get_logger().info(f"Detected ring color: {self.ring_color}")
-
-
                     else:
                         # create marker
                         marker = Marker()
@@ -417,16 +479,14 @@ class RingDetector(Node):
                         marker.color.a = 1.0
 
                         # Set the pose of the marker
-                        marker.pose.position.x = ring_point_map.x
-                        marker.pose.position.y = ring_point_map.y
+                        marker.pose.position.x = ring_point_map.x - scadirx
+                        marker.pose.position.y = ring_point_map.y - scadiry
                         marker.pose.position.z = ring_point_map.z
 
                         #self.get_logger().info(f"Publishing marker: {marker} on topic: {self.marker_pub.topic_name}")
-                        self.ring_marker_pub.publish(marker)
+                        self.marker_pub.publish(marker)
 
                         self.center_array = []
-
-
             except TransformException as e:
                 self.get_logger().error(f"Transform exception: {e}")
 
@@ -447,6 +507,21 @@ class RingDetector(Node):
 
         cv2.imshow("Depth window", image_viz)
         cv2.waitKey(1)
+
+
+def createPS(self, frame_id, point):
+    point_robot_frame = PointStamped()
+    point_robot_frame.header.frame_id = frame_id
+    point_robot_frame.header.stamp = self.get_clock().now().to_msg()
+    point_robot_frame.header = data.header
+    point_robot_frame.point.x = point[0]
+    point_robot_frame.point.y = point[1]
+    point_robot_frame.point.z = point[2]
+    return point_robot_frame
+
+def is_valid_value(value):
+    return not (np.isnan(value) or np.isinf(value))
+
 
 
 def main():
