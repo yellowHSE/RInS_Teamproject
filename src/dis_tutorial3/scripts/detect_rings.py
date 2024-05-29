@@ -55,6 +55,7 @@ class RingDetector(Node):
         self.previous_centers = []
         self.ring_color = "unknown"
         self.ring_markerN = 0
+        self.ring_r = 0
 
         # Subscribe to the image and/or depth topic
         self.image_sub = self.create_subscription(Image, "/oakd/rgb/preview/image_raw", self.image_callback, 1)
@@ -423,12 +424,15 @@ class RingDetector(Node):
 
                         # Set the color
                         if ring_point_map.z >= 0.5:
-
                             if self.ring_color == "green":
                                 marker_ring.color.r = 0.0
                                 marker_ring.color.g = 1.0
                                 marker_ring.color.b = 0.0
                                 marker_ring.color.a = 1.0
+                            #elif self.ring_color == "red":
+                            #    if self.ring_r == 1:
+                            #        continue
+                            #    self.ring_r = 1
                             else:
                                 marker_ring.color.r = 1.0
                                 marker_ring.color.g = 1.0
