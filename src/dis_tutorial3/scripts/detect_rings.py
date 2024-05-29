@@ -120,8 +120,8 @@ class RingDetector(Node):
         # Define color ranges for red, black, green, and blue in HSV
         color_ranges = {
             "red": [(0, 50, 50), (10, 255, 255)],
-            "green": [(50, 50, 50), (70, 255, 255)],
-            "blue": [(110, 50, 50), (130, 255, 255)],
+            "green": [(50, 50, 50), (60, 255, 255)],
+            "blue": [(70, 50, 50), (130, 255, 255)],
             "black": [(0, 0, 0), (180, 255, 30)]
         }
 
