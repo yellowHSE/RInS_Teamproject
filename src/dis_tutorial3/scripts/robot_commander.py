@@ -561,7 +561,7 @@ def main(args=None):
 
     # Check if the robot is docked, only continue when a message is recieved
     while rc.is_docked is None:
-        rclpy.spin_once(rc, timeout_sec=0.1)
+        rclpy.spin_once(rc, timeout_sec=0.05)
 
     # If it is docked, undock it first
     if rc.is_docked:
@@ -572,20 +572,28 @@ def main(args=None):
     time.sleep(5)
     
     # Finally send it a goal to reach
-
+    # Do not touch
     goal_positions = [
         {'x': -1.5, 'y': 1.1, 'yaw': -1.57},
         {'x': -1.0, 'y': 1.1, 'yaw': 0.57},
         {'x': -1.5, 'y': 4.4, 'yaw': 1.0},
         {'x': -1.5, 'y': 3.2, 'yaw': 0.0},
-        {'x': 1.7, 'y': 3.2, 'yaw': 1.0},
-        {'x': 2.3, 'y': 1.7, 'yaw': -1.57},
-        {'x': 2.4, 'y': 0.0, 'yaw': 0.27},
-        {'x': 2.3, 'y': -1.0, 'yaw': 0.57},
-        {'x': 3.7, 'y': -1.0, 'yaw': 0.57},
-        {'x': 1.0, 'y': 1.8, 'yaw': 1.0},
-        {'x': -1.0, 'y': -0.8, 'yaw': 0.0},
-        {'x': 0.0, 'y': -0.9, 'yaw': 0.57}
+        {'x': 1.7, 'y': 3.2, 'yaw': 0.0},
+        #initial y1.6
+        {'x': 2.5, 'y': 1.4, 'yaw': -4.00},
+
+        {'x': 2.5, 'y': 0.0, 'yaw': 0.0},
+        {'x': 3.2, 'y': -1.0, 'yaw': 0.57},
+        {'x': 1.2, 'y': -0.2, 'yaw': 1.57},
+
+        #initial y2.0
+        {'x': 1.2, 'y': 1.8, 'yaw': 0.67},
+        {'x': 0.7, 'y': 2.0, 'yaw': 1.57},
+
+        {'x': 0.0, 'y': 2.1, 'yaw': -1.57},
+        {'x': -1.0, 'y': -0.8, 'yaw': 0.00},
+        {'x': -0.2, 'y': -0.8, 'yaw': -4.00},
+        {'x': 1.6, 'y': -2.0, 'yaw': 0.57}
     ]
 
 
@@ -612,21 +620,21 @@ def main(args=None):
                 rc.move_robot_to_face(rc.face_coordinate_msg)
 
                 # Wait for 5 seconds
-                time.sleep(5)
+                time.sleep(3)
 
                 #rc.greeting()
                 # Clear face coordinate message
                 rc.face_coordinate_msg = None
                 rc.face_coordinate_received = False
 
-                if(rc.detected_face_num > 2):
-                    break
+                #if(rc.detected_face_num > 2):
+                #    break
 
             else:
                 rc.info("Waiting")
                 time.sleep(1)
-        if(rc.detected_face_num > 2):
-            break
+        #if(rc.detected_face_num > 2):
+        #    break
         rc.info("Goal reached")
 
     
