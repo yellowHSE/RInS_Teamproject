@@ -54,8 +54,12 @@ class RingDetector(Node):
         self.center_array = []
         self.previous_centers = []
         self.ring_color = "unknown"
+        self.previous_ring_color = "unknown"
         self.ring_markerN = 0
         self.ring_r = 0
+        self.ring_gb = 0
+        self.ring_b = 0
+        self.ring_3d_red = 0
 
         # Subscribe to the image and/or depth topic
         self.image_sub = self.create_subscription(Image, "/oakd/rgb/preview/image_raw", self.image_callback, 1)
@@ -87,13 +91,31 @@ class RingDetector(Node):
         pygame.mixer.music.play()
 
     def is_new_ring(self, new_center):
+
+        closest_dist = float('inf')
+        closest_ring_color = "unknown"
+
+        if not self.previous_centers:
+            return True
+
         for center in self.previous_centers:
-            dist = np.sqrt((new_center.x - center[0])**2 + (new_center.y - center[1])**2 + (new_center.z - center[2])**2)
+            center_x, center_y, center_z, center_color = center
+
+            dist = np.sqrt((new_center.x - center_x)**2 + (new_center.y - center_y)**2 + (new_center.z - center_z)**2)
 
             #print("dist:")
             #print(dist)
-            if dist < 0.5:
+            if dist < closest_dist:
+                closest_dist = dist
+                closest_ring_color = center_color
+
+        if closest_dist < 0.65:
+            if closest_ring_color == self.ring_color:
+                print("Same color as the closest ring.")
                 return False
+            else:
+                print("Different color than the closest ring.")
+                return True
         return True
 
     def is_2dcircle(self, cnt):
@@ -123,7 +145,7 @@ class RingDetector(Node):
         approx = cv2.approxPolyDP(cnt, 0.025 * peri, True)
 
         if len(approx) > 7:
-            print("approx", len(approx))
+            #print("approx", len(approx))
             return True
         return False
 
@@ -188,7 +210,7 @@ class RingDetector(Node):
                     (x,y),(MA,ma),angle = ellipse
 
                     if MA != 0 and ma/MA < 1.2:
-                        print("ma", ma/MA)
+                        #print("ma", ma/MA)
                         elps.append(ellipse)
 
 
@@ -276,6 +298,9 @@ class RingDetector(Node):
             y_min = y1 if y1 > 0 else 0
             y_max = y2 if y2 < cv_image.shape[1] else cv_image.shape[1]
 
+            print("x1", x1)
+            print("y1", x1)
+
 
             ring_inner_region = hsv_image[x_min:x_max, y_min:y_max]
 
@@ -289,6 +314,10 @@ class RingDetector(Node):
                 if color_pixels > max_color_pixels:
                     max_color_pixels = color_pixels
                     self.ring_color = color
+
+                    if(self.ring_color == "blue" and self.ring_b == 1):
+                        continue
+                print("color", self.ring_color)
 
             #self.get_logger().info(f"Detected ring color: {ring_color}")
 
@@ -403,9 +432,11 @@ class RingDetector(Node):
                     #print(scadiry)
                     #print()
 
-                    #print(ring_point_map.z)
+
+                    print("ring point z", ring_point_map.z)
                     print(self.is_new_ring(ring_point_map))
-                    if ring_point_map.z > -0.03 and self.is_new_ring(ring_point_map):
+
+                    if ((ring_point_map.z > -0.03 and self.is_new_ring(ring_point_map)) or (self.ring_3d_red == 0 and self.ring_color == "red" and ring_point_map.z > 0.5)):
                         marker_ring = Marker()
                         marker_ring.header.frame_id = "/map"
                         marker_ring.header.stamp = data.header.stamp
@@ -424,16 +455,19 @@ class RingDetector(Node):
 
                         # Set the color
                         if ring_point_map.z >= 0.5:
-                            if self.ring_color == "green":
+                            if self.ring_color == "green" and self.ring_gb == 1:
                                 marker_ring.color.r = 0.0
                                 marker_ring.color.g = 1.0
                                 marker_ring.color.b = 0.0
                                 marker_ring.color.a = 1.0
-                            #elif self.ring_color == "red":
-                            #    if self.ring_r == 1:
-                            #        continue
-                            #    self.ring_r = 1
                             else:
+                                if(self.ring_color == "blue"):
+                                    if(self.ring_gb == 0):
+                                        self.ring_gb = 1
+                                    if(self.ring_b == 0):
+                                        self.ring_b = 1
+                                if(self.ring_color == "red"):
+                                    self.ring_3d_red = 1
                                 marker_ring.color.r = 1.0
                                 marker_ring.color.g = 1.0
                                 marker_ring.color.b = 1.0
@@ -450,13 +484,15 @@ class RingDetector(Node):
                         marker_ring.pose.position.z = ring_point_map.z
 
                         self.ring_marker_pub.publish(marker_ring)
-                        self.previous_centers.append((ring_point_map.x, ring_point_map.y, ring_point_map.z))
+                        self.previous_centers.append((ring_point_map.x, ring_point_map.y, ring_point_map.z, self.ring_color))
 
                         self.center_array = []
 
                         if self.ring_color != "unknown":
-                            self.speak(f"{self.ring_color}")
+                            #self.speak(f"{self.ring_color}")
                             self.get_logger().info(f"Detected ring color: {self.ring_color}")
+
+                            self.previous_ring_color = self.ring_color
                     else:
                         # create marker
                         marker = Marker()
