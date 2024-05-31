@@ -103,10 +103,14 @@ class detect_faces(Node):
 					continue
 
 
+				bbox = bbox[0]
+
+				# Check for brown boundary in the bounding box
+				if self.has_brown_boundary(cv_image, bbox):
+					self.get_logger().info("Not People")
+					continue
 
 				self.get_logger().info(f"Person has been detected!")
-
-				bbox = bbox[0]
 
 				# draw rectangle
 				cv_image = cv2.rectangle(cv_image, (int(bbox[0]), int(bbox[1])), (int(bbox[2]), int(bbox[3])), self.detection_color, 3)
@@ -195,7 +199,7 @@ class detect_faces(Node):
 				marker.id = len(self.prev_face_points) - 1  # Assign unique ID for each marker
 
 				# Set the scale of the marker
-				scale = 0.1
+				scale = 0.2
 				marker.scale.x = scale
 				marker.scale.y = scale
 				marker.scale.z = scale
@@ -203,7 +207,7 @@ class detect_faces(Node):
 				# Set the color
 				marker.color.r = 1.0
 				marker.color.g = 1.0
-				marker.color.b = 1.0
+				marker.color.b = 0.0
 				marker.color.a = 1.0
 
 				# Set the pose of the marker
@@ -227,6 +231,48 @@ class detect_faces(Node):
 
 		return False
 
+	def has_brown_boundary(self, image, bbox):
+		# Define brown color range in HSV
+		lower_brown = np.array([10, 100, 20])
+		upper_brown = np.array([20, 255, 200])
+
+		# Extract bounding box region
+		x1, y1, x2, y2 = int(bbox[0]), int(bbox[1]), int(bbox[2]), int(bbox[3])
+		bbox_region = image[y1:y2, x1:x2]
+
+		x1_expanded = max(0, x1 - 5)
+		y1_expanded = max(0, y1 - 5)
+		x2_expanded = min(image.shape[1], x2 + 5)
+		y2_expanded = min(image.shape[0], y2 + 5)
+
+		# Create a mask for the expanded region
+		mask_outer = np.zeros(image.shape[:2], dtype=np.uint8)
+		mask_outer[y1_expanded:y2_expanded, x1_expanded:x2_expanded] = 255
+
+		# Create a mask for the inner bounding box region
+		mask_inner = np.zeros(image.shape[:2], dtype=np.uint8)
+		mask_inner[y1:y2, x1:x2] = 255
+
+		# Subtract the inner mask from the outer mask to get the border region
+		mask_border = cv2.subtract(mask_outer, mask_inner)
+
+		# Apply the mask to the original image to get the border region
+		border_region = cv2.bitwise_and(image, image, mask=mask_border)
+
+		# Display the border region
+		cv2.imshow("Border Region", border_region)
+		cv2.waitKey(1)
+
+		# Convert the border region to HSV color space
+		hsv_border = cv2.cvtColor(border_region, cv2.COLOR_BGR2HSV)
+
+		# Create a mask for brown color in the border region
+		mask_brown = cv2.inRange(hsv_border, lower_brown, upper_brown)
+
+		# Check if there is any brown color in the mask
+		if cv2.countNonZero(mask_brown) > 0:
+			return True
+		return False
 
 def main():
 	print('Face detection node starting.')
