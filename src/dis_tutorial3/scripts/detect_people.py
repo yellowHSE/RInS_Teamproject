@@ -240,10 +240,12 @@ class detect_faces(Node):
 		x1, y1, x2, y2 = int(bbox[0]), int(bbox[1]), int(bbox[2]), int(bbox[3])
 		bbox_region = image[y1:y2, x1:x2]
 
-		x1_expanded = max(0, x1 - 5)
-		y1_expanded = max(0, y1 - 5)
-		x2_expanded = min(image.shape[1], x2 + 5)
-		y2_expanded = min(image.shape[0], y2 + 5)
+		brown_threshold = 6
+
+		x1_expanded = max(0, x1 - brown_threshold)
+		y1_expanded = max(0, y1 - brown_threshold)
+		x2_expanded = min(image.shape[1], x2 + brown_threshold)
+		y2_expanded = min(image.shape[0], y2 + brown_threshold)
 
 		# Create a mask for the expanded region
 		mask_outer = np.zeros(image.shape[:2], dtype=np.uint8)

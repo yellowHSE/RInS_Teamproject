@@ -35,6 +35,7 @@ from geometry_msgs.msg import PointStamped
 from gtts import gTTS
 import pygame
 from tempfile import TemporaryFile
+from queue import Queue
 
 
 class TaskResult(Enum):
@@ -69,6 +70,9 @@ class RobotCommander(Node):
         self.face_coordinate_received = False
         self.park_coordinate_received = False
         self.parkspace_coordinate_received = False
+        self.current_goal_pose = PoseStamped()
+        self.face_coordinate_queue = Queue()
+
 
         self.tf_buffer = Buffer()
         self.tf_listener = TransformListener(self.tf_buffer, self)
@@ -130,6 +134,7 @@ class RobotCommander(Node):
 
         self.get_logger().info(f"Face coordinate: ({x}, {y}, {z})")
         self.face_coordinate_received = True
+        self.face_coordinate_queue.put(self.face_coordinate_msg)
 
     def approachToFace(self, pose, behavior_tree=''):
         """Send a `NavToPose` action request."""
@@ -141,7 +146,7 @@ class RobotCommander(Node):
         goal_msg.pose = pose
         goal_msg.behavior_tree = behavior_tree
 
-        self.info('Navigating to : ' + str(pose.pose.position.x) + ' ' +
+        self.info('Navigating to face: ' + str(pose.pose.position.x) + ' ' +
                   str(pose.pose.position.y) + '...')
         send_goal_future = self.nav_to_pose_client.send_goal_async(goal_msg,
                                                                    self._feedbackCallback)
@@ -310,8 +315,8 @@ class RobotCommander(Node):
         goal_msg.pose = pose
         goal_msg.behavior_tree = behavior_tree
 
-        #self.info('Navigating to goal: ' + str(pose.pose.position.x) + ' ' +
-        #          str(pose.pose.position.y) + '...')
+        self.info('Navigating to goal: ' + str(pose.pose.position.x) + ' ' +
+                  str(pose.pose.position.y) + '...')
         send_goal_future = self.nav_to_pose_client.send_goal_async(goal_msg,
                                                                    self._feedbackCallback)
         rclpy.spin_until_future_complete(self, send_goal_future)
@@ -607,34 +612,38 @@ def main(args=None):
         goal_pose.pose.orientation = rc.YawToQuaternion(goal['yaw'])
 
         rc.goToPose(goal_pose)
+        rc.current_goal_pose = goal_pose
 
         while not rc.isTaskComplete():
             # Check if face coordinate message is received
+            rc.info("--------------------")
             if rc.face_coordinate_received:
-                rc.info("face detected")
 
-                rc.detected_face_num = rc.detected_face_num + 1
+                #rc.info("face detected")
+                #rc.detected_face_num = rc.detected_face_num + 1
+                first = 0
+                while not rc.face_coordinate_queue.empty():
+                    first = 1
+                    face = rc.face_coordinate_msg
+                    rc.move_robot_to_face(face)
 
-                # rc.cancelTask()
-                # Move robot to face coordinate
-                rc.move_robot_to_face(rc.face_coordinate_msg)
+                    # Wait for 5 seconds
+                    time.sleep(3)
 
-                # Wait for 5 seconds
-                time.sleep(3)
+                    rc.greeting()
 
-                #rc.greeting()
+                    #rc.cancelTask()
+                    if(first == 1):
+                        rc.goToPose(rc.current_goal_pose)
+
+                first = 0
                 # Clear face coordinate message
                 rc.face_coordinate_msg = None
                 rc.face_coordinate_received = False
-
-                #if(rc.detected_face_num > 2):
-                #    break
-
+                rc.face_coordinate_queue.clear()
             else:
                 rc.info("Waiting")
                 time.sleep(1)
-        #if(rc.detected_face_num > 2):
-        #    break
         rc.info("Goal reached")
 
     
