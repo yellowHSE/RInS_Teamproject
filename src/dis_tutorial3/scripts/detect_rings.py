@@ -59,6 +59,7 @@ class RingDetector(Node):
         self.ring_r = 0
         self.ring_gb = 0
         self.ring_b = 0
+        self.ring_bk = 0
         self.ring_3d_red = 0
 
         # Subscribe to the image and/or depth topic
@@ -109,7 +110,8 @@ class RingDetector(Node):
                 closest_dist = dist
                 closest_ring_color = center_color
 
-        if closest_dist < 0.65:
+        #if closest_dist < 0.65:
+        if closest_dist < 0.75:
             if closest_ring_color == self.ring_color:
                 print("Same color as the closest ring.")
                 return False
@@ -473,6 +475,10 @@ class RingDetector(Node):
                                 marker_ring.color.b = 1.0
                                 marker_ring.color.a = 1.0
                         else:
+                            if(self.ring_color == "black"):
+                                self.ring_bk = 1
+                            if(self.ring_color == "red" and self.ring_bk == 1):
+                                continue
                             marker_ring.color.r = 0.0
                             marker_ring.color.g = 0.0
                             marker_ring.color.b = 1.0
