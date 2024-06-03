@@ -601,7 +601,7 @@ def main(args=None):
         {'x': 1.6, 'y': -2.0, 'yaw': 0.57}
     ]
 
-
+    
     for goal in goal_positions:
         goal_pose = PoseStamped()
         goal_pose.header.frame_id = 'map'
@@ -619,34 +619,31 @@ def main(args=None):
             rc.info("--------------------")
             if rc.face_coordinate_received:
 
-                #rc.info("face detected")
-                #rc.detected_face_num = rc.detected_face_num + 1
-                first = 0
-                while not rc.face_coordinate_queue.empty():
-                    first = 1
-                    face = rc.face_coordinate_msg
-                    rc.move_robot_to_face(face)
 
-                    # Wait for 5 seconds
-                    time.sleep(3)
+                face = rc.face_coordinate_msg
+                rc.move_robot_to_face(face)
 
-                    rc.greeting()
+                # Wait for 5 seconds
+                time.sleep(10)
 
-                    #rc.cancelTask()
-                    if(first == 1):
-                        rc.goToPose(rc.current_goal_pose)
+                rc.greeting()
 
-                first = 0
+    
+
                 # Clear face coordinate message
                 rc.face_coordinate_msg = None
                 rc.face_coordinate_received = False
-                rc.face_coordinate_queue.clear()
             else:
                 rc.info("Waiting")
                 time.sleep(1)
+            
+
+            rc.info("Back to the goal")
+            rc.goToPose(rc.current_goal_pose)
+        
+
         rc.info("Goal reached")
 
-    
     rc.info("spinning now")
     time.sleep(2)
     rc.spin(10.1)
@@ -655,7 +652,7 @@ def main(args=None):
             rc.info("parking")
             rc.goPark(rc.park_msg)
      
-    for i in range(2):
+    for i in range(3):
         rc.info("spinning now")
         time.sleep(2)
         rc.spin(3.0)
