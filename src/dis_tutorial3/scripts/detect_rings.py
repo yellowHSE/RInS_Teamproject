@@ -61,6 +61,7 @@ class RingDetector(Node):
         self.ring_b = 0
         self.ring_bk = 0
         self.ring_3d_red = 0
+        self.count = 0
 
         # Subscribe to the image and/or depth topic
         self.image_sub = self.create_subscription(Image, "/oakd/rgb/preview/image_raw", self.image_callback, 1)
@@ -476,9 +477,17 @@ class RingDetector(Node):
                                 marker_ring.color.a = 1.0
                         else:
                             if(self.ring_color == "black"):
-                                self.ring_bk = 1
+                                if(self.ring_bk == 1):
+                                    continue
+                                else:
+                                    self.ring_bk = 1
                             if(self.ring_color == "red" and self.ring_bk == 1):
                                 continue
+                            if(self.ring_color == "red"):
+                                if(ring_point_map.x > 0.5 and ring_point_map.x < 3 and ring_point_map.y > 1.7 and ring_point_map.y < 3):
+                                    continue
+                                self.ring_r = 1
+
                             marker_ring.color.r = 0.0
                             marker_ring.color.g = 0.0
                             marker_ring.color.b = 1.0
@@ -495,13 +504,15 @@ class RingDetector(Node):
                         self.center_array = []
 
                         if self.ring_color != "unknown":
-                            #self.speak(f"{self.ring_color}")
+                            self.speak(f"{self.ring_color}")
                             self.get_logger().info(f"Detected ring color: {self.ring_color}")
 
                             self.previous_ring_color = self.ring_color
                     else:
+                        
                         # create marker
                         marker = Marker()
+                        '''
                         marker.header.frame_id = "/map"
                         marker.header.stamp = data.header.stamp
 
@@ -527,6 +538,7 @@ class RingDetector(Node):
 
                         #self.get_logger().info(f"Publishing marker: {marker} on topic: {self.marker_pub.topic_name}")
                         self.marker_pub.publish(marker)
+                        '''
 
                         self.center_array = []
             except TransformException as e:
