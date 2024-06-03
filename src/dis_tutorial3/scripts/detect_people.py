@@ -105,10 +105,12 @@ class detect_faces(Node):
 
 				bbox = bbox[0]
 
+				'''
 				# Check for brown boundary in the bounding box
 				if self.has_brown_boundary(cv_image, bbox):
 					self.get_logger().info("Not People")
 					continue
+				'''
 
 				self.get_logger().info(f"Person has been detected!")
 
