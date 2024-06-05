@@ -82,7 +82,7 @@ class RingDetector(Node):
         # Object we use for transforming between coordinate frames
         # self.tf_buf = tf2_ros.Buffer()
         # self.tf_listener = tf2_ros.TransformListener(self.tf_buf)
-        cv2.namedWindow("Detected contours", cv2.WINDOW_NORMAL)
+        #cv2.namedWindow("Detected contours", cv2.WINDOW_NORMAL)
 
     def speak(self, text):
         tts = gTTS(text=text, lang='en')
@@ -189,16 +189,16 @@ class RingDetector(Node):
         edges = cv2.Canny(gray, 50, 150)
 
         thresh = cv2.adaptiveThreshold(edges, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 15, 10)
-        cv2.imshow("Binary Image", thresh)
-        cv2.waitKey(1)
+        #cv2.imshow("Binary Image", thresh)
+        #cv2.waitKey(1)
 
         # Extract contours
         contours, hierarchy = cv2.findContours(thresh, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
 
         # Example of how to draw the contours, only for visualization purposes
-        cv2.drawContours(gray, contours, -1, (255, 0, 0), 3)
-        cv2.imshow("Detected contours", gray)
-        cv2.waitKey(1)
+        #cv2.drawContours(gray, contours, -1, (255, 0, 0), 3)
+        #cv2.imshow("Detected contours", gray)
+        #cv2.waitKey(1)
 
         # Fit elipses to all extracted contours
         elps = []
@@ -483,6 +483,7 @@ class RingDetector(Node):
                                     self.ring_bk = 1
                             if(self.ring_color == "red" and self.ring_bk == 1):
                                 continue
+                                
                             if(self.ring_color == "red"):
                                 if(ring_point_map.x > 0.5 and ring_point_map.x < 3 and ring_point_map.y > 1.7 and ring_point_map.y < 3):
                                     continue
@@ -559,8 +560,8 @@ class RingDetector(Node):
 
         image_viz = np.array(image_1, dtype= np.uint8)
 
-        cv2.imshow("Depth window", image_viz)
-        cv2.waitKey(1)
+        #cv2.imshow("Depth window", image_viz)
+        #cv2.waitKey(1)
 
 
 def createPS(self, frame_id, point):
