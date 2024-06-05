@@ -30,6 +30,7 @@ from tf2_ros import TransformException
 from tf2_ros.buffer import Buffer
 from tf2_ros.transform_listener import TransformListener
 
+import numpy as np
 from geometry_msgs.msg import PointStamped
 
 from gtts import gTTS
@@ -131,10 +132,10 @@ class RobotCommander(Node):
         x = face_position.x
         y = face_position.y
         z = face_position.z
-
-        self.get_logger().info(f"Face coordinate: ({x}, {y}, {z})")
-        self.face_coordinate_received = True
-        self.face_coordinate_queue.put(self.face_coordinate_msg)
+        if not np.isnan(x) or not np.isnan(y) or not np.isnan(z):
+            self.get_logger().info(f"Face coordinate: ({x}, {y}, {z})")
+            self.face_coordinate_received = True
+            self.face_coordinate_queue.put(self.face_coordinate_msg)
 
     def approachToFace(self, pose, behavior_tree=''):
         """Send a `NavToPose` action request."""
@@ -189,27 +190,30 @@ class RobotCommander(Node):
             self.park_coordinate_received = True
     
     def in_circle(self, msg):
-        self.info(f"Parking position: {msg.pose.position.x}, {msg.pose.position.y}, {msg.pose.position.z}")
-        
-        #print("IN CIRCLE BITCH")
-        #print(msg)
+        try:
+            self.info(f"Parking position: {msg.pose.position.x}, {msg.pose.position.y}, {msg.pose.position.z}")
+            
+            #print("IN CIRCLE BITCH")
+            #print(msg)
 
-        camera_to_map = self.tf_buffer.lookup_transform("map", "top_camera_link", rclpy.time.Time(), rclpy.duration.Duration(seconds=0.1))
+            camera_to_map = self.tf_buffer.lookup_transform("map", "top_camera_link", rclpy.time.Time(), rclpy.duration.Duration(seconds=0.1))
 
-        circle_point = self.createPS("top_camera_link", (msg.pose.position.x, msg.pose.position.y, msg.pose.position.z))
-        circle_on_map = tfg.do_transform_point(circle_point, camera_to_map)
+            circle_point = self.createPS("top_camera_link", (msg.pose.position.x, msg.pose.position.y, msg.pose.position.z))
+            circle_on_map = tfg.do_transform_point(circle_point, camera_to_map)
 
-        print("CIRCLE ON MAP")
-        print(circle_on_map)
+            print("CIRCLE ON MAP")
+            print(circle_on_map)
 
-        x = circle_on_map.point.x
-        y = circle_on_map.point.y
-        z = circle_on_map.point.z
+            x = circle_on_map.point.x
+            y = circle_on_map.point.y
+            z = circle_on_map.point.z
 
-        self.circle_msg = circle_on_map
+            self.circle_msg = circle_on_map
 
-        #self.get_logger().info(f"Parking coordinates: ({x}, {y}, {z})")
-        self.parkspace_coordinate_received = True
+            #self.get_logger().info(f"Parking coordinates: ({x}, {y}, {z})")
+            self.parkspace_coordinate_received = True
+        except Exception as e:
+            self.get_logger().info(f"Transform exception: {e}")
 
     def createPS(self, frame_id, point):
         point_robot_frame = PointStamped()
@@ -277,8 +281,8 @@ class RobotCommander(Node):
         dis = math.sqrt(dx**2 + dy**2)
         direct_x = dx / dis
         direct_y = dy / dis
-        scadirx = direct_x * 0.2
-        scadiry = direct_y * 0.2
+        scadirx = direct_x * 0.1
+        scadiry = direct_y * 0.1
         #self.info(f'Parking - {pose}')
         #self.info(f'Parking - {marker}')
         pose.header.frame_id = 'map'
@@ -579,6 +583,7 @@ def main(args=None):
     # Finally send it a goal to reach
     # Do not touch
     goal_positions = [
+        {'x': -1.1, 'y': -0.4, 'yaw': -0.0},
         {'x': -1.5, 'y': 1.1, 'yaw': -1.57},
         {'x': -1.0, 'y': 1.1, 'yaw': 0.57},
         {'x': -1.5, 'y': 4.4, 'yaw': 1.0},
@@ -591,14 +596,10 @@ def main(args=None):
         {'x': 3.2, 'y': -1.0, 'yaw': 0.57},
         {'x': 1.2, 'y': -0.2, 'yaw': 1.57},
 
-        #initial y2.0
-        {'x': 1.2, 'y': 1.8, 'yaw': 0.67},
-        {'x': 0.7, 'y': 2.0, 'yaw': 1.57},
-
         {'x': 0.0, 'y': 2.1, 'yaw': -1.57},
         {'x': -1.0, 'y': -0.8, 'yaw': 0.00},
-        {'x': -0.2, 'y': -0.8, 'yaw': -4.00},
-        {'x': 1.6, 'y': -2.0, 'yaw': 0.57}
+        {'x': 1.8, 'y': -2.0, 'yaw': 0.57},
+        {'x': 2.5, 'y': -1.1, 'yaw': 0.57}
     ]
 
     
